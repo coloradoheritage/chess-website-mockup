@@ -40,12 +40,12 @@
 <body class="bg-white font-sans text-mountain-slate antialiased">
 
 <!-- TOP ANNOUNCEMENT BAR -->
-<div class="bg-chess-blue text-white text-sm font-semibold py-2 px-4 relative z-50 flex justify-center items-center gap-4 text-center">
+<div id="announcement-bar" class="bg-chess-blue text-white text-sm font-semibold py-2 px-4 relative z-50 flex justify-center items-center gap-4 text-center">
     <span class="flex items-center gap-2">
         <i data-lucide="bell" class="w-4 h-4 text-academy-gold animate-bounce"></i>
-        2026/2027 Academy Class Registration is scheduled to open Monday, June 1.
+        <span id="announcement-text">2026/2027 Academy Class Registration is scheduled to open Monday, June 1.</span>
     </span>
-    <a href="programs.html#academy" class="underline text-academy-gold hover:text-white transition-colors">View Classes</a>
+    <a id="announcement-link" href="programs.html#academy" class="underline text-academy-gold hover:text-white transition-colors">View Classes</a>
 </div>
 
 <!-- MAIN NAVIGATION -->
@@ -78,7 +78,7 @@
                 <a href="programs.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Programs</a>
                 <a href="contact.html#apply" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Admissions</a>
                 <a href="#" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Resources</a>
-                <a href="#" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Blog</a>
+                <a href="blog.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Blog</a>
             </nav>
 
             <!-- CTA Buttons -->
@@ -106,7 +106,7 @@
         <a href="programs.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">Programs</a>
         <a href="contact.html#apply" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">Admissions</a>
         <a href="#" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">Resources</a>
-        <a href="#" class="block font-bold text-heritage-navy py-2">Blog</a>
+        <a href="blog.html" class="block font-bold text-heritage-navy py-2">Blog</a>
         <div class="pt-4 flex flex-col gap-3">
             <a href="contact.html" class="text-center font-bold text-heritage-navy py-2 border border-heritage-navy rounded">Portals</a>
             <a href="#" class="text-center bg-heritage-navy text-white font-bold py-2.5 rounded">Donate</a>
@@ -489,6 +489,22 @@
     mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
+        // Load announcement bar from CMS
+        fetch('/data/announcement.json')
+            .then(r => r.json())
+            .then(data => {
+                const bar = document.getElementById('announcement-bar');
+                if (!bar) return;
+                if (!data.active) { bar.style.display = 'none'; return; }
+                const textEl = document.getElementById('announcement-text');
+                const linkEl = document.getElementById('announcement-link');
+                if (textEl && data.text) textEl.textContent = data.text;
+                if (linkEl) {
+                    if (data.link_text) linkEl.textContent = data.link_text;
+                    if (data.link_url) linkEl.href = data.link_url;
+                }
+            })
+            .catch(() => {});
 </script>
 </body>
 </html>

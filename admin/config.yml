@@ -1,0 +1,86 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# ─────────────────────────────────────────────
+# SITE SETTINGS
+# ─────────────────────────────────────────────
+collections:
+
+  - label: "Site Settings"
+    name: "settings"
+    files:
+
+      - label: "Announcement Bar"
+        name: "announcement"
+        file: "data/announcement.json"
+        fields:
+          - label: "Show Announcement Bar"
+            name: "active"
+            widget: "boolean"
+            default: true
+            hint: "Turn off to hide the blue bar entirely."
+          - label: "Announcement Text"
+            name: "text"
+            widget: "string"
+            hint: "The message shown in the blue bar at the top of every page."
+          - label: "Link Text"
+            name: "link_text"
+            widget: "string"
+            default: "View Classes"
+          - label: "Link URL"
+            name: "link_url"
+            widget: "string"
+            default: "programs.html#academy"
+
+# ─────────────────────────────────────────────
+# BLOG POSTS
+# ─────────────────────────────────────────────
+
+  - label: "Blog Posts"
+    name: "posts"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "post.html?slug={{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "date"
+        format: "MMMM D, YYYY"
+      - label: "Summary"
+        name: "summary"
+        widget: "text"
+        hint: "Short description shown on the homepage and blog listing (1–2 sentences)."
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        hint: "Write the full article here. Use the toolbar to add headings, bold, links, etc."
+
+# ─────────────────────────────────────────────
+# STAFF DIRECTORY
+# ─────────────────────────────────────────────
+
+  - label: "Staff Directory"
+    name: "staff"
+    file: "data/staff.json"
+    label_singular: "Staff Member"
+    fields:
+      - label: "Staff Members"
+        name: "members"
+        widget: "list"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Title / Role", name: "role", widget: "string"}
+          - label: "Photo"
+            name: "photo"
+            widget: "image"
+            required: false
+            hint: "Upload a headshot photo."
+          - {label: "Bio", name: "bio", widget: "text", required: false}
