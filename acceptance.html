@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceptance Policy — Colorado Heritage Education School System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'heritage-navy': '#1A365D',
+                        'academy-gold': '#D4AF37',
+                        'chess-blue': '#0D008C',
+                        'mountain-slate': '#2D3748',
+                        'parchment': '#F7FAFC',
+                    },
+                    fontFamily: {
+                        'serif': ['Merriweather', 'serif'],
+                        'sans': ['Lato', 'sans-serif'],
+                        'garamond': ['EB Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>html { scroll-behavior: smooth; }</style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white font-sans text-mountain-slate antialiased">
+
+<!-- TOP ANNOUNCEMENT BAR -->
+<div id="announcement-bar" class="bg-chess-blue text-white text-sm font-semibold py-2 px-4 relative z-50 flex justify-center items-center gap-4 text-center">
+    <span class="flex items-center gap-2">
+        <i data-lucide="bell" class="w-4 h-4 text-academy-gold animate-bounce"></i>
+        <span id="announcement-text">2026/2027 Academy Class Registration is scheduled to open Monday, June 1.</span>
+    </span>
+    <a id="announcement-link" href="programs.html#academy" class="underline text-academy-gold hover:text-white transition-colors">View Classes</a>
+</div>
+
+<!-- MAIN NAVIGATION -->
+<header class="bg-white shadow-sm sticky top-0 z-40 border-b-4 border-academy-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-24">
+            <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                <img src="chess-logo.png" alt="CHESS Logo" class="h-14 w-14 object-contain transition-transform group-hover:scale-105">
+                <div class="flex flex-col">
+                    <h1 class="font-serif text-2xl md:text-3xl font-bold text-heritage-navy leading-none tracking-tight">Colorado Heritage</h1>
+                    <span class="font-sans text-xs font-bold tracking-widest text-academy-gold uppercase mt-1">Education School System</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex space-x-8 items-center">
+                <div class="relative group">
+                    <button class="text-academy-gold font-bold transition-colors flex items-center gap-1 py-4 border-b-2 border-academy-gold">
+                        About Us <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="about.html#purpose" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Our Purpose</a>
+                        <a href="about.html#foundation" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our Foundation</a>
+                        <a href="about.html#history" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our History</a>
+                        <hr class="my-1 border-gray-100">
+                        <a href="people.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Faculty &amp; Staff</a>
+                        <a href="acceptance.html" class="block px-4 py-2.5 text-sm bg-parchment text-heritage-navy font-bold">Acceptance Policy</a>
+                    </div>
+                </div>
+                <a href="programs.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Programs</a>
+                <div class="relative group">
+                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">
+                        Admissions <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute left-0 mt-0 w-56 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="apply.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Apply</a>
+                        <a href="schedule.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Class Schedule</a>
+                        <a href="tuition.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Tuition &amp; Fees</a>
+                        <a href="policies.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Academy Policies</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">
+                        Resources <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="resources.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Homeschool Resources</a>
+                        <a href="gallery.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Photo Gallery</a>
+                        <a href="testimonials.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Testimonials</a>
+                    </div>
+                </div>
+                <a href="blog.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Blog</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="contact.html" class="text-heritage-navy hover:text-chess-blue font-bold flex items-center gap-2"><i data-lucide="user-circle" class="w-5 h-5"></i> Portals</a>
+                <a href="donate.html" class="bg-heritage-navy hover:bg-chess-blue text-white px-6 py-2.5 rounded-md font-bold transition-all shadow-md hover:shadow-lg">Donate</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-heritage-navy hover:text-chess-blue"><i data-lucide="menu" class="w-8 h-8"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3 shadow-inner">
+        <a href="about.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">About Us</a>
+        <a href="programs.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">Programs</a>
+        <div class="border-b border-gray-50">
+            <p class="font-bold text-heritage-navy py-2">Admissions</p>
+            <div class="pl-3 pb-2 space-y-1">
+                <a href="apply.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Apply</a>
+                <a href="schedule.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Class Schedule</a>
+                <a href="tuition.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Tuition &amp; Fees</a>
+                <a href="policies.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Academy Policies</a>
+            </div>
+        </div>
+        <div class="border-b border-gray-50">
+            <p class="font-bold text-heritage-navy py-2">Resources</p>
+            <div class="pl-3 pb-2 space-y-1">
+                <a href="resources.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Homeschool Resources</a>
+                <a href="gallery.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Photo Gallery</a>
+                <a href="testimonials.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Testimonials</a>
+            </div>
+        </div>
+        <a href="blog.html" class="block font-bold text-heritage-navy py-2">Blog</a>
+        <div class="pt-4 flex flex-col gap-3">
+            <a href="contact.html" class="text-center font-bold text-heritage-navy py-2 border border-heritage-navy rounded">Portals</a>
+            <a href="donate.html" class="text-center bg-heritage-navy text-white font-bold py-2.5 rounded">Donate</a>
+        </div>
+    </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-heritage-navy relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-academy-gold"></div>
+    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 28px 28px;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Our Foundation</p>
+        <h1 class="text-white font-serif font-bold text-4xl md:text-5xl mb-4">Acceptance Policy</h1>
+        <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">Colorado Heritage serves families who are conforming to the biblical pattern for family found in Holy Scripture.</p>
+    </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="bg-parchment border-b border-gray-200 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex items-center gap-2 text-xs text-gray-500">
+            <a href="index.html" class="hover:text-heritage-navy transition-colors">Home</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <a href="about.html" class="hover:text-heritage-navy transition-colors">About</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <span class="text-heritage-navy font-bold">Acceptance Policy</span>
+        </nav>
+    </div>
+</div>
+
+<!-- ACCEPTANCE POLICY CONTENT -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Policy statement -->
+        <div class="mb-14">
+            <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-4">Policy Statement</p>
+            <h2 class="text-heritage-navy font-serif font-bold text-3xl md:text-4xl mb-6">Acceptance &amp; Eligibility</h2>
+            <div class="w-12 h-0.5 bg-academy-gold mb-8"></div>
+            <p class="text-mountain-slate text-base leading-relaxed mb-5">The Colorado Heritage Independent School, Academy, and all programs seek students from families conforming to the biblical pattern for family found in Holy Scripture and specified in the various position statements of this organization.</p>
+            <p class="text-mountain-slate text-base leading-relaxed mb-5">Applications are considered from families led by a husband and wife (man and woman), a single parent, or legal guardians.</p>
+            <p class="text-mountain-slate text-base leading-relaxed">We are committed to serving every enrolled family with excellence, integrity, and genuine care — as partners in the education of their children.</p>
+        </div>
+
+        <!-- Scripture -->
+        <div class="bg-heritage-navy rounded-2xl p-8 md:p-10 mb-12">
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div>
+                    <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-4">Our Biblical Foundation</p>
+                    <p class="text-white text-base leading-relaxed mb-4">Every aspect of Colorado Heritage — from our enrollment policies to our curriculum philosophy — flows from a commitment to the authority and sufficiency of Scripture.</p>
+                    <p class="text-blue-200 text-sm leading-relaxed">We believe God has designed the family as the foundational unit of society, and that His design is both good and worth upholding.</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 border border-white border-opacity-20">
+                    <p class="text-academy-gold text-xs uppercase tracking-wider font-bold mb-3">Scripture</p>
+                    <p class="text-white font-garamond italic text-lg leading-relaxed mb-3">"Thine eyes did see my substance, yet being unperfect; and in thy book all my members were written, which in continuance were fashioned, when as yet there was none of them."</p>
+                    <p class="text-gray-300 text-sm">— Psalm 139:16</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Non-discrimination -->
+        <div class="bg-parchment border border-gray-200 rounded-2xl p-8 mb-10">
+            <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-heritage-navy rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg class="w-5 h-5 text-academy-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <div>
+                    <h3 class="font-serif font-bold text-heritage-navy text-xl mb-3">Non-Discrimination Statement</h3>
+                    <p class="text-mountain-slate text-sm leading-relaxed">Colorado Heritage Education School System admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at Colorado Heritage. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apply CTA inline -->
+        <div class="text-center">
+            <p class="text-mountain-slate text-base mb-6">Ready to begin the enrollment process? We'd be glad to walk you through the application.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="apply.html" class="inline-flex items-center gap-2 bg-heritage-navy text-white font-bold py-3 px-8 rounded uppercase tracking-wider text-sm hover:bg-blue-900 transition-colors">
+                    Start Your Application
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+                <a href="contact.html" class="inline-flex items-center gap-2 border-2 border-heritage-navy text-heritage-navy font-bold py-3 px-8 rounded uppercase tracking-wider text-sm hover:bg-heritage-navy hover:text-white transition-colors">Contact Our Office</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-mountain-slate pt-16 pb-8 border-t-8 border-heritage-navy">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6"><img src="chess-logo.png" alt="CHESS Logo" class="h-10 w-10 object-contain"><h2 class="font-serif text-xl font-bold text-white tracking-tight">Colorado Heritage</h2></div>
+                <p class="text-gray-300 mb-6 font-garamond italic text-lg">"Pursuing the Knowledge of God."</p>
+                <div class="space-y-3 text-gray-400 text-sm">
+                    <p class="flex items-start gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-academy-gold shrink-0"></i><span>1300 9th Street<br>Greeley, Colorado 80631</span></p>
+                    <p class="flex items-center gap-3"><i data-lucide="phone" class="w-5 h-5 text-academy-gold shrink-0"></i>(970) 346-0099</p>
+                    <p class="flex items-center gap-3"><i data-lucide="mail" class="w-5 h-5 text-academy-gold shrink-0"></i><a href="mailto:office@coloradoheritage.org" class="hover:text-white transition-colors">office@coloradoheritage.org</a></p>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Quick Links</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="about.html#foundation" class="hover:text-academy-gold transition-colors block">Our Beliefs</a></li>
+                    <li><a href="acceptance.html" class="hover:text-academy-gold transition-colors block">Acceptance Policy</a></li>
+                    <li><a href="programs.html#academy" class="hover:text-academy-gold transition-colors block">Fee Schedule &amp; Scholarships</a></li>
+                    <li><a href="resources.html" class="hover:text-academy-gold transition-colors block">Homeschool Resources</a></li>
+                    <li><a href="testimonials.html" class="hover:text-academy-gold transition-colors block">Testimonials</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Access Portals</h4>
+                <div class="space-y-3">
+                    <a href="#" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="users" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>PARENT Portal</a>
+                    <a href="#" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="briefcase" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>FACULTY/STAFF Portal</a>
+                    <a href="#" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="user-plus" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>NEW APPLICANT Portal</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Support CHESS</h4>
+                <p class="text-gray-400 text-sm mb-4">Please consider donating to Colorado Heritage. Thank you for your continued support!</p>
+                <a href="donate.html" class="bg-academy-gold hover:bg-yellow-500 text-heritage-navy font-bold px-6 py-2 rounded-md inline-flex items-center gap-2 transition-colors w-full justify-center mb-6"><i data-lucide="heart" class="w-4 h-4"></i> Donate Now</a>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 text-xs text-gray-500 leading-relaxed text-justify md:text-center">
+            <p class="mb-4">Colorado Heritage Education School System admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at Colorado Heritage. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs.</p>
+            <p>Colorado Heritage Education School System is a 501 (c) (3) charitable organization. &copy; 1991 - 2026. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    lucide.createIcons();
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+    fetch('/data/announcement.json').then(r => r.json()).then(data => {
+        const bar = document.getElementById('announcement-bar');
+        if (!bar) return;
+        if (!data.active) { bar.style.display = 'none'; return; }
+        if (data.text) document.getElementById('announcement-text').textContent = data.text;
+        const linkEl = document.getElementById('announcement-link');
+        if (linkEl && data.link_text) linkEl.textContent = data.link_text;
+        if (linkEl && data.link_url) linkEl.href = data.link_url;
+    }).catch(() => {});
+</script>
+</body>
+</html>

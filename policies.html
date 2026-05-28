@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy Policies — Colorado Heritage Education School System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'heritage-navy': '#1A365D',
+                        'academy-gold': '#D4AF37',
+                        'chess-blue': '#0D008C',
+                        'mountain-slate': '#2D3748',
+                        'parchment': '#F7FAFC',
+                    },
+                    fontFamily: {
+                        'serif': ['Merriweather', 'serif'],
+                        'sans': ['Lato', 'sans-serif'],
+                        'garamond': ['EB Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>html { scroll-behavior: smooth; } .accordion-body { display: none; } .accordion-body.open { display: block; }</style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white font-sans text-mountain-slate antialiased">
+
+<!-- TOP ANNOUNCEMENT BAR -->
+<div id="announcement-bar" class="bg-chess-blue text-white text-sm font-semibold py-2 px-4 relative z-50 flex justify-center items-center gap-4 text-center">
+    <span class="flex items-center gap-2">
+        <i data-lucide="bell" class="w-4 h-4 text-academy-gold animate-bounce"></i>
+        <span id="announcement-text">2026/2027 Academy Class Registration is scheduled to open Monday, June 1.</span>
+    </span>
+    <a id="announcement-link" href="programs.html#academy" class="underline text-academy-gold hover:text-white transition-colors">View Classes</a>
+</div>
+
+<!-- MAIN NAVIGATION -->
+<header class="bg-white shadow-sm sticky top-0 z-40 border-b-4 border-academy-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-24">
+            <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                <img src="chess-logo.png" alt="CHESS Logo" class="h-14 w-14 object-contain transition-transform group-hover:scale-105">
+                <div class="flex flex-col">
+                    <h1 class="font-serif text-2xl md:text-3xl font-bold text-heritage-navy leading-none tracking-tight">Colorado Heritage</h1>
+                    <span class="font-sans text-xs font-bold tracking-widest text-academy-gold uppercase mt-1">Education School System</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex space-x-8 items-center">
+                <div class="relative group">
+                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">
+                        About Us <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="about.html#purpose" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Our Purpose</a>
+                        <a href="about.html#foundation" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our Foundation</a>
+                        <a href="about.html#history" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our History</a>
+                        <hr class="my-1 border-gray-100">
+                        <a href="people.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Faculty &amp; Staff</a>
+                        <a href="acceptance.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Acceptance Policy</a>
+                    </div>
+                </div>
+                <a href="programs.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Programs</a>
+                <div class="relative group">
+                    <button class="text-academy-gold font-bold transition-colors flex items-center gap-1 py-4 border-b-2 border-academy-gold">
+                        Admissions <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute left-0 mt-0 w-56 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="apply.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Apply</a>
+                        <a href="schedule.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Class Schedule</a>
+                        <a href="tuition.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Tuition &amp; Fees</a>
+                        <a href="policies.html" class="block px-4 py-2.5 text-sm bg-parchment text-heritage-navy font-bold">Academy Policies</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">
+                        Resources <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="resources.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Homeschool Resources</a>
+                        <a href="gallery.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Photo Gallery</a>
+                        <a href="testimonials.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Testimonials</a>
+                    </div>
+                </div>
+                <a href="blog.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Blog</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="contact.html" class="text-heritage-navy hover:text-chess-blue font-bold flex items-center gap-2"><i data-lucide="user-circle" class="w-5 h-5"></i> Portals</a>
+                <a href="donate.html" class="bg-heritage-navy hover:bg-chess-blue text-white px-6 py-2.5 rounded-md font-bold transition-all shadow-md hover:shadow-lg">Donate</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-heritage-navy hover:text-chess-blue"><i data-lucide="menu" class="w-8 h-8"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3 shadow-inner">
+        <a href="about.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">About Us</a>
+        <a href="programs.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">Programs</a>
+        <div class="border-b border-gray-50">
+            <p class="font-bold text-heritage-navy py-2">Admissions</p>
+            <div class="pl-3 pb-2 space-y-1">
+                <a href="apply.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Apply</a>
+                <a href="schedule.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Class Schedule</a>
+                <a href="tuition.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Tuition &amp; Fees</a>
+                <a href="policies.html" class="block font-bold text-academy-gold py-1 text-sm">Academy Policies</a>
+            </div>
+        </div>
+        <div class="border-b border-gray-50">
+            <p class="font-bold text-heritage-navy py-2">Resources</p>
+            <div class="pl-3 pb-2 space-y-1">
+                <a href="resources.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Homeschool Resources</a>
+                <a href="gallery.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Photo Gallery</a>
+                <a href="testimonials.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Testimonials</a>
+            </div>
+        </div>
+        <a href="blog.html" class="block font-bold text-heritage-navy py-2">Blog</a>
+        <div class="pt-4 flex flex-col gap-3">
+            <a href="contact.html" class="text-center font-bold text-heritage-navy py-2 border border-heritage-navy rounded">Portals</a>
+            <a href="donate.html" class="text-center bg-heritage-navy text-white font-bold py-2.5 rounded">Donate</a>
+        </div>
+    </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-heritage-navy relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-academy-gold"></div>
+    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 28px 28px;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">K–12 Academy</p>
+        <h1 class="text-white font-serif font-bold text-4xl md:text-5xl mb-4">Academy Policies</h1>
+        <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">Guidelines and expectations that help our Academy community run with integrity, consistency, and mutual respect.</p>
+    </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="bg-parchment border-b border-gray-200 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex items-center gap-2 text-xs text-gray-500">
+            <a href="index.html" class="hover:text-heritage-navy transition-colors">Home</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <a href="programs.html#academy" class="hover:text-heritage-navy transition-colors">Programs</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <span class="text-heritage-navy font-bold">Academy Policies</span>
+        </nav>
+    </div>
+</div>
+
+<!-- POLICIES ACCORDION -->
+<section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14">
+            <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-4">Policies &amp; Guidelines</p>
+            <h2 class="text-heritage-navy font-serif font-bold text-3xl md:text-4xl mb-4">K–12 Academy Policies</h2>
+            <div class="w-12 h-0.5 bg-academy-gold mx-auto mb-6"></div>
+            <p class="text-mountain-slate text-base max-w-xl mx-auto">These policies apply to all Academy students and families. Please read each section carefully before the start of each semester.</p>
+        </div>
+
+        <div class="space-y-3" id="accordion">
+
+            <!-- Policy 1: Semester Details -->
+            <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="accordion-toggle w-full flex items-center justify-between px-6 py-5 bg-white hover:bg-parchment transition-colors text-left" aria-expanded="false">
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-heritage-navy rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-academy-gold text-xs font-bold">01</span>
+                        </div>
+                        <h3 class="font-serif font-bold text-heritage-navy text-lg">Semester Details</h3>
+                    </div>
+                    <svg class="accordion-icon w-5 h-5 text-heritage-navy transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="accordion-body px-6 pb-6 border-t border-gray-100">
+                    <div class="pt-4 text-mountain-slate text-sm leading-relaxed space-y-3">
+                        <p>The CHESS Academy operates on a semester schedule. The academic year is divided into two semesters: fall and spring.</p>
+                        <p>Specific start and end dates, registration deadlines, and important calendar events are published each year prior to registration opening. Please refer to the current-year schedule for exact dates.</p>
+                        <p>Students are expected to be enrolled for the full semester. Withdrawal mid-semester is subject to the Tuition and Withdrawal Policy below.</p>
+                        <p class="bg-parchment border border-gray-200 rounded-lg p-4 italic">Full semester details, including specific dates, will be provided at registration each year. Contact our office for the current academic calendar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy 2: Tuition and Withdrawal -->
+            <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="accordion-toggle w-full flex items-center justify-between px-6 py-5 bg-white hover:bg-parchment transition-colors text-left" aria-expanded="false">
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-heritage-navy rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-academy-gold text-xs font-bold">02</span>
+                        </div>
+                        <h3 class="font-serif font-bold text-heritage-navy text-lg">Tuition and Withdrawal Policy</h3>
+                    </div>
+                    <svg class="accordion-icon w-5 h-5 text-heritage-navy transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="accordion-body px-6 pb-6 border-t border-gray-100">
+                    <div class="pt-4 text-mountain-slate text-sm leading-relaxed space-y-3">
+                        <p>Tuition for Academy classes is due at the time of registration unless a payment plan has been established with the office.</p>
+                        <p>If a student withdraws from a class, tuition refunds are issued according to the following schedule:</p>
+                        <ul class="list-disc list-inside space-y-1 pl-2">
+                            <li>Before the first day of class: Full refund less a registration fee</li>
+                            <li>Within the first two weeks: Partial refund (varies by class)</li>
+                            <li>After the second week: No refund issued</li>
+                        </ul>
+                        <p>All withdrawal requests must be submitted in writing to the CHESS office. Please contact us for specific refund amounts.</p>
+                        <p class="bg-parchment border border-gray-200 rounded-lg p-4 italic">Full tuition and fee details are available on the <a href="tuition.html" class="text-chess-blue underline font-bold">Tuition &amp; Fees page</a>. Contact our office for questions about your specific enrollment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy 3: Acceptance & Eligibility -->
+            <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="accordion-toggle w-full flex items-center justify-between px-6 py-5 bg-white hover:bg-parchment transition-colors text-left" aria-expanded="false">
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-heritage-navy rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-academy-gold text-xs font-bold">03</span>
+                        </div>
+                        <h3 class="font-serif font-bold text-heritage-navy text-lg">Acceptance &amp; Eligibility</h3>
+                    </div>
+                    <svg class="accordion-icon w-5 h-5 text-heritage-navy transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="accordion-body px-6 pb-6 border-t border-gray-100">
+                    <div class="pt-4 text-mountain-slate text-sm leading-relaxed space-y-3">
+                        <p>The Academy seeks students from families conforming to the biblical pattern for family found in Holy Scripture and specified in the various position statements of this organization.</p>
+                        <p>Applications are considered from families led by a husband and wife (man and woman), a single parent, or legal guardians.</p>
+                        <p>Students are expected to demonstrate respect for authority, fellow students, and the Christian values upheld by Colorado Heritage.</p>
+                        <p>For our full acceptance policy, see the <a href="acceptance.html" class="text-chess-blue underline font-bold">Acceptance Policy page</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy 4: Dress Code -->
+            <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="accordion-toggle w-full flex items-center justify-between px-6 py-5 bg-white hover:bg-parchment transition-colors text-left" aria-expanded="false">
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-heritage-navy rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-academy-gold text-xs font-bold">04</span>
+                        </div>
+                        <h3 class="font-serif font-bold text-heritage-navy text-lg">Dress Code</h3>
+                    </div>
+                    <svg class="accordion-icon w-5 h-5 text-heritage-navy transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="accordion-body px-6 pb-6 border-t border-gray-100">
+                    <div class="pt-4 text-mountain-slate text-sm leading-relaxed space-y-3">
+                        <p>Students attending Academy classes are expected to dress modestly and appropriately, reflecting the Christian values of Colorado Heritage and showing respect for their instructors and peers.</p>
+                        <p>General guidelines include:</p>
+                        <ul class="list-disc list-inside space-y-1 pl-2">
+                            <li>Clothing should be clean, neat, and in good repair</li>
+                            <li>Modesty standards should be maintained — clothing should not be revealing or distracting</li>
+                            <li>Graphic content on clothing should be appropriate for a Christian academic setting</li>
+                            <li>Hats may be permitted at the instructor's discretion</li>
+                        </ul>
+                        <p>Instructors reserve the right to ask students to change or cover clothing that does not meet these standards. Consistent violations may result in a conversation with parents.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy 5: Electronics Policy -->
+            <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="accordion-toggle w-full flex items-center justify-between px-6 py-5 bg-white hover:bg-parchment transition-colors text-left" aria-expanded="false">
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-heritage-navy rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-academy-gold text-xs font-bold">05</span>
+                        </div>
+                        <h3 class="font-serif font-bold text-heritage-navy text-lg">Electronics Policy</h3>
+                    </div>
+                    <svg class="accordion-icon w-5 h-5 text-heritage-navy transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="accordion-body px-6 pb-6 border-t border-gray-100">
+                    <div class="pt-4 text-mountain-slate text-sm leading-relaxed space-y-3">
+                        <p>Personal electronic devices (cell phones, tablets, smartwatches, etc.) must be kept silent and put away during class time unless explicitly permitted by the instructor for academic purposes.</p>
+                        <p>Computers or tablets may be used for note-taking or class assignments when permitted by the instructor.</p>
+                        <p>Colorado Heritage is not responsible for lost, stolen, or damaged personal electronics. Students bring devices at their own risk.</p>
+                        <p>Repeated disruptions due to electronics may result in a student being asked to leave the device in the hallway or with parents for the class period.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy 6: Reporting Absences -->
+            <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="accordion-toggle w-full flex items-center justify-between px-6 py-5 bg-white hover:bg-parchment transition-colors text-left" aria-expanded="false">
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-heritage-navy rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-academy-gold text-xs font-bold">06</span>
+                        </div>
+                        <h3 class="font-serif font-bold text-heritage-navy text-lg">Reporting Absences</h3>
+                    </div>
+                    <svg class="accordion-icon w-5 h-5 text-heritage-navy transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="accordion-body px-6 pb-6 border-t border-gray-100">
+                    <div class="pt-4 text-mountain-slate text-sm leading-relaxed space-y-3">
+                        <p>If your student will be absent from a class, please notify the CHESS office and the instructor in advance whenever possible.</p>
+                        <p>Absences should be reported by email to <a href="mailto:office@coloradoheritage.org" class="text-chess-blue underline font-bold">office@coloradoheritage.org</a> or by calling <strong>(970) 346-0099</strong>.</p>
+                        <p>It is the student's responsibility to obtain missed assignments and notes from classmates or the instructor. Make-up opportunities are at the instructor's discretion.</p>
+                        <p>Excessive unexcused absences may affect a student's standing in the class and may require a meeting between parents and the instructor.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy 7: Opportunities to Serve -->
+            <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="accordion-toggle w-full flex items-center justify-between px-6 py-5 bg-white hover:bg-parchment transition-colors text-left" aria-expanded="false">
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-academy-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-heritage-navy text-xs font-bold">07</span>
+                        </div>
+                        <h3 class="font-serif font-bold text-heritage-navy text-lg">Opportunities to Serve</h3>
+                    </div>
+                    <svg class="accordion-icon w-5 h-5 text-heritage-navy transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="accordion-body px-6 pb-6 border-t border-gray-100">
+                    <div class="pt-4 text-mountain-slate text-sm leading-relaxed space-y-3">
+                        <p>Colorado Heritage is a community, and we depend on the participation of our families to make our programs excellent. We are grateful for every family that helps make CHESS what it is.</p>
+                        <p>Opportunities to serve include:</p>
+                        <ul class="list-disc list-inside space-y-1 pl-2">
+                            <li>Volunteering during class days</li>
+                            <li>Helping with Academy events, performances, and field trips</li>
+                            <li>Providing snacks or refreshments on a rotating schedule</li>
+                            <li>Serving in a leadership capacity with prior approval</li>
+                        </ul>
+                        <p>We ask that all volunteers conduct themselves in a manner consistent with the values and standards of Colorado Heritage. Contact our office to learn about current volunteer needs.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end accordion -->
+
+        <!-- Questions callout -->
+        <div class="mt-14 bg-heritage-navy rounded-2xl p-8 text-center text-white">
+            <h3 class="font-serif font-bold text-xl text-academy-gold mb-3">Questions About Policies?</h3>
+            <p class="text-blue-200 text-sm mb-6">Our office is happy to clarify any of these policies or answer questions specific to your family's situation.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-white text-heritage-navy font-bold py-3 px-6 rounded uppercase tracking-wider text-sm hover:bg-parchment transition-colors">Contact Us</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-mountain-slate pt-16 pb-8 border-t-8 border-heritage-navy">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6"><img src="chess-logo.png" alt="CHESS Logo" class="h-10 w-10 object-contain"><h2 class="font-serif text-xl font-bold text-white tracking-tight">Colorado Heritage</h2></div>
+                <p class="text-gray-300 mb-6 font-garamond italic text-lg">"Pursuing the Knowledge of God."</p>
+                <div class="space-y-3 text-gray-400 text-sm">
+                    <p class="flex items-start gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-academy-gold shrink-0"></i><span>1300 9th Street<br>Greeley, Colorado 80631</span></p>
+                    <p class="flex items-center gap-3"><i data-lucide="phone" class="w-5 h-5 text-academy-gold shrink-0"></i>(970) 346-0099</p>
+                    <p class="flex items-center gap-3"><i data-lucide="mail" class="w-5 h-5 text-academy-gold shrink-0"></i><a href="mailto:office@coloradoheritage.org" class="hover:text-white transition-colors">office@coloradoheritage.org</a></p>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Quick Links</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="about.html#foundation" class="hover:text-academy-gold transition-colors block">Our Beliefs</a></li>
+                    <li><a href="acceptance.html" class="hover:text-academy-gold transition-colors block">Acceptance Policy</a></li>
+                    <li><a href="programs.html#academy" class="hover:text-academy-gold transition-colors block">Fee Schedule &amp; Scholarships</a></li>
+                    <li><a href="resources.html" class="hover:text-academy-gold transition-colors block">Homeschool Resources</a></li>
+                    <li><a href="testimonials.html" class="hover:text-academy-gold transition-colors block">Testimonials</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Access Portals</h4>
+                <div class="space-y-3">
+                    <a href="#" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="users" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>PARENT Portal</a>
+                    <a href="#" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="briefcase" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>FACULTY/STAFF Portal</a>
+                    <a href="#" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="user-plus" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>NEW APPLICANT Portal</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Support CHESS</h4>
+                <p class="text-gray-400 text-sm mb-4">Please consider donating to Colorado Heritage. Thank you for your continued support!</p>
+                <a href="donate.html" class="bg-academy-gold hover:bg-yellow-500 text-heritage-navy font-bold px-6 py-2 rounded-md inline-flex items-center gap-2 transition-colors w-full justify-center mb-6"><i data-lucide="heart" class="w-4 h-4"></i> Donate Now</a>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 text-xs text-gray-500 leading-relaxed text-justify md:text-center">
+            <p class="mb-4">Colorado Heritage Education School System admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at Colorado Heritage. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs.</p>
+            <p>Colorado Heritage Education School System is a 501 (c) (3) charitable organization. &copy; 1991 - 2026. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    lucide.createIcons();
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+
+    fetch('/data/announcement.json').then(r => r.json()).then(data => {
+        const bar = document.getElementById('announcement-bar');
+        if (!bar) return;
+        if (!data.active) { bar.style.display = 'none'; return; }
+        if (data.text) document.getElementById('announcement-text').textContent = data.text;
+        const linkEl = document.getElementById('announcement-link');
+        if (linkEl && data.link_text) linkEl.textContent = data.link_text;
+        if (linkEl && data.link_url) linkEl.href = data.link_url;
+    }).catch(() => {});
+
+    // Accordion
+    document.querySelectorAll('.accordion-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const body = btn.nextElementSibling;
+            const icon = btn.querySelector('.accordion-icon');
+            const isOpen = body.classList.contains('open');
+            body.classList.toggle('open', !isOpen);
+            icon.style.transform = isOpen ? '' : 'rotate(180deg)';
+            btn.setAttribute('aria-expanded', !isOpen);
+        });
+    });
+
+    // Open first accordion by default
+    const firstToggle = document.querySelector('.accordion-toggle');
+    if (firstToggle) firstToggle.click();
+</script>
+</body>
+</html>

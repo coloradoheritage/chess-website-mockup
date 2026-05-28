@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate — Colorado Heritage Education School System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'heritage-navy': '#1A365D',
+                        'academy-gold': '#D4AF37',
+                        'chess-blue': '#0D008C',
+                        'mountain-slate': '#2D3748',
+                        'parchment': '#F7FAFC',
+                    },
+                    fontFamily: {
+                        'serif': ['Merriweather', 'serif'],
+                        'sans': ['Lato', 'sans-serif'],
+                        'garamond': ['EB Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>html { scroll-behavior: smooth; }</style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white font-sans text-mountain-slate antialiased">
+
+<!-- TOP ANNOUNCEMENT BAR -->
+<div id="announcement-bar" class="bg-chess-blue text-white text-sm font-semibold py-2 px-4 relative z-50 flex justify-center items-center gap-4 text-center">
+    <span class="flex items-center gap-2">
+        <i data-lucide="bell" class="w-4 h-4 text-academy-gold animate-bounce"></i>
+        <span id="announcement-text">2026/2027 Academy Class Registration is scheduled to open Monday, June 1.</span>
+    </span>
+    <a id="announcement-link" href="programs.html#academy" class="underline text-academy-gold hover:text-white transition-colors">View Classes</a>
+</div>
+
+<!-- MAIN NAVIGATION -->
+<header class="bg-white shadow-sm sticky top-0 z-40 border-b-4 border-academy-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-24">
+            <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                <img src="chess-logo.png" alt="CHESS Logo" class="h-14 w-14 object-contain transition-transform group-hover:scale-105">
+                <div class="flex flex-col">
+                    <h1 class="font-serif text-2xl md:text-3xl font-bold text-heritage-navy leading-none tracking-tight">Colorado Heritage</h1>
+                    <span class="font-sans text-xs font-bold tracking-widest text-academy-gold uppercase mt-1">Education School System</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex space-x-8 items-center">
+                <div class="relative group">
+                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">About Us <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                    <div class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="about.html#purpose" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Our Purpose</a>
+                        <a href="about.html#foundation" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our Foundation</a>
+                        <a href="about.html#history" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our History</a>
+                        <hr class="my-1 border-gray-100">
+                        <a href="people.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Faculty &amp; Staff</a>
+                        <a href="acceptance.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Acceptance Policy</a>
+                    </div>
+                </div>
+                <a href="programs.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Programs</a>
+                <div class="relative group">
+                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">Admissions <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                    <div class="absolute left-0 mt-0 w-56 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="apply.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Apply</a>
+                        <a href="schedule.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Class Schedule</a>
+                        <a href="tuition.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Tuition &amp; Fees</a>
+                        <a href="policies.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Academy Policies</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">Resources <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                    <div class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="resources.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Homeschool Resources</a>
+                        <a href="gallery.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Photo Gallery</a>
+                        <a href="testimonials.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Testimonials</a>
+                    </div>
+                </div>
+                <a href="blog.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Blog</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="contact.html" class="text-heritage-navy hover:text-chess-blue font-bold flex items-center gap-2"><i data-lucide="user-circle" class="w-5 h-5"></i> Portals</a>
+                <a href="donate.html" class="bg-academy-gold hover:bg-yellow-400 text-heritage-navy px-6 py-2.5 rounded-md font-bold transition-all shadow-md hover:shadow-lg">
+                    Donate
+                </a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-heritage-navy hover:text-chess-blue"><i data-lucide="menu" class="w-8 h-8"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3 shadow-inner">
+        <a href="about.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">About Us</a>
+        <a href="programs.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">Programs</a>
+        <div class="border-b border-gray-50">
+            <p class="font-bold text-heritage-navy py-2">Admissions</p>
+            <div class="pl-3 pb-2 space-y-1">
+                <a href="apply.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Apply</a>
+                <a href="schedule.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Class Schedule</a>
+                <a href="tuition.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Tuition &amp; Fees</a>
+                <a href="policies.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Academy Policies</a>
+            </div>
+        </div>
+        <div class="border-b border-gray-50">
+            <p class="font-bold text-heritage-navy py-2">Resources</p>
+            <div class="pl-3 pb-2 space-y-1">
+                <a href="resources.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Homeschool Resources</a>
+                <a href="gallery.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Photo Gallery</a>
+                <a href="testimonials.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Testimonials</a>
+            </div>
+        </div>
+        <a href="blog.html" class="block font-bold text-heritage-navy py-2">Blog</a>
+        <div class="pt-4 flex flex-col gap-3">
+            <a href="contact.html" class="text-center font-bold text-heritage-navy py-2 border border-heritage-navy rounded">Portals</a>
+            <a href="donate.html" class="text-center bg-academy-gold text-heritage-navy font-bold py-2.5 rounded">Donate</a>
+        </div>
+    </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-heritage-navy relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-academy-gold"></div>
+    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 28px 28px;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Give Back</p>
+        <h1 class="text-white font-serif font-bold text-4xl md:text-5xl mb-4">Support Colorado Heritage</h1>
+        <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">Your generous gifts help us serve more homeschooling families with excellent, Christ-centered education.</p>
+    </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="bg-parchment border-b border-gray-200 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex items-center gap-2 text-xs text-gray-500">
+            <a href="index.html" class="hover:text-heritage-navy transition-colors">Home</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <span class="text-heritage-navy font-bold">Donate</span>
+        </nav>
+    </div>
+</div>
+
+<!-- WHY DONATE -->
+<section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-4">Why Give</p>
+            <h2 class="text-heritage-navy font-serif font-bold text-3xl md:text-4xl mb-4">Making a Difference Together</h2>
+            <div class="w-12 h-0.5 bg-academy-gold mx-auto mb-6"></div>
+            <p class="text-mountain-slate text-base max-w-2xl mx-auto leading-relaxed">Colorado Heritage Education School System is a 501(c)(3) charitable organization. Your donations are tax-deductible and directly support our mission to serve homeschooling families with excellence, integrity, and biblical conviction.</p>
+        </div>
+
+        <!-- Tax deductible notice -->
+        <div class="bg-parchment border border-gray-200 rounded-xl p-6 mb-14 flex items-start gap-4">
+            <div class="w-10 h-10 bg-heritage-navy rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-academy-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+                <p class="font-bold text-heritage-navy text-sm mb-1">Tax-Deductible Contributions</p>
+                <p class="text-mountain-slate text-sm leading-relaxed">As a 501(c)(3) organization, your gifts to Colorado Heritage Education School System are tax-deductible to the extent permitted by law. A receipt will be provided for all donations.</p>
+            </div>
+        </div>
+
+        <!-- Donation Funds -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
+
+            <!-- General Fund -->
+            <div class="bg-white border-2 border-heritage-navy rounded-2xl p-8 flex flex-col">
+                <div class="w-12 h-12 bg-heritage-navy rounded-xl flex items-center justify-center mb-5">
+                    <i data-lucide="school" class="w-6 h-6 text-academy-gold"></i>
+                </div>
+                <h3 class="font-serif font-bold text-heritage-navy text-xl mb-3">General Fund</h3>
+                <p class="text-mountain-slate text-sm leading-relaxed mb-6 flex-grow">Supports the day-to-day operations of Colorado Heritage — office staff, administrative costs, communications, and the infrastructure that keeps our programs running.</p>
+                <div class="bg-parchment rounded-xl p-4 text-center">
+                    <p class="text-heritage-navy text-xs uppercase tracking-wider font-bold mb-2">How to Give</p>
+                    <p class="text-mountain-slate text-sm">Contact our office to donate to the General Fund.</p>
+                </div>
+            </div>
+
+            <!-- Scholarship Fund -->
+            <div class="bg-heritage-navy rounded-2xl p-8 flex flex-col text-white">
+                <div class="w-12 h-12 bg-academy-gold rounded-xl flex items-center justify-center mb-5">
+                    <i data-lucide="graduation-cap" class="w-6 h-6 text-heritage-navy"></i>
+                </div>
+                <h3 class="font-serif font-bold text-academy-gold text-xl mb-3">Scholarship Fund</h3>
+                <p class="text-blue-200 text-sm leading-relaxed mb-6 flex-grow">Helps make Academy classes and programs accessible to families who need financial assistance. Every gift to this fund directly reduces barriers to Christian education.</p>
+                <div class="bg-white bg-opacity-10 rounded-xl p-4 text-center">
+                    <p class="text-academy-gold text-xs uppercase tracking-wider font-bold mb-2">How to Give</p>
+                    <p class="text-blue-200 text-sm">Contact our office to donate to the Scholarship Fund.</p>
+                </div>
+            </div>
+
+            <!-- Capital Fund -->
+            <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 flex flex-col">
+                <div class="w-12 h-12 bg-heritage-navy rounded-xl flex items-center justify-center mb-5">
+                    <i data-lucide="building" class="w-6 h-6 text-academy-gold"></i>
+                </div>
+                <h3 class="font-serif font-bold text-heritage-navy text-xl mb-3">Capital &amp; Facilities</h3>
+                <p class="text-mountain-slate text-sm leading-relaxed mb-6 flex-grow">Supports facility improvements, equipment, and long-term investments in the physical resources our Academy families depend on.</p>
+                <div class="bg-parchment rounded-xl p-4 text-center">
+                    <p class="text-heritage-navy text-xs uppercase tracking-wider font-bold mb-2">How to Give</p>
+                    <p class="text-mountain-slate text-sm">Contact our office to donate to the Capital Fund.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Give Now CTA -->
+        <div class="bg-parchment border border-gray-200 rounded-2xl p-10 text-center">
+            <i data-lucide="heart" class="w-12 h-12 text-heritage-navy mx-auto mb-4"></i>
+            <h3 class="font-serif font-bold text-heritage-navy text-2xl mb-3">Ready to Give?</h3>
+            <p class="text-mountain-slate text-base mb-6 max-w-lg mx-auto">To make a donation, please contact our office. We accept checks, cash, and can discuss additional giving options.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:9703460099" class="inline-flex items-center justify-center gap-2 bg-heritage-navy text-white font-bold py-3 px-8 rounded uppercase tracking-wider text-sm hover:bg-blue-900 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4"></i> (970) 346-0099
+                </a>
+                <a href="mailto:office@coloradoheritage.org" class="inline-flex items-center justify-center gap-2 border-2 border-heritage-navy text-heritage-navy font-bold py-3 px-8 rounded uppercase tracking-wider text-sm hover:bg-heritage-navy hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4"></i> Email Us
+                </a>
+            </div>
+            <p class="text-gray-400 text-xs mt-6">Colorado Heritage Education School System is a 501(c)(3) charitable organization. EIN available upon request.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-mountain-slate pt-16 pb-8 border-t-8 border-heritage-navy">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6"><img src="chess-logo.png" alt="CHESS Logo" class="h-10 w-10 object-contain"><h2 class="font-serif text-xl font-bold text-white tracking-tight">Colorado Heritage</h2></div>
+                <p class="text-gray-300 mb-6 font-garamond italic text-lg">"Pursuing the Knowledge of God."</p>
+                <div class="space-y-3 text-gray-400 text-sm">
+                    <p class="flex items-start gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-academy-gold shrink-0"></i><span>1300 9th Street<br>Greeley, Colorado 80631</span></p>
+                    <p class="flex items-center gap-3"><i data-lucide="phone" class="w-5 h-5 text-academy-gold shrink-0"></i>(970) 346-0099</p>
+                    <p class="flex items-center gap-3"><i data-lucide="mail" class="w-5 h-5 text-academy-gold shrink-0"></i><a href="mailto:office@coloradoheritage.org" class="hover:text-white transition-colors">office@coloradoheritage.org</a></p>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Quick Links</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="about.html#foundation" class="hover:text-academy-gold transition-colors block">Our Beliefs</a></li>
+                    <li><a href="acceptance.html" class="hover:text-academy-gold transition-colors block">Acceptance Policy</a></li>
+                    <li><a href="programs.html#academy" class="hover:text-academy-gold transition-colors block">Fee Schedule &amp; Scholarships</a></li>
+                    <li><a href="resources.html" class="hover:text-academy-gold transition-colors block">Homeschool Resources</a></li>
+                    <li><a href="testimonials.html" class="hover:text-academy-gold transition-colors block">Testimonials</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Access Portals</h4>
+                <div class="space-y-3">
+                    <a href="#" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="users" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>PARENT Portal</a>
+                    <a href="#" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="briefcase" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>FACULTY/STAFF Portal</a>
+                    <a href="#" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="user-plus" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>NEW APPLICANT Portal</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Support CHESS</h4>
+                <p class="text-gray-400 text-sm mb-4">Please consider donating to Colorado Heritage. Thank you for your continued support!</p>
+                <a href="donate.html" class="bg-academy-gold hover:bg-yellow-500 text-heritage-navy font-bold px-6 py-2 rounded-md inline-flex items-center gap-2 transition-colors w-full justify-center mb-6"><i data-lucide="heart" class="w-4 h-4"></i> Donate Now</a>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 text-xs text-gray-500 leading-relaxed text-justify md:text-center">
+            <p class="mb-4">Colorado Heritage Education School System admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at Colorado Heritage. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs.</p>
+            <p>Colorado Heritage Education School System is a 501 (c) (3) charitable organization. &copy; 1991 - 2026. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    lucide.createIcons();
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+    fetch('/data/announcement.json').then(r => r.json()).then(data => {
+        const bar = document.getElementById('announcement-bar');
+        if (!bar) return;
+        if (!data.active) { bar.style.display = 'none'; return; }
+        if (data.text) document.getElementById('announcement-text').textContent = data.text;
+        const linkEl = document.getElementById('announcement-link');
+        if (linkEl && data.link_text) linkEl.textContent = data.link_text;
+        if (linkEl && data.link_url) linkEl.href = data.link_url;
+    }).catch(() => {});
+</script>
+</body>
+</html>

@@ -189,3 +189,52 @@ collections:
                 required: false
                 hint: "Upload a headshot photo."
               - {label: "Bio", name: "bio", widget: "text", required: false}
+
+# ─────────────────────────────────────────────
+# FACULTY DIRECTORY
+# ─────────────────────────────────────────────
+
+  - label: "Faculty Directory"
+    name: "faculty"
+    files:
+      - label: "Faculty Members"
+        name: "faculty_members"
+        file: "data/faculty.json"
+        fields:
+          - label: "Faculty Members"
+            name: "members"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Subject / Role", name: "role", widget: "string"}
+              - label: "Photo"
+                name: "photo"
+                widget: "image"
+                required: false
+                hint: "Upload a headshot photo."
+              - {label: "Bio", name: "bio", widget: "text", required: false}
+
+# ─────────────────────────────────────────────
+# TESTIMONIALS
+# ─────────────────────────────────────────────
+
+  - label: "Testimonials"
+    name: "testimonials"
+    files:
+      - label: "Testimonials"
+        name: "all_testimonials"
+        file: "data/testimonials.json"
+        fields:
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - {label: "Name", name: "name", widget: "string", hint: "Family name or first name only (e.g. 'The Johnson Family' or 'Sarah M.')"}
+              - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Program", name: "program", widget: "string", required: false, hint: "e.g. K–12 Academy, Diploma Program, Independent School"}
+              - {label: "Years Enrolled", name: "years", widget: "string", required: false, hint: "e.g. 2019–2024"}
+              - label: "Photo"
+                name: "photo"
+                widget: "image"
+                required: false
