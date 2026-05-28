@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply — Colorado Heritage Education School System</title>
+    <title>Enrollment Application — Colorado Heritage Education School System</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
@@ -29,7 +29,58 @@
         }
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>html { scroll-behavior: smooth; }</style>
+    <style>
+        html { scroll-behavior: smooth; }
+        .form-step { display: none; }
+        .form-step.active { display: block; animation: stepIn 0.25s ease; }
+        @keyframes stepIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Form inputs */
+        .fi { border: 1.5px solid #d1d5db; border-radius: 0.5rem; padding: 0.6rem 0.875rem; width: 100%; background: #fff; color: #2D3748; font-size: 0.9375rem; transition: border-color .15s, box-shadow .15s; font-family: 'Lato', sans-serif; }
+        .fi:focus { outline: none; border-color: #D4AF37; box-shadow: 0 0 0 3px rgba(212,175,55,.18); }
+        .fi.err { border-color: #ef4444 !important; box-shadow: 0 0 0 3px rgba(239,68,68,.12); }
+        select.fi { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .75rem center; background-size: 1rem; padding-right: 2.5rem; }
+        textarea.fi { resize: vertical; min-height: 100px; }
+
+        /* Labels */
+        .fl { display: block; font-size: 0.78rem; font-weight: 700; color: #1A365D; margin-bottom: 0.3rem; letter-spacing: 0.04em; text-transform: uppercase; }
+        .req { color: #ef4444; margin-left: 2px; }
+        .ferr { color: #ef4444; font-size: 0.73rem; margin-top: 0.2rem; display: none; }
+        .ferr.show { display: block; }
+
+        /* Progress dots */
+        .pg-dot { width: 2.25rem; height: 2.25rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; transition: all .25s; flex-shrink: 0; }
+        .pg-dot.done  { background: #D4AF37; color: #1A365D; }
+        .pg-dot.active { background: #1A365D; color: #fff; box-shadow: 0 0 0 4px rgba(26,54,93,.18); }
+        .pg-dot.future { background: #e5e7eb; color: #9ca3af; }
+        .pg-line { flex: 1; height: 2px; background: #e5e7eb; transition: background .3s; }
+        .pg-line.done { background: #D4AF37; }
+
+        /* Selection cards */
+        .sel-card { border: 2px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem 1.25rem; cursor: pointer; transition: all .15s; user-select: none; }
+        .sel-card:hover { border-color: #D4AF37; background: #fffef5; }
+        .sel-card.on { border-color: #1A365D; background: #eff3ff; }
+
+        /* Agreement checkboxes */
+        .agree-row { display: flex; align-items: flex-start; gap: .75rem; padding: .875rem 1rem; border-radius: .5rem; border: 1.5px solid #e5e7eb; transition: border-color .15s; cursor: pointer; }
+        .agree-row:hover { border-color: #D4AF37; }
+        .agree-row.checked { border-color: #1A365D; background: #eff3ff; }
+        .agree-row input[type="checkbox"] { width: 1.125rem; height: 1.125rem; accent-color: #1A365D; flex-shrink: 0; margin-top: .15rem; cursor: pointer; }
+
+        /* Review blocks */
+        .rev-section { background: #fff; border: 1px solid #e5e7eb; border-radius: .75rem; overflow: hidden; margin-bottom: 1.25rem; }
+        .rev-head { background: #1A365D; padding: .6rem 1.125rem; display: flex; justify-content: space-between; align-items: center; }
+        .rev-row { display: grid; grid-template-columns: 1fr 1.5fr; gap: .5rem; padding: .6rem 1.125rem; border-bottom: 1px solid #f3f4f6; font-size: .875rem; }
+        .rev-row:last-child { border-bottom: none; }
+        .rev-key { font-weight: 700; color: #4b5563; }
+        .rev-val { color: #2D3748; }
+
+        /* Divider */
+        .sh { font-family: 'Merriweather', serif; font-weight: 700; font-size: 1.125rem; color: #1A365D; margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 2px solid #D4AF37; display: flex; align-items: center; gap: .5rem; }
+
+        /* Fee badge */
+        .fee-badge { background: #eff3ff; border: 1px solid #c7d2fe; color: #1A365D; font-size: .75rem; font-weight: 700; border-radius: 9999px; padding: .15rem .625rem; white-space: nowrap; }
+    </style>
 </head>
 <body class="font-sans bg-parchment text-mountain-slate antialiased">
 
@@ -55,23 +106,19 @@
                 </a>
                 <nav class="hidden lg:flex space-x-8 items-center">
                     <div class="relative group">
-                        <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">
-                            About Us <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
+                        <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">About Us <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
                         <div class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
                             <a href="about.html#purpose" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Our Purpose</a>
                             <a href="about.html#foundation" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our Foundation</a>
                             <a href="about.html#history" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our History</a>
                             <hr class="my-1 border-gray-100">
-                        <a href="people.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Faculty &amp; Staff</a>
-                        <a href="acceptance.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Acceptance Policy</a>
+                            <a href="people.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Faculty &amp; Staff</a>
+                            <a href="acceptance.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Acceptance Policy</a>
                         </div>
                     </div>
                     <a href="programs.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Programs</a>
                     <div class="relative group">
-                        <button class="text-academy-gold font-bold border-b-2 border-academy-gold pb-0.5 flex items-center gap-1 py-4">
-                            Admissions <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
+                        <button class="text-academy-gold font-bold border-b-2 border-academy-gold pb-0.5 flex items-center gap-1 py-4">Admissions <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
                         <div class="absolute left-0 mt-0 w-56 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
                             <a href="apply.html" class="block px-4 py-2.5 text-sm bg-parchment text-heritage-navy font-bold">Apply</a>
                             <a href="schedule.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Class Schedule</a>
@@ -80,27 +127,21 @@
                         </div>
                     </div>
                     <div class="relative group">
-                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">
-                        Resources <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </button>
-                    <div class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
-                        <a href="resources.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Homeschool Resources</a>
-                        <a href="gallery.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Photo Gallery</a>
-                        <a href="testimonials.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Testimonials</a>
+                        <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">Resources <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                        <div class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                            <a href="resources.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Homeschool Resources</a>
+                            <a href="gallery.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Photo Gallery</a>
+                            <a href="testimonials.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Testimonials</a>
+                        </div>
                     </div>
-                </div>
                     <a href="blog.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Blog</a>
                 </nav>
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="contact.html" class="text-heritage-navy hover:text-chess-blue font-bold flex items-center gap-2">
-                        <i data-lucide="user-circle" class="w-5 h-5"></i> Portals
-                    </a>
+                    <a href="contact.html" class="text-heritage-navy hover:text-chess-blue font-bold flex items-center gap-2"><i data-lucide="user-circle" class="w-5 h-5"></i> Portals</a>
                     <a href="donate.html" class="bg-heritage-navy hover:bg-chess-blue text-white px-6 py-2.5 rounded-md font-bold transition-all shadow-md hover:shadow-lg">Donate</a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-heritage-navy hover:text-chess-blue">
-                        <i data-lucide="menu" class="w-8 h-8"></i>
-                    </button>
+                    <button id="mobile-menu-btn" class="text-heritage-navy hover:text-chess-blue"><i data-lucide="menu" class="w-8 h-8"></i></button>
                 </div>
             </div>
         </div>
@@ -117,13 +158,13 @@
                 </div>
             </div>
             <div class="border-b border-gray-50">
-            <p class="font-bold text-heritage-navy py-2">Resources</p>
-            <div class="pl-3 pb-2 space-y-1">
-                <a href="resources.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Homeschool Resources</a>
-                <a href="gallery.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Photo Gallery</a>
-                <a href="testimonials.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Testimonials</a>
+                <p class="font-bold text-heritage-navy py-2">Resources</p>
+                <div class="pl-3 pb-2 space-y-1">
+                    <a href="resources.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Homeschool Resources</a>
+                    <a href="gallery.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Photo Gallery</a>
+                    <a href="testimonials.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Testimonials</a>
+                </div>
             </div>
-        </div>
             <a href="blog.html" class="block font-bold text-heritage-navy py-2">Blog</a>
             <div class="pt-4 flex flex-col gap-3">
                 <a href="contact.html" class="text-center font-bold text-heritage-navy py-2 border border-heritage-navy rounded">Portals</a>
@@ -136,10 +177,10 @@
     <section class="bg-heritage-navy relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-academy-gold"></div>
         <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 28px 28px;"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-18 relative z-10">
             <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Admissions</p>
-            <h1 class="text-white font-serif font-bold text-4xl md:text-5xl mb-4">Apply to Colorado Heritage</h1>
-            <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">We welcome families who share our commitment to Christ-centered, parent-led education.</p>
+            <h1 class="text-white font-serif font-bold text-4xl md:text-5xl mb-3">Enrollment Application</h1>
+            <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">2026/2027 Academic Year &mdash; Please complete all sections. The CHESS office will contact you within 3&ndash;5 business days.</p>
         </div>
     </section>
 
@@ -149,57 +190,626 @@
             <nav class="flex items-center gap-2 text-xs text-gray-500">
                 <a href="index.html" class="hover:text-heritage-navy transition-colors">Home</a>
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                <span class="text-heritage-navy font-bold">Apply</span>
+                <a href="apply.html" class="hover:text-heritage-navy transition-colors">Apply</a>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                <span class="text-heritage-navy font-bold">Application Form</span>
             </nav>
         </div>
     </div>
 
-    <!-- CONTENT PLACEHOLDER -->
-    <main class="py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- MAIN CONTENT -->
+    <main class="py-10 md:py-14">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <!-- Intro -->
-            <div class="text-center mb-14">
-                <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-4">Get Started</p>
-                <h2 class="text-heritage-navy font-serif font-bold text-3xl mb-4">How to Apply</h2>
-                <div class="w-12 h-0.5 bg-academy-gold mx-auto mb-6"></div>
-                <p class="text-mountain-slate text-base max-w-xl mx-auto">Application details and enrollment steps will be posted here. Please contact our office to begin the enrollment process.</p>
-            </div>
-
-            <!-- Steps placeholder -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
-                <div class="bg-white border border-gray-200 rounded-xl p-7 shadow-sm">
-                    <div class="w-10 h-10 rounded-full bg-heritage-navy text-white font-bold text-lg flex items-center justify-center mb-4">1</div>
-                    <h3 class="font-serif text-xl text-heritage-navy mb-2">Step One</h3>
-                    <p class="text-mountain-slate text-sm leading-relaxed text-gray-400 italic">Application step details coming soon.</p>
+            <!-- PROGRESS BAR -->
+            <div id="progress-bar" class="mb-10">
+                <div class="flex items-center">
+                    <!-- Step dots + lines rendered by JS -->
+                    <div id="pg-dots" class="flex items-center w-full"></div>
                 </div>
-                <div class="bg-white border border-gray-200 rounded-xl p-7 shadow-sm">
-                    <div class="w-10 h-10 rounded-full bg-heritage-navy text-white font-bold text-lg flex items-center justify-center mb-4">2</div>
-                    <h3 class="font-serif text-xl text-heritage-navy mb-2">Step Two</h3>
-                    <p class="text-mountain-slate text-sm leading-relaxed text-gray-400 italic">Application step details coming soon.</p>
-                </div>
-                <div class="bg-white border border-gray-200 rounded-xl p-7 shadow-sm">
-                    <div class="w-10 h-10 rounded-full bg-heritage-navy text-white font-bold text-lg flex items-center justify-center mb-4">3</div>
-                    <h3 class="font-serif text-xl text-heritage-navy mb-2">Step Three</h3>
-                    <p class="text-mountain-slate text-sm leading-relaxed text-gray-400 italic">Application step details coming soon.</p>
-                </div>
-                <div class="bg-white border border-gray-200 rounded-xl p-7 shadow-sm">
-                    <div class="w-10 h-10 rounded-full bg-heritage-navy text-white font-bold text-lg flex items-center justify-center mb-4">4</div>
-                    <h3 class="font-serif text-xl text-heritage-navy mb-2">Step Four</h3>
-                    <p class="text-mountain-slate text-sm leading-relaxed text-gray-400 italic">Application step details coming soon.</p>
+                <div class="flex justify-between mt-2 px-1">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wide" style="width:2.25rem;text-align:center">Program</span>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wide flex-1 text-center">Contact</span>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wide flex-1 text-center">Students</span>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wide flex-1 text-center">Details</span>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wide flex-1 text-center">Agreements</span>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wide" style="width:2.25rem;text-align:center">Review</span>
                 </div>
             </div>
 
-            <!-- Contact CTA -->
-            <div class="bg-heritage-navy rounded-xl p-10 text-center">
-                <h3 class="text-white font-serif font-bold text-2xl mb-3">Ready to Get Started?</h3>
-                <p class="text-blue-200 text-base mb-6">First-time applicants can create an account in our enrollment portal, or contact our office if you have questions.</p>
+            <!-- STEP LABEL -->
+            <p id="step-label" class="text-xs font-bold uppercase tracking-widest text-academy-gold mb-2"></p>
+
+            <!-- FORM CONTAINER -->
+            <div id="form-container">
+                <form id="app-form" novalidate>
+
+                    <!-- ═══════════════════════════════════════════
+                         STEP 1 — Program & Family Type
+                    ═══════════════════════════════════════════ -->
+                    <div id="step-1" class="form-step">
+                        <h2 class="font-serif text-2xl font-bold text-heritage-navy mb-1">Program Selection</h2>
+                        <p class="text-sm text-gray-500 mb-7">Select your family status and the program(s) you are applying for. You may select more than one program.</p>
+
+                        <!-- New or Returning -->
+                        <div class="mb-7">
+                            <p class="sh"><i data-lucide="users" class="w-5 h-5 text-academy-gold"></i> Family Status</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <label class="sel-card" id="card-new">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="family_status" value="new" class="accent-heritage-navy w-4 h-4" required>
+                                        <div>
+                                            <p class="font-bold text-heritage-navy text-sm">New Family</p>
+                                            <p class="text-xs text-gray-500 mt-0.5">First time enrolling with Colorado Heritage</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="sel-card" id="card-returning">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="family_status" value="returning" class="accent-heritage-navy w-4 h-4">
+                                        <div>
+                                            <p class="font-bold text-heritage-navy text-sm">Returning Family</p>
+                                            <p class="text-xs text-gray-500 mt-0.5">Re-enrolling for a new academic year</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <p id="err-status" class="ferr mt-2">Please select your family status.</p>
+                        </div>
+
+                        <!-- Program Selection -->
+                        <div class="mb-7">
+                            <p class="sh"><i data-lucide="book-open" class="w-5 h-5 text-academy-gold"></i> Program(s)</p>
+                            <div class="space-y-3">
+                                <label class="sel-card block" id="card-independent">
+                                    <div class="flex items-start gap-3">
+                                        <input type="checkbox" name="programs" value="independent" data-label="Independent School" class="accent-heritage-navy w-4 h-4 mt-1">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-2 flex-wrap">
+                                                <p class="font-bold text-heritage-navy text-sm">Independent School</p>
+                                                <span class="fee-badge">$125 / year</span>
+                                                <span class="fee-badge bg-amber-50 border-amber-200 text-amber-800">$50 late re-enroll</span>
+                                            </div>
+                                            <p class="text-xs text-gray-500 mt-1">Colorado Heritage serves as your student's school of record. Required for all families using CHESS services.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="sel-card block" id="card-academy">
+                                    <div class="flex items-start gap-3">
+                                        <input type="checkbox" name="programs" value="academy" data-label="K-12 Academy Classes" class="accent-heritage-navy w-4 h-4 mt-1">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-2 flex-wrap">
+                                                <p class="font-bold text-heritage-navy text-sm">K-12 Academy Classes</p>
+                                                <span class="fee-badge">$270 – $480 / class</span>
+                                                <span class="fee-badge bg-blue-50 border-blue-200 text-blue-800">+$75 tech fee</span>
+                                            </div>
+                                            <p class="text-xs text-gray-500 mt-1">On-site classes for elementary, junior high, and high school students. Two 14-week semesters per year.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="sel-card block" id="card-diploma">
+                                    <div class="flex items-start gap-3">
+                                        <input type="checkbox" name="programs" value="diploma" data-label="High School Diploma Program" class="accent-heritage-navy w-4 h-4 mt-1">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-2 flex-wrap">
+                                                <p class="font-bold text-heritage-navy text-sm">High School Diploma Program</p>
+                                                <span class="fee-badge">$50 app fee</span>
+                                                <span class="fee-badge bg-green-50 border-green-200 text-green-800">$170 / semester</span>
+                                            </div>
+                                            <p class="text-xs text-gray-500 mt-1">A customizable 4-year high school plan with a CHESS official transcript and optional graduation ceremony.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <p id="err-programs" class="ferr mt-2">Please select at least one program.</p>
+                        </div>
+
+                        <!-- Academic Year Notice -->
+                        <div class="bg-heritage-navy bg-opacity-5 border border-heritage-navy border-opacity-20 rounded-xl p-4 flex items-start gap-3">
+                            <i data-lucide="info" class="w-5 h-5 text-heritage-navy shrink-0 mt-0.5"></i>
+                            <p class="text-sm text-mountain-slate">Submitting this form begins the application process. Enrollment is <strong>not confirmed</strong> until our office contacts you to complete final steps, including an interview if required. Enrollment fees are non-refundable.</p>
+                        </div>
+                    </div>
+
+                    <!-- ═══════════════════════════════════════════
+                         STEP 2 — Family Contact Information
+                    ═══════════════════════════════════════════ -->
+                    <div id="step-2" class="form-step">
+                        <h2 class="font-serif text-2xl font-bold text-heritage-navy mb-1">Family Contact Information</h2>
+                        <p class="text-sm text-gray-500 mb-7">Please provide accurate contact information. We will use this to reach you about your application.</p>
+
+                        <!-- Primary Parent -->
+                        <div class="mb-8">
+                            <p class="sh"><i data-lucide="user" class="w-5 h-5 text-academy-gold"></i> Primary Parent / Guardian</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                                <div>
+                                    <label class="fl" for="p1_first">First Name <span class="req">*</span></label>
+                                    <input id="p1_first" name="p1_first" type="text" class="fi" required autocomplete="given-name">
+                                    <p class="ferr">Required.</p>
+                                </div>
+                                <div>
+                                    <label class="fl" for="p1_last">Last Name <span class="req">*</span></label>
+                                    <input id="p1_last" name="p1_last" type="text" class="fi" required autocomplete="family-name">
+                                    <p class="ferr">Required.</p>
+                                </div>
+                                <div>
+                                    <label class="fl" for="p1_role">Role <span class="req">*</span></label>
+                                    <select id="p1_role" name="p1_role" class="fi" required>
+                                        <option value="">Select…</option>
+                                        <option>Father</option>
+                                        <option>Mother</option>
+                                        <option>Legal Guardian</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <p class="ferr">Required.</p>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="fl" for="p1_phone">Cell / Primary Phone <span class="req">*</span></label>
+                                    <input id="p1_phone" name="p1_phone" type="tel" class="fi" required autocomplete="tel" placeholder="(970) 000-0000">
+                                    <p class="ferr">Required.</p>
+                                </div>
+                                <div>
+                                    <label class="fl" for="p1_email">Email Address <span class="req">*</span></label>
+                                    <input id="p1_email" name="p1_email" type="email" class="fi" required autocomplete="email" placeholder="you@email.com">
+                                    <p class="ferr">Please enter a valid email.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Second Parent -->
+                        <div class="mb-8">
+                            <div class="flex items-center justify-between mb-4">
+                                <p class="sh mb-0"><i data-lucide="user-plus" class="w-5 h-5 text-academy-gold"></i> Second Parent / Guardian</p>
+                                <button type="button" id="toggle-p2" class="text-xs font-bold text-chess-blue hover:underline flex items-center gap-1"><i data-lucide="plus-circle" class="w-4 h-4"></i> Add</button>
+                            </div>
+                            <div id="p2-section" class="hidden">
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                                    <div>
+                                        <label class="fl" for="p2_first">First Name</label>
+                                        <input id="p2_first" name="p2_first" type="text" class="fi" autocomplete="given-name">
+                                    </div>
+                                    <div>
+                                        <label class="fl" for="p2_last">Last Name</label>
+                                        <input id="p2_last" name="p2_last" type="text" class="fi" autocomplete="family-name">
+                                    </div>
+                                    <div>
+                                        <label class="fl" for="p2_role">Role</label>
+                                        <select id="p2_role" name="p2_role" class="fi">
+                                            <option value="">Select…</option>
+                                            <option>Father</option>
+                                            <option>Mother</option>
+                                            <option>Legal Guardian</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="fl" for="p2_phone">Cell / Primary Phone</label>
+                                        <input id="p2_phone" name="p2_phone" type="tel" class="fi" autocomplete="tel" placeholder="(970) 000-0000">
+                                    </div>
+                                    <div>
+                                        <label class="fl" for="p2_email">Email Address</label>
+                                        <input id="p2_email" name="p2_email" type="email" class="fi" autocomplete="email">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Home Address -->
+                        <div class="mb-8">
+                            <p class="sh"><i data-lucide="map-pin" class="w-5 h-5 text-academy-gold"></i> Mailing Address</p>
+                            <div class="mb-4">
+                                <label class="fl" for="addr_street">Street Address <span class="req">*</span></label>
+                                <input id="addr_street" name="addr_street" type="text" class="fi" required autocomplete="street-address" placeholder="1234 Main St">
+                                <p class="ferr">Required.</p>
+                            </div>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                                <div class="sm:col-span-2">
+                                    <label class="fl" for="addr_city">City <span class="req">*</span></label>
+                                    <input id="addr_city" name="addr_city" type="text" class="fi" required autocomplete="address-level2">
+                                    <p class="ferr">Required.</p>
+                                </div>
+                                <div>
+                                    <label class="fl" for="addr_state">State <span class="req">*</span></label>
+                                    <input id="addr_state" name="addr_state" type="text" class="fi" required maxlength="2" placeholder="CO" autocomplete="address-level1">
+                                    <p class="ferr">Required.</p>
+                                </div>
+                                <div>
+                                    <label class="fl" for="addr_zip">ZIP <span class="req">*</span></label>
+                                    <input id="addr_zip" name="addr_zip" type="text" class="fi" required maxlength="10" placeholder="80631" autocomplete="postal-code">
+                                    <p class="ferr">Required.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Referral + Church -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="fl" for="referral">How did you hear about us?</label>
+                                <select id="referral" name="referral" class="fi">
+                                    <option value="">Select…</option>
+                                    <option value="friend_family">Friend or Family</option>
+                                    <option value="church">Church</option>
+                                    <option value="hslda">HSLDA</option>
+                                    <option value="internet">Internet Search</option>
+                                    <option value="social_media">Social Media</option>
+                                    <option value="returning">Returning Family</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="fl" for="church">Church / Congregation Name</label>
+                                <input id="church" name="church" type="text" class="fi" placeholder="e.g. Greeley Bible Church">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ═══════════════════════════════════════════
+                         STEP 3 — Student Information
+                    ═══════════════════════════════════════════ -->
+                    <div id="step-3" class="form-step">
+                        <h2 class="font-serif text-2xl font-bold text-heritage-navy mb-1">Student Information</h2>
+                        <p class="text-sm text-gray-500 mb-7">Provide information for each student you are enrolling. Click "Add Another Student" for additional children.</p>
+
+                        <div id="students-container" class="space-y-6">
+                            <!-- Student 1 -->
+                            <div class="student-entry bg-white border border-gray-200 rounded-xl overflow-hidden" id="student-1">
+                                <div class="bg-heritage-navy px-5 py-3 flex items-center gap-2">
+                                    <i data-lucide="graduation-cap" class="w-4 h-4 text-academy-gold"></i>
+                                    <span class="text-white font-bold text-sm">Student 1</span>
+                                </div>
+                                <div class="p-5 space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div>
+                                            <label class="fl" for="s1_first">Legal First Name <span class="req">*</span></label>
+                                            <input id="s1_first" name="s1_first" type="text" class="fi" required>
+                                            <p class="ferr">Required.</p>
+                                        </div>
+                                        <div>
+                                            <label class="fl" for="s1_last">Last Name <span class="req">*</span></label>
+                                            <input id="s1_last" name="s1_last" type="text" class="fi" required>
+                                            <p class="ferr">Required.</p>
+                                        </div>
+                                        <div>
+                                            <label class="fl" for="s1_preferred">Preferred / Nickname</label>
+                                            <input id="s1_preferred" name="s1_preferred" type="text" class="fi" placeholder="Optional">
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div>
+                                            <label class="fl" for="s1_dob">Date of Birth <span class="req">*</span></label>
+                                            <input id="s1_dob" name="s1_dob" type="date" class="fi" required>
+                                            <p class="ferr">Required.</p>
+                                        </div>
+                                        <div>
+                                            <label class="fl" for="s1_grade">Entering Grade (Fall) <span class="req">*</span></label>
+                                            <select id="s1_grade" name="s1_grade" class="fi" required>
+                                                <option value="">Select…</option>
+                                                <option>Kindergarten</option>
+                                                <option>1st Grade</option><option>2nd Grade</option><option>3rd Grade</option>
+                                                <option>4th Grade</option><option>5th Grade</option><option>6th Grade</option>
+                                                <option>7th Grade</option><option>8th Grade</option><option>9th Grade</option>
+                                                <option>10th Grade</option><option>11th Grade</option><option>12th Grade</option>
+                                            </select>
+                                            <p class="ferr">Required.</p>
+                                        </div>
+                                        <div>
+                                            <label class="fl" for="s1_gender">Gender <span class="req">*</span></label>
+                                            <select id="s1_gender" name="s1_gender" class="fi" required>
+                                                <option value="">Select…</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                            </select>
+                                            <p class="ferr">Required.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="fl" for="s1_prev_school">Previous School or Curriculum <span class="text-gray-400 font-normal normal-case text-xs ml-1">(if any)</span></label>
+                                        <input id="s1_prev_school" name="s1_prev_school" type="text" class="fi" placeholder="e.g. Greeley Central High School, or Home — Sonlight Curriculum">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Students 2–4 (hidden) -->
+                            <div class="student-entry bg-white border border-gray-200 rounded-xl overflow-hidden hidden" id="student-2">
+                                <div class="bg-heritage-navy px-5 py-3 flex items-center justify-between">
+                                    <div class="flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4 text-academy-gold"></i><span class="text-white font-bold text-sm">Student 2</span></div>
+                                    <button type="button" onclick="removeStudent(2)" class="text-blue-200 hover:text-white text-xs flex items-center gap-1"><i data-lucide="x" class="w-3.5 h-3.5"></i> Remove</button>
+                                </div>
+                                <div class="p-5 space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div><label class="fl" for="s2_first">Legal First Name</label><input id="s2_first" name="s2_first" type="text" class="fi"></div>
+                                        <div><label class="fl" for="s2_last">Last Name</label><input id="s2_last" name="s2_last" type="text" class="fi"></div>
+                                        <div><label class="fl" for="s2_preferred">Preferred / Nickname</label><input id="s2_preferred" name="s2_preferred" type="text" class="fi" placeholder="Optional"></div>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div><label class="fl" for="s2_dob">Date of Birth</label><input id="s2_dob" name="s2_dob" type="date" class="fi"></div>
+                                        <div><label class="fl" for="s2_grade">Entering Grade (Fall)</label>
+                                            <select id="s2_grade" name="s2_grade" class="fi"><option value="">Select…</option><option>Kindergarten</option><option>1st Grade</option><option>2nd Grade</option><option>3rd Grade</option><option>4th Grade</option><option>5th Grade</option><option>6th Grade</option><option>7th Grade</option><option>8th Grade</option><option>9th Grade</option><option>10th Grade</option><option>11th Grade</option><option>12th Grade</option></select></div>
+                                        <div><label class="fl" for="s2_gender">Gender</label>
+                                            <select id="s2_gender" name="s2_gender" class="fi"><option value="">Select…</option><option>Male</option><option>Female</option></select></div>
+                                    </div>
+                                    <div><label class="fl" for="s2_prev_school">Previous School or Curriculum</label><input id="s2_prev_school" name="s2_prev_school" type="text" class="fi" placeholder="Optional"></div>
+                                </div>
+                            </div>
+
+                            <div class="student-entry bg-white border border-gray-200 rounded-xl overflow-hidden hidden" id="student-3">
+                                <div class="bg-heritage-navy px-5 py-3 flex items-center justify-between">
+                                    <div class="flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4 text-academy-gold"></i><span class="text-white font-bold text-sm">Student 3</span></div>
+                                    <button type="button" onclick="removeStudent(3)" class="text-blue-200 hover:text-white text-xs flex items-center gap-1"><i data-lucide="x" class="w-3.5 h-3.5"></i> Remove</button>
+                                </div>
+                                <div class="p-5 space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div><label class="fl" for="s3_first">Legal First Name</label><input id="s3_first" name="s3_first" type="text" class="fi"></div>
+                                        <div><label class="fl" for="s3_last">Last Name</label><input id="s3_last" name="s3_last" type="text" class="fi"></div>
+                                        <div><label class="fl" for="s3_preferred">Preferred / Nickname</label><input id="s3_preferred" name="s3_preferred" type="text" class="fi" placeholder="Optional"></div>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div><label class="fl" for="s3_dob">Date of Birth</label><input id="s3_dob" name="s3_dob" type="date" class="fi"></div>
+                                        <div><label class="fl" for="s3_grade">Entering Grade (Fall)</label>
+                                            <select id="s3_grade" name="s3_grade" class="fi"><option value="">Select…</option><option>Kindergarten</option><option>1st Grade</option><option>2nd Grade</option><option>3rd Grade</option><option>4th Grade</option><option>5th Grade</option><option>6th Grade</option><option>7th Grade</option><option>8th Grade</option><option>9th Grade</option><option>10th Grade</option><option>11th Grade</option><option>12th Grade</option></select></div>
+                                        <div><label class="fl" for="s3_gender">Gender</label>
+                                            <select id="s3_gender" name="s3_gender" class="fi"><option value="">Select…</option><option>Male</option><option>Female</option></select></div>
+                                    </div>
+                                    <div><label class="fl" for="s3_prev_school">Previous School or Curriculum</label><input id="s3_prev_school" name="s3_prev_school" type="text" class="fi" placeholder="Optional"></div>
+                                </div>
+                            </div>
+
+                            <div class="student-entry bg-white border border-gray-200 rounded-xl overflow-hidden hidden" id="student-4">
+                                <div class="bg-heritage-navy px-5 py-3 flex items-center justify-between">
+                                    <div class="flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4 text-academy-gold"></i><span class="text-white font-bold text-sm">Student 4</span></div>
+                                    <button type="button" onclick="removeStudent(4)" class="text-blue-200 hover:text-white text-xs flex items-center gap-1"><i data-lucide="x" class="w-3.5 h-3.5"></i> Remove</button>
+                                </div>
+                                <div class="p-5 space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div><label class="fl" for="s4_first">Legal First Name</label><input id="s4_first" name="s4_first" type="text" class="fi"></div>
+                                        <div><label class="fl" for="s4_last">Last Name</label><input id="s4_last" name="s4_last" type="text" class="fi"></div>
+                                        <div><label class="fl" for="s4_preferred">Preferred / Nickname</label><input id="s4_preferred" name="s4_preferred" type="text" class="fi" placeholder="Optional"></div>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div><label class="fl" for="s4_dob">Date of Birth</label><input id="s4_dob" name="s4_dob" type="date" class="fi"></div>
+                                        <div><label class="fl" for="s4_grade">Entering Grade (Fall)</label>
+                                            <select id="s4_grade" name="s4_grade" class="fi"><option value="">Select…</option><option>Kindergarten</option><option>1st Grade</option><option>2nd Grade</option><option>3rd Grade</option><option>4th Grade</option><option>5th Grade</option><option>6th Grade</option><option>7th Grade</option><option>8th Grade</option><option>9th Grade</option><option>10th Grade</option><option>11th Grade</option><option>12th Grade</option></select></div>
+                                        <div><label class="fl" for="s4_gender">Gender</label>
+                                            <select id="s4_gender" name="s4_gender" class="fi"><option value="">Select…</option><option>Male</option><option>Female</option></select></div>
+                                    </div>
+                                    <div><label class="fl" for="s4_prev_school">Previous School or Curriculum</label><input id="s4_prev_school" name="s4_prev_school" type="text" class="fi" placeholder="Optional"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" id="add-student-btn" class="mt-5 flex items-center gap-2 text-sm font-bold text-chess-blue hover:text-heritage-navy border border-chess-blue hover:border-heritage-navy rounded-lg px-4 py-2.5 transition-colors">
+                            <i data-lucide="plus" class="w-4 h-4"></i> Add Another Student
+                        </button>
+                    </div>
+
+                    <!-- ═══════════════════════════════════════════
+                         STEP 4 — Program Details
+                    ═══════════════════════════════════════════ -->
+                    <div id="step-4" class="form-step">
+                        <h2 class="font-serif text-2xl font-bold text-heritage-navy mb-1">Program Details</h2>
+                        <p class="text-sm text-gray-500 mb-7">Please provide details specific to the program(s) you selected. Only the sections for your selected program(s) are shown.</p>
+
+                        <!-- Independent School Details -->
+                        <div id="detail-independent" class="mb-8 hidden">
+                            <p class="sh"><i data-lucide="home" class="w-5 h-5 text-academy-gold"></i> Independent School</p>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="fl" for="is_curriculum">Primary Curriculum / Educational Approach</label>
+                                    <input id="is_curriculum" name="is_curriculum" type="text" class="fi" placeholder="e.g. Sonlight, Classical Conversations, Charlotte Mason, Eclectic…">
+                                </div>
+                                <div>
+                                    <label class="fl" for="is_transfer">Are you transferring records from another institution?</label>
+                                    <select id="is_transfer" name="is_transfer" class="fi">
+                                        <option value="">Select…</option>
+                                        <option value="no">No — we are beginning our enrollment record with CHESS</option>
+                                        <option value="academic">Yes — from another academic institution</option>
+                                        <option value="homeschool">Yes — from our own homeschool records</option>
+                                        <option value="both">Yes — from both an institution and homeschool records</option>
+                                    </select>
+                                    <p class="text-xs text-gray-400 mt-1.5">Transfer fee: $35/semester from an academic institution; $40/semester from homeschool records.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- K-12 Academy Details -->
+                        <div id="detail-academy" class="mb-8 hidden">
+                            <p class="sh"><i data-lucide="building" class="w-5 h-5 text-academy-gold"></i> K-12 Academy — Class Interests</p>
+                            <p class="text-xs text-gray-500 mb-4">Check all class types you are interested in. Final class registration will be completed through our office. <strong>A $75 technology fee applies per student enrolled in Academy classes.</strong></p>
+                            <div class="space-y-2 mb-5">
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="elem_1day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Elementary Course — 1 day/week</p><p class="text-xs text-gray-500">Grades K–5</p></div><span class="fee-badge">$270.00</span></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="jh_1day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Junior High Course — 1 day/week</p><p class="text-xs text-gray-500">Grades 6–8</p></div><span class="fee-badge">$270.00</span></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="jh_2day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Junior High Course — 2 days/week</p><p class="text-xs text-gray-500">Grades 6–8</p></div><span class="fee-badge">$430.00</span></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="hs_1day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">High School Class — 1 day/week</p><p class="text-xs text-gray-500">Grades 9–12</p></div><span class="fee-badge">$335.00</span></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="hs_2day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">High School Class — 2 days/week</p><p class="text-xs text-gray-500">Grades 9–12</p></div><span class="fee-badge">$480.00</span></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="study_hall" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Study Hall</p><p class="text-xs text-gray-500">All grade levels</p></div><span class="fee-badge">$50.00</span></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="supervised_lunch" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Supervised Lunch</p><p class="text-xs text-gray-500">Grades K–2 only</p></div><span class="fee-badge">$50.00/student</span></label>
+                            </div>
+                            <div>
+                                <label class="fl" for="acad_notes">Specific course interests or notes for our registrar</label>
+                                <textarea id="acad_notes" name="acad_notes" class="fi" placeholder="e.g. Looking for a high school writing class and a junior high history class…"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Diploma Program Details -->
+                        <div id="detail-diploma" class="mb-8 hidden">
+                            <p class="sh"><i data-lucide="award" class="w-5 h-5 text-academy-gold"></i> High School Diploma Program</p>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="fl" for="dp_transfer">Is the student transferring from another high school?</label>
+                                    <select id="dp_transfer" name="dp_transfer" class="fi" id="dp_transfer_sel">
+                                        <option value="">Select…</option>
+                                        <option value="no">No — beginning high school with CHESS</option>
+                                        <option value="yes_school">Yes — transferring from a traditional high school</option>
+                                        <option value="yes_home">Yes — transitioning from home high school records</option>
+                                    </select>
+                                </div>
+                                <div id="dp_transcript_block" class="hidden bg-amber-50 border border-amber-200 rounded-xl p-4">
+                                    <p class="text-sm font-bold text-amber-800 mb-2 flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Transcript Required</p>
+                                    <p class="text-xs text-amber-700 mb-3">Please email your transcript(s) to <a href="mailto:office@coloradoheritage.org" class="underline font-bold">office@coloradoheritage.org</a> before scheduling your Diploma Program meeting. Transfer fees: <strong>$35/semester</strong> from an academic institution; <strong>$40/semester</strong> from homeschool records.</p>
+                                    <div>
+                                        <label class="fl" for="dp_prev_school">Name of Previous High School</label>
+                                        <input id="dp_prev_school" name="dp_prev_school" type="text" class="fi" placeholder="e.g. Greeley Central High School">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="fl" for="dp_grad_year">Expected Graduation Year <span class="req">*</span></label>
+                                        <select id="dp_grad_year" name="dp_grad_year" class="fi">
+                                            <option value="">Select…</option>
+                                            <option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="fl" for="dp_track">Diploma Track Interest</label>
+                                        <select id="dp_track" name="dp_track" class="fi">
+                                            <option value="">Select…</option>
+                                            <option value="general">General</option>
+                                            <option value="honors">Honors</option>
+                                            <option value="high_honors">High Honors</option>
+                                            <option value="highest_honors">Highest Honors</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="fl" for="dp_also_academy">Will this student also enroll in K-12 Academy classes?</label>
+                                    <select id="dp_also_academy" name="dp_also_academy" class="fi">
+                                        <option value="">Select…</option>
+                                        <option value="yes">Yes — I will also complete the Academy section</option>
+                                        <option value="no">No — home instruction only</option>
+                                        <option value="unsure">Undecided / would like to discuss</option>
+                                    </select>
+                                </div>
+
+                                <!-- Testing Services -->
+                                <div class="mt-2">
+                                    <p class="text-xs font-bold text-heritage-navy uppercase tracking-wider mb-3">Testing Services Interest <span class="normal-case font-normal text-gray-400 ml-1">(optional — check any you may need)</span></p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                        <label class="agree-row"><input type="checkbox" name="testing" value="private_core" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Private Test — CORE</p></div><span class="fee-badge">$85/test</span></label>
+                                        <label class="agree-row"><input type="checkbox" name="testing" value="private_complete" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Private Test — COMPLETE</p></div><span class="fee-badge">$100/test</span></label>
+                                        <label class="agree-row"><input type="checkbox" name="testing" value="group_core" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Group Core</p></div><span class="fee-badge">$55</span></label>
+                                        <label class="agree-row"><input type="checkbox" name="testing" value="group_core_complete" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Group Core &amp; Complete</p></div><span class="fee-badge">$65</span></label>
+                                        <label class="agree-row"><input type="checkbox" name="testing" value="clt" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">CLT (Classic Learning Test)</p></div><span class="fee-badge">$75</span></label>
+                                        <label class="agree-row"><input type="checkbox" name="testing" value="home_core" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Home Testing — Core</p></div><span class="fee-badge">$55</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- No program detail needed -->
+                        <div id="detail-none" class="hidden bg-amber-50 border border-amber-200 rounded-xl p-5 text-sm text-amber-800">
+                            <strong>Please go back to Step 1</strong> and select at least one program before continuing.
+                        </div>
+
+                        <!-- General Notes -->
+                        <div>
+                            <label class="fl" for="general_notes">Additional Questions or Comments</label>
+                            <textarea id="general_notes" name="general_notes" class="fi" placeholder="Anything else you'd like our office to know about your family or students…"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- ═══════════════════════════════════════════
+                         STEP 5 — Agreements & Signature
+                    ═══════════════════════════════════════════ -->
+                    <div id="step-5" class="form-step">
+                        <h2 class="font-serif text-2xl font-bold text-heritage-navy mb-1">Agreements &amp; Signature</h2>
+                        <p class="text-sm text-gray-500 mb-7">Please read and acknowledge each statement below. All four are required to submit your application.</p>
+
+                        <!-- Policy summary box -->
+                        <div class="bg-parchment border border-gray-200 rounded-xl p-5 mb-6">
+                            <p class="font-serif font-bold text-heritage-navy mb-2">Colorado Heritage Acceptance Policy</p>
+                            <p class="text-sm text-mountain-slate leading-relaxed mb-3">Colorado Heritage admits students from families who are committed to Christ-centered, parent-led education and whose values align with our foundational beliefs. We welcome students of any race, color, national, and ethnic origin. Our full Acceptance Policy outlines the biblical and educational standards that guide our community.</p>
+                            <a href="acceptance.html" class="text-xs font-bold text-chess-blue hover:underline flex items-center gap-1"><i data-lucide="external-link" class="w-3.5 h-3.5"></i> Read the Full Acceptance Policy</a>
+                        </div>
+
+                        <div class="space-y-3 mb-6" id="agreement-list">
+                            <label class="agree-row" id="agree-1-row">
+                                <input type="checkbox" name="agree" value="policy" class="accent-heritage-navy">
+                                <span class="text-sm text-mountain-slate">I have read the CHESS <strong>Acceptance Policy</strong> and confirm that our family's values align with the Colorado Heritage mission and community standards.</span>
+                            </label>
+                            <label class="agree-row" id="agree-2-row">
+                                <input type="checkbox" name="agree" value="christian" class="accent-heritage-navy">
+                                <span class="text-sm text-mountain-slate">I understand that Colorado Heritage is a <strong>Christ-centered organization</strong> and that all programs, classes, and activities are conducted within a biblical framework.</span>
+                            </label>
+                            <label class="agree-row" id="agree-3-row">
+                                <input type="checkbox" name="agree" value="fees" class="accent-heritage-navy">
+                                <span class="text-sm text-mountain-slate">I acknowledge the applicable <strong>enrollment fee(s)</strong>: Independent School — $125.00 / year; Diploma Program — $50.00 application fee; Academy Technology Fee — $75.00 per student. <em>All fees are non-refundable.</em></span>
+                            </label>
+                            <label class="agree-row" id="agree-4-row">
+                                <input type="checkbox" name="agree" value="not_final" class="accent-heritage-navy">
+                                <span class="text-sm text-mountain-slate">I understand that this application <strong>does not guarantee enrollment.</strong> The CHESS office will contact me within 3–5 business days to confirm next steps, which may include a principal interview.</span>
+                            </label>
+                        </div>
+                        <p id="err-agree" class="ferr mb-4">Please check all four boxes to continue.</p>
+
+                        <!-- E-Signature -->
+                        <div class="bg-white border border-gray-200 rounded-xl p-5">
+                            <p class="sh mb-4"><i data-lucide="pen-line" class="w-5 h-5 text-academy-gold"></i> Electronic Signature</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="fl" for="sig_name">Type Your Full Legal Name <span class="req">*</span></label>
+                                    <input id="sig_name" name="sig_name" type="text" class="fi" required placeholder="Full legal name">
+                                    <p class="ferr">Required.</p>
+                                </div>
+                                <div>
+                                    <label class="fl" for="sig_date">Date <span class="req">*</span></label>
+                                    <input id="sig_date" name="sig_date" type="date" class="fi" required>
+                                    <p class="ferr">Required.</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-3">By typing your name above, you are providing an electronic signature and agree that this constitutes your legal signature for this application.</p>
+                        </div>
+                    </div>
+
+                    <!-- ═══════════════════════════════════════════
+                         STEP 6 — Review & Submit
+                    ═══════════════════════════════════════════ -->
+                    <div id="step-6" class="form-step">
+                        <h2 class="font-serif text-2xl font-bold text-heritage-navy mb-1">Review &amp; Submit</h2>
+                        <p class="text-sm text-gray-500 mb-7">Please review your application before submitting. Click any <strong>"Edit"</strong> link to go back and make changes.</p>
+
+                        <div id="review-body"></div>
+
+                        <div class="bg-heritage-navy bg-opacity-5 border border-heritage-navy border-opacity-20 rounded-xl p-4 mt-2 flex items-start gap-3">
+                            <i data-lucide="send" class="w-5 h-5 text-heritage-navy shrink-0 mt-0.5"></i>
+                            <p class="text-sm text-mountain-slate">When you click <strong>Submit Application</strong>, your information will be sent to the Colorado Heritage office. You will receive a confirmation and next steps by email within 3–5 business days.</p>
+                        </div>
+                    </div>
+
+                </form>
+
+                <!-- NAVIGATION BUTTONS -->
+                <div class="flex items-center justify-between mt-8 pt-6 border-t border-gray-200">
+                    <button id="prev-btn" class="hidden flex items-center gap-2 font-bold text-sm text-mountain-slate hover:text-heritage-navy border border-gray-300 hover:border-heritage-navy rounded-lg px-5 py-2.5 transition-colors">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Previous
+                    </button>
+                    <div id="btn-spacer" class="flex-1"></div>
+                    <button id="next-btn" class="flex items-center gap-2 bg-heritage-navy hover:bg-chess-blue text-white font-bold px-7 py-2.5 rounded-lg transition-colors shadow-sm">
+                        Next Step <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                    <button id="submit-btn" class="hidden flex items-center gap-2 bg-academy-gold hover:bg-yellow-400 text-heritage-navy font-bold px-8 py-2.5 rounded-lg transition-colors shadow-sm">
+                        <i data-lucide="send" class="w-4 h-4"></i> Submit Application
+                    </button>
+                </div>
+            </div>
+
+            <!-- THANK YOU STATE -->
+            <div id="thank-you" class="hidden text-center py-12">
+                <div class="w-20 h-20 rounded-full bg-heritage-navy flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="check" class="w-10 h-10 text-academy-gold"></i>
+                </div>
+                <h2 class="font-serif text-3xl font-bold text-heritage-navy mb-3">Application Received!</h2>
+                <p class="text-mountain-slate text-lg mb-2">Thank you for applying to Colorado Heritage.</p>
+                <p class="text-gray-500 text-sm max-w-md mx-auto mb-8">Our office will review your application and contact you within <strong>3–5 business days</strong> to confirm next steps. Please check your email inbox (and spam folder).</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://app.praxischool.com/site_login.php?s=1300" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-academy-gold hover:bg-yellow-400 text-heritage-navy font-bold px-8 py-3 rounded transition-colors">
-                        <i data-lucide="user-plus" class="w-5 h-5"></i> Begin Application
+                    <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-heritage-navy hover:bg-chess-blue text-white font-bold px-6 py-3 rounded-lg transition-colors">
+                        <i data-lucide="home" class="w-4 h-4"></i> Return Home
                     </a>
-                    <a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white hover:border-academy-gold text-white hover:text-academy-gold font-bold px-8 py-3 rounded transition-colors">
-                        <i data-lucide="mail" class="w-5 h-5"></i> Contact Our Office
+                    <a href="contact.html" class="inline-flex items-center justify-center gap-2 border-2 border-heritage-navy text-heritage-navy hover:bg-heritage-navy hover:text-white font-bold px-6 py-3 rounded-lg transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Contact Our Office
                     </a>
                 </div>
             </div>
@@ -228,7 +838,7 @@
                     <ul class="space-y-3 text-gray-400">
                         <li><a href="about.html#foundation" class="hover:text-academy-gold transition-colors block">Our Beliefs</a></li>
                         <li><a href="acceptance.html" class="hover:text-academy-gold transition-colors block">Acceptance Policy</a></li>
-                        <li><a href="programs.html#academy" class="hover:text-academy-gold transition-colors block">Fee Schedule &amp; Scholarships</a></li>
+                        <li><a href="tuition.html" class="hover:text-academy-gold transition-colors block">Fee Schedule</a></li>
                         <li><a href="resources.html" class="hover:text-academy-gold transition-colors block">Homeschool Resources</a></li>
                         <li><a href="testimonials.html" class="hover:text-academy-gold transition-colors block">Testimonials</a></li>
                     </ul>
@@ -236,8 +846,8 @@
                 <div>
                     <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Access Portals</h4>
                     <div class="space-y-3">
-                        <a href="https://app.praxischool.com/parent_login.php?s=1300" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="users" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>PARENT Portal</a>
-                        <a href="https://app.praxischool.com" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="briefcase" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>FACULTY/STAFF Portal</a>
+                        <a href="https://app.praxischool.com/parent_login.php?s=1300" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="users" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>PARENT Portal</a>
+                        <a href="https://app.praxischool.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="briefcase" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>FACULTY/STAFF Portal</a>
                         <a href="https://app.praxischool.com/site_login.php?s=1300" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="user-plus" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>NEW APPLICANT Portal</a>
                     </div>
                 </div>
@@ -259,26 +869,281 @@
     </footer>
 
     <script>
-        lucide.createIcons();
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        // ─── State ───────────────────────────────────────────────────────────
+        let currentStep = 1;
+        const TOTAL = 6;
+        const STEP_NAMES = ['Program', 'Contact', 'Students', 'Details', 'Agreements', 'Review'];
+        let visibleStudents = 1;
 
-        fetch('/data/announcement.json')
-            .then(r => r.json())
-            .then(data => {
-                const bar = document.getElementById('announcement-bar');
-                if (!bar) return;
-                if (!data.active) { bar.style.display = 'none'; return; }
-                const textEl = document.getElementById('announcement-text');
-                const linkEl = document.getElementById('announcement-link');
-                if (textEl && data.text) textEl.textContent = data.text;
-                if (linkEl) {
-                    if (data.link_text) linkEl.textContent = data.link_text;
-                    if (data.link_url) linkEl.href = data.link_url;
+        // ─── Progress Bar ─────────────────────────────────────────────────────
+        function buildProgressBar() {
+            const container = document.getElementById('pg-dots');
+            let html = '';
+            for (let i = 1; i <= TOTAL; i++) {
+                html += `<div id="pg-${i}" class="pg-dot future">${i}</div>`;
+                if (i < TOTAL) html += `<div id="line-${i}" class="pg-line"></div>`;
+            }
+            container.innerHTML = html;
+        }
+
+        function updateProgress() {
+            for (let i = 1; i <= TOTAL; i++) {
+                const dot = document.getElementById(`pg-${i}`);
+                if (i < currentStep)       { dot.className = 'pg-dot done'; dot.innerHTML = '✓'; }
+                else if (i === currentStep) { dot.className = 'pg-dot active'; dot.innerHTML = i; }
+                else                        { dot.className = 'pg-dot future'; dot.innerHTML = i; }
+                if (i < TOTAL) {
+                    document.getElementById(`line-${i}`).className = 'pg-line' + (i < currentStep ? ' done' : '');
                 }
-            })
-            .catch(() => {});
+            }
+            document.getElementById('step-label').textContent = `Step ${currentStep} of ${TOTAL} — ${STEP_NAMES[currentStep - 1]}`;
+        }
+
+        // ─── Show Step ─────────────────────────────────────────────────────────
+        function showStep(n) {
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step-${n}`).classList.add('active');
+            currentStep = n;
+            updateProgress();
+            // Nav buttons
+            const prev = document.getElementById('prev-btn');
+            const next = document.getElementById('next-btn');
+            const sub  = document.getElementById('submit-btn');
+            const spacer = document.getElementById('btn-spacer');
+            prev.classList.toggle('hidden', n === 1);
+            next.classList.toggle('hidden', n === TOTAL);
+            sub.classList.toggle('hidden', n !== TOTAL);
+            spacer.style.display = (n === 1) ? 'flex' : 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (n === 4) updateProgramDetails();
+            if (n === 6) buildReview();
+        }
+
+        // ─── Validation ────────────────────────────────────────────────────────
+        function validateStep(n) {
+            let ok = true;
+
+            if (n === 1) {
+                // Family status radio
+                const status = document.querySelector('input[name="family_status"]:checked');
+                const statusErr = document.getElementById('err-status');
+                if (!status) { statusErr.classList.add('show'); ok = false; }
+                else statusErr.classList.remove('show');
+                // At least one program
+                const programs = document.querySelectorAll('input[name="programs"]:checked');
+                const progErr = document.getElementById('err-programs');
+                if (programs.length === 0) { progErr.classList.add('show'); ok = false; }
+                else progErr.classList.remove('show');
+                return ok;
+            }
+
+            if (n === 5) {
+                const total = document.querySelectorAll('#agreement-list input[name="agree"]').length;
+                const checked = document.querySelectorAll('#agreement-list input[name="agree"]:checked').length;
+                const agreeErr = document.getElementById('err-agree');
+                if (checked < total) { agreeErr.classList.add('show'); ok = false; }
+                else agreeErr.classList.remove('show');
+                // Validate sig fields
+                ['sig_name', 'sig_date'].forEach(id => {
+                    const f = document.getElementById(id);
+                    const err = f.parentElement.querySelector('.ferr');
+                    if (!f.value.trim()) { f.classList.add('err'); if(err) err.classList.add('show'); ok = false; }
+                    else { f.classList.remove('err'); if(err) err.classList.remove('show'); }
+                });
+                return ok;
+            }
+
+            // General required fields in the step
+            const step = document.getElementById(`step-${n}`);
+            step.querySelectorAll('[required]').forEach(field => {
+                if (field.closest('.hidden')) return; // skip hidden sections
+                const err = field.parentElement.querySelector('.ferr');
+                let val = field.value.trim();
+                // Email check
+                if (field.type === 'email' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+                    field.classList.add('err'); if (err) err.classList.add('show'); ok = false;
+                } else if (!val) {
+                    field.classList.add('err'); if (err) err.classList.add('show'); ok = false;
+                } else {
+                    field.classList.remove('err'); if (err) err.classList.remove('show');
+                }
+            });
+            return ok;
+        }
+
+        // ─── Student Management ────────────────────────────────────────────────
+        function addNextStudent() {
+            if (visibleStudents >= 4) return;
+            visibleStudents++;
+            document.getElementById(`student-${visibleStudents}`).classList.remove('hidden');
+            if (visibleStudents >= 4) document.getElementById('add-student-btn').classList.add('hidden');
+            lucide.createIcons();
+        }
+
+        function removeStudent(n) {
+            const el = document.getElementById(`student-${n}`);
+            el.classList.add('hidden');
+            el.querySelectorAll('input, select, textarea').forEach(f => f.value = '');
+            visibleStudents--;
+            document.getElementById('add-student-btn').classList.remove('hidden');
+        }
+
+        // ─── Conditional Program Details ──────────────────────────────────────
+        function updateProgramDetails() {
+            const programs = ['independent', 'academy', 'diploma'];
+            let anyVisible = false;
+            programs.forEach(p => {
+                const checked = document.querySelector(`input[name="programs"][value="${p}"]`)?.checked;
+                const sec = document.getElementById(`detail-${p}`);
+                if (sec) { sec.classList.toggle('hidden', !checked); if (checked) anyVisible = true; }
+            });
+            document.getElementById('detail-none').classList.toggle('hidden', anyVisible);
+        }
+
+        // ─── Review Builder ────────────────────────────────────────────────────
+        function rev(title, rows, stepN) {
+            const rowsHTML = rows.filter(r => r[1]).map(([k,v]) =>
+                `<div class="rev-row"><span class="rev-key">${k}</span><span class="rev-val">${v}</span></div>`
+            ).join('');
+            return `<div class="rev-section">
+                <div class="rev-head">
+                    <span class="text-white font-serif font-bold text-sm">${title}</span>
+                    <button type="button" onclick="showStep(${stepN})" class="text-blue-200 hover:text-white text-xs font-bold flex items-center gap-1"><i data-lucide="pencil" class="w-3 h-3"></i> Edit</button>
+                </div><div>${rowsHTML}</div></div>`;
+        }
+
+        function buildReview() {
+            const f = document.getElementById('app-form');
+            const fd = new FormData(f);
+            const get = k => fd.get(k) || '';
+            const programs = [...f.querySelectorAll('input[name="programs"]:checked')].map(c => c.dataset.label).join(', ');
+            const classes  = [...f.querySelectorAll('input[name="acad_classes"]:checked')].map(c => {
+                const labels = {elem_1day:'Elementary 1-day ($270)',jh_1day:'JH 1-day ($270)',jh_2day:'JH 2-day ($430)',hs_1day:'HS 1-day ($335)',hs_2day:'HS 2-day ($480)',study_hall:'Study Hall ($50)',supervised_lunch:'Supervised Lunch ($50)'};
+                return labels[c.value] || c.value;
+            }).join(', ') || 'None selected';
+            const tests    = [...f.querySelectorAll('input[name="testing"]:checked')].map(c => c.value.replace(/_/g,' ')).join(', ') || 'None';
+
+            let p2row = '';
+            if (get('p2_first')) p2row = `${get('p2_first')} ${get('p2_last')} (${get('p2_role')})`;
+
+            const studentRows = [];
+            for (let i = 1; i <= 4; i++) {
+                const el = document.getElementById(`student-${i}`);
+                const nm = `${get(`s${i}_first`)} ${get(`s${i}_last`)}`.trim();
+                if (!el.classList.contains('hidden') && nm) {
+                    studentRows.push([`Student ${i}`, `${nm} — Grade: ${get(`s${i}_grade`)} — Born: ${get(`s${i}_dob`)}`]);
+                }
+            }
+
+            let html = '';
+            html += rev('Application Type', [
+                ['Family Status', get('family_status') === 'new' ? 'New Family' : 'Returning Family'],
+                ['Programs', programs],
+            ], 1);
+            html += rev('Family Contact', [
+                ['Primary Parent', `${get('p1_first')} ${get('p1_last')} (${get('p1_role')})`],
+                ['Phone', get('p1_phone')],
+                ['Email', get('p1_email')],
+                ['Second Parent', p2row],
+                ['Address', `${get('addr_street')}, ${get('addr_city')}, ${get('addr_state')} ${get('addr_zip')}`],
+                ['How did you hear', get('referral')],
+                ['Church', get('church')],
+            ], 2);
+            html += rev('Students', studentRows, 3);
+            const progDetails = [
+                get('is_curriculum') ? ['Curriculum', get('is_curriculum')] : null,
+                get('is_transfer') ? ['Transfer Records', get('is_transfer')] : null,
+                get('dp_transfer') ? ['HS Transfer', get('dp_transfer')] : null,
+                get('dp_prev_school') ? ['Prev. School', get('dp_prev_school')] : null,
+                get('dp_grad_year') ? ['Grad Year', get('dp_grad_year')] : null,
+                get('dp_track') ? ['Diploma Track', get('dp_track')] : null,
+                programs.includes('Academy') ? ['Academy Classes', classes] : null,
+                ['Testing Interest', tests],
+            ].filter(Boolean);
+            html += rev('Program Details', progDetails.length ? progDetails : [['Notes', get('general_notes') || 'None']], 4);
+            html += rev('Agreements', [
+                ['Acceptance Policy', '✓ Agreed'],
+                ['Christ-Centered', '✓ Agreed'],
+                ['Enrollment Fees', '✓ Acknowledged'],
+                ['Not Final', '✓ Acknowledged'],
+                ['Signed By', get('sig_name')],
+                ['Signature Date', get('sig_date')],
+            ], 5);
+
+            document.getElementById('review-body').innerHTML = html;
+            lucide.createIcons();
+        }
+
+        // ─── Submit ────────────────────────────────────────────────────────────
+        function submitForm() {
+            // TODO: send form data via fetch() to backend endpoint when wired
+            document.getElementById('form-container').classList.add('hidden');
+            document.getElementById('progress-bar').classList.add('hidden');
+            document.getElementById('step-label').classList.add('hidden');
+            document.getElementById('thank-you').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ─── Event Listeners ───────────────────────────────────────────────────
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (validateStep(currentStep)) showStep(currentStep + 1);
+            else { const stepEl = document.getElementById(`step-${currentStep}`); const err = stepEl.querySelector('.err, .ferr.show'); if (err) err.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        });
+        document.getElementById('prev-btn').addEventListener('click', () => showStep(currentStep - 1));
+        document.getElementById('submit-btn').addEventListener('click', submitForm);
+        document.getElementById('add-student-btn').addEventListener('click', addNextStudent);
+
+        // Sel-card toggle for radio
+        document.querySelectorAll('.sel-card input[type="radio"]').forEach(r => {
+            r.addEventListener('change', () => {
+                document.querySelectorAll(`input[name="${r.name}"]`).forEach(x => x.closest('.sel-card').classList.remove('on'));
+                r.closest('.sel-card').classList.add('on');
+            });
+        });
+        // Sel-card toggle for checkbox
+        document.querySelectorAll('.sel-card input[type="checkbox"]').forEach(c => {
+            c.addEventListener('change', () => c.closest('.sel-card').classList.toggle('on', c.checked));
+        });
+        // Agreement rows
+        document.querySelectorAll('.agree-row input[type="checkbox"]').forEach(c => {
+            c.addEventListener('change', () => c.closest('.agree-row').classList.toggle('checked', c.checked));
+        });
+        // Second parent toggle
+        document.getElementById('toggle-p2').addEventListener('click', () => {
+            const sec = document.getElementById('p2-section');
+            const btn = document.getElementById('toggle-p2');
+            sec.classList.toggle('hidden');
+            btn.innerHTML = sec.classList.contains('hidden')
+                ? '<i data-lucide="plus-circle" class="w-4 h-4"></i> Add'
+                : '<i data-lucide="minus-circle" class="w-4 h-4"></i> Remove';
+            lucide.createIcons();
+        });
+        // Diploma transfer — show transcript block
+        document.getElementById('dp_transfer').addEventListener('change', function() {
+            const show = this.value === 'yes_school' || this.value === 'yes_home';
+            document.getElementById('dp_transcript_block').classList.toggle('hidden', !show);
+        });
+
+        // Auto-fill today's date in signature
+        document.getElementById('sig_date').value = new Date().toISOString().split('T')[0];
+
+        // ─── Init ──────────────────────────────────────────────────────────────
+        buildProgressBar();
+        showStep(1);
+        lucide.createIcons();
+
+        // Mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () =>
+            document.getElementById('mobile-menu').classList.toggle('hidden'));
+
+        // Announcement
+        fetch('/data/announcement.json').then(r=>r.json()).then(data=>{
+            const bar=document.getElementById('announcement-bar');
+            if(!bar)return; if(!data.active){bar.style.display='none';return;}
+            const t=document.getElementById('announcement-text'),l=document.getElementById('announcement-link');
+            if(t&&data.text)t.textContent=data.text;
+            if(l){if(data.link_text)l.textContent=data.link_text;if(data.link_url)l.href=data.link_url;}
+        }).catch(()=>{});
     </script>
 </body>
 </html>
