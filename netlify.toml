@@ -1,5 +1,9 @@
 [build]
   publish = "."
+  # Skip the build unless the commit message contains [deploy]
+  # This prevents Netlify from consuming build minutes on every dev commit.
+  # To publish a new version: include [deploy] anywhere in your commit message.
+  ignore = "git log -1 --pretty=%B | grep -qv '\\[deploy\\]'"
 
 [[headers]]
   for = "/admin/*"
