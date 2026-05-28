@@ -42,26 +42,40 @@ collections:
 
   - label: "Blog Posts"
     name: "posts"
-    folder: "posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    preview_path: "post.html?slug={{slug}}"
-    fields:
-      - label: "Title"
-        name: "title"
-        widget: "string"
-      - label: "Publish Date"
-        name: "date"
-        widget: "date"
-        format: "MMMM D, YYYY"
-      - label: "Summary"
-        name: "summary"
-        widget: "text"
-        hint: "Short description shown on the homepage and blog listing (1–2 sentences)."
-      - label: "Body"
-        name: "body"
-        widget: "markdown"
-        hint: "Write the full article here. Use the toolbar to add headings, bold, links, etc."
+    files:
+      - label: "All Posts"
+        name: "all_posts"
+        file: "data/posts.json"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - label: "Slug (URL ID)"
+                name: "slug"
+                widget: "string"
+                hint: "Lowercase letters and hyphens only. Example: 2026-06-01-summer-update"
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Publish Date"
+                name: "date"
+                widget: "date"
+                format: "MMMM D, YYYY"
+              - label: "Summary"
+                name: "summary"
+                widget: "text"
+                hint: "Short description shown on the blog listing page (1–2 sentences)."
+              - label: "Featured Image"
+                name: "image"
+                widget: "image"
+                required: false
+                hint: "Optional photo shown at the top of the article and on the listing card."
+              - label: "Body"
+                name: "body"
+                widget: "markdown"
+                hint: "Write the full article here. Use the toolbar to add headings, bold, links, etc."
 
 # ─────────────────────────────────────────────
 # STAFF DIRECTORY
@@ -80,6 +94,30 @@ collections:
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Title / Role", name: "role", widget: "string"}
+              - label: "Photo"
+                name: "photo"
+                widget: "image"
+                required: false
+                hint: "Upload a headshot photo."
+              - {label: "Bio", name: "bio", widget: "text", required: false}
+
+# ─────────────────────────────────────────────
+# BOARD MEMBERS
+# ─────────────────────────────────────────────
+
+  - label: "Board Members"
+    name: "board"
+    files:
+      - label: "Board Members"
+        name: "board_members"
+        file: "data/board.json"
+        fields:
+          - label: "Board Members"
+            name: "members"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Title / Role", name: "role", widget: "string", default: "Board Member"}
               - label: "Photo"
                 name: "photo"
                 widget: "image"

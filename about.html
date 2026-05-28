@@ -328,36 +328,11 @@
             <p class="text-mountain-slate text-base max-w-xl mx-auto">Dedicated staff committed to serving homeschooling families with excellence and care.</p>
         </div>
 
-        <!-- Staff placeholder grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <div class="text-center">
-                <div class="w-28 h-28 rounded-full bg-gray-100 border-2 border-gray-200 mx-auto mb-4 flex items-center justify-center">
-                    <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                </div>
-                <p class="font-serif font-bold text-heritage-navy text-lg">Staff Name</p>
-                <p class="text-academy-gold text-xs uppercase tracking-wider font-bold mt-1">Title / Role</p>
-                <p class="text-mountain-slate text-sm mt-2 italic text-gray-400">Photo &amp; bio coming soon</p>
+        <!-- Staff loaded by JavaScript from data/staff.json -->
+        <div id="staff-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="col-span-full text-center py-8">
+                <p class="text-gray-400 text-sm italic">Loading staff directory…</p>
             </div>
-            <div class="text-center">
-                <div class="w-28 h-28 rounded-full bg-gray-100 border-2 border-gray-200 mx-auto mb-4 flex items-center justify-center">
-                    <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                </div>
-                <p class="font-serif font-bold text-heritage-navy text-lg">Staff Name</p>
-                <p class="text-academy-gold text-xs uppercase tracking-wider font-bold mt-1">Title / Role</p>
-                <p class="text-mountain-slate text-sm mt-2 italic text-gray-400">Photo &amp; bio coming soon</p>
-            </div>
-            <div class="text-center">
-                <div class="w-28 h-28 rounded-full bg-gray-100 border-2 border-gray-200 mx-auto mb-4 flex items-center justify-center">
-                    <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                </div>
-                <p class="font-serif font-bold text-heritage-navy text-lg">Staff Name</p>
-                <p class="text-academy-gold text-xs uppercase tracking-wider font-bold mt-1">Title / Role</p>
-                <p class="text-mountain-slate text-sm mt-2 italic text-gray-400">Photo &amp; bio coming soon</p>
-            </div>
-        </div>
-
-        <div class="mt-10 bg-parchment border border-gray-200 rounded-xl p-6 max-w-xl mx-auto text-center">
-            <p class="text-mountain-slate text-sm italic">Staff photos and biographies will be added here. Contact us at <a href="mailto:office@coloradoheritage.org" class="text-chess-blue underline font-bold">office@coloradoheritage.org</a> to reach our team.</p>
         </div>
     </div>
 </section>
@@ -371,9 +346,12 @@
             <div class="w-12 h-0.5 bg-academy-gold mx-auto mb-6"></div>
             <p class="text-mountain-slate text-base max-w-xl mx-auto">Our board provides governance and oversight, ensuring Colorado Heritage remains faithful to its founding mission.</p>
         </div>
-        <div class="bg-white border border-gray-200 rounded-xl p-8 max-w-xl mx-auto text-center shadow-sm">
-            <svg class="w-12 h-12 text-gray-200 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            <p class="text-mountain-slate text-sm italic text-gray-400">Board member names and bios coming soon.</p>
+        <!-- Board loaded by JavaScript from data/board.json -->
+        <div id="board-grid">
+            <div class="bg-white border border-gray-200 rounded-xl p-8 max-w-xl mx-auto text-center shadow-sm">
+                <svg class="w-12 h-12 text-gray-200 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <p class="text-mountain-slate text-sm italic text-gray-400">Board member names and bios coming soon.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -503,6 +481,58 @@
                     if (data.link_text) linkEl.textContent = data.link_text;
                     if (data.link_url) linkEl.href = data.link_url;
                 }
+            })
+            .catch(() => {});
+
+        // Load staff directory from CMS
+        fetch('/data/staff.json')
+            .then(r => r.json())
+            .then(data => {
+                const grid = document.getElementById('staff-grid');
+                if (!grid) return;
+                const members = data.members || [];
+                if (!members.length) {
+                    grid.innerHTML = '<div class="col-span-full mt-4 bg-parchment border border-gray-200 rounded-xl p-6 max-w-xl mx-auto text-center"><p class="text-mountain-slate text-sm italic">Staff photos and biographies will be added here. Contact us at <a href="mailto:office@coloradoheritage.org" class="text-chess-blue underline font-bold">office@coloradoheritage.org</a> to reach our team.</p></div>';
+                    return;
+                }
+                grid.innerHTML = members.map(m => `
+                    <div class="text-center">
+                        <div class="w-28 h-28 rounded-full overflow-hidden border-2 border-academy-gold mx-auto mb-4 flex items-center justify-center bg-gray-100">
+                            ${m.photo
+                                ? `<img src="${m.photo}" alt="${m.name}" class="w-full h-full object-cover">`
+                                : '<svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>'
+                            }
+                        </div>
+                        <p class="font-serif font-bold text-heritage-navy text-lg">${m.name}</p>
+                        <p class="text-academy-gold text-xs uppercase tracking-wider font-bold mt-1">${m.role}</p>
+                        ${m.bio ? `<p class="text-mountain-slate text-sm mt-2 leading-relaxed max-w-xs mx-auto">${m.bio}</p>` : ''}
+                    </div>
+                `).join('');
+            })
+            .catch(() => {});
+
+        // Load board members from CMS
+        fetch('/data/board.json')
+            .then(r => r.json())
+            .then(data => {
+                const grid = document.getElementById('board-grid');
+                if (!grid) return;
+                const members = data.members || [];
+                if (!members.length) return; // keep default "coming soon" placeholder
+                grid.innerHTML = '<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">' +
+                    members.map(m => `
+                        <div class="text-center bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-heritage-navy mx-auto mb-4 flex items-center justify-center bg-gray-100">
+                                ${m.photo
+                                    ? `<img src="${m.photo}" alt="${m.name}" class="w-full h-full object-cover">`
+                                    : '<svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>'
+                                }
+                            </div>
+                            <p class="font-serif font-bold text-heritage-navy">${m.name}</p>
+                            <p class="text-academy-gold text-xs uppercase tracking-wider font-bold mt-1">${m.role || 'Board Member'}</p>
+                            ${m.bio ? `<p class="text-mountain-slate text-sm mt-2 leading-relaxed">${m.bio}</p>` : ''}
+                        </div>
+                    `).join('') + '</div>';
             })
             .catch(() => {});
 </script>

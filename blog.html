@@ -211,7 +211,8 @@
         // Load blog posts
         fetch('/data/posts.json')
             .then(r => r.json())
-            .then(posts => {
+            .then(data => {
+                const posts = Array.isArray(data) ? data : (data.posts || []);
                 const grid = document.getElementById('posts-grid');
                 if (!posts.length) {
                     grid.innerHTML = '<p class="col-span-full text-center text-gray-400 py-12">No posts yet.</p>';
@@ -219,6 +220,7 @@
                 }
                 grid.innerHTML = posts.map(post => `
                     <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col border border-gray-100">
+                        ${post.image ? `<a href="post.html?slug=${post.slug}"><img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover"></a>` : ''}
                         <div class="p-8 flex-grow">
                             <span class="text-xs font-bold text-academy-gold uppercase tracking-wider">${post.date}</span>
                             <h2 class="text-xl font-serif font-bold text-heritage-navy mt-3 mb-3 leading-snug">${post.title}</h2>
