@@ -76,7 +76,16 @@
                     </div>
                 </div>
                 <a href="programs.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Programs</a>
-                <a href="contact.html#apply" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Admissions</a>
+                <div class="relative group">
+                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">
+                        Admissions <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute left-0 mt-0 w-56 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="apply.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Apply</a>
+                        <a href="schedule.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Class Schedule</a>
+                        <a href="tuition.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Tuition &amp; Fees</a>
+                    </div>
+                </div>
                 <a href="#" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Resources</a>
                 <a href="blog.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Blog</a>
             </nav>
@@ -104,7 +113,14 @@
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3 shadow-inner">
         <a href="about.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">About Us</a>
         <a href="programs.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">Programs</a>
-        <a href="contact.html#apply" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">Admissions</a>
+        <div class="border-b border-gray-50">
+            <p class="font-bold text-heritage-navy py-2">Admissions</p>
+            <div class="pl-3 pb-2 space-y-1">
+                <a href="apply.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Apply</a>
+                <a href="schedule.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Class Schedule</a>
+                <a href="tuition.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Tuition &amp; Fees</a>
+            </div>
+        </div>
         <a href="#" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">Resources</a>
         <a href="blog.html" class="block font-bold text-heritage-navy py-2">Blog</a>
         <div class="pt-4 flex flex-col gap-3">

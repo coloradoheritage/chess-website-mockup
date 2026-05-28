@@ -102,6 +102,71 @@ collections:
               - {label: "Bio", name: "bio", widget: "text", required: false}
 
 # ─────────────────────────────────────────────
+# CLASS SCHEDULE
+# ─────────────────────────────────────────────
+
+  - label: "Class Schedule"
+    name: "schedule"
+    files:
+      - label: "Class Schedule"
+        name: "class_schedule"
+        file: "data/schedule.json"
+        fields:
+          - label: "Semester / Academic Year"
+            name: "semester"
+            widget: "string"
+            hint: "Shown in the page hero. Example: 2026-2027 Academic Year"
+          - label: "Announcement / Note"
+            name: "note"
+            widget: "text"
+            required: false
+            hint: "Optional message shown at the top of the schedule page (e.g. registration dates)."
+          - label: "Classes"
+            name: "classes"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.days}}"
+            fields:
+              - {label: "Class Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Instructor", name: "instructor", widget: "string", required: false, hint: "Leave blank to show TBD"}
+              - {label: "Grade Levels", name: "grade_levels", widget: "string", hint: "e.g. Grades 6–8"}
+              - {label: "Days", name: "days", widget: "string", hint: "e.g. Monday & Wednesday"}
+              - {label: "Time", name: "time", widget: "string", hint: "e.g. 9:00 AM – 10:30 AM"}
+              - {label: "Fee", name: "fee", widget: "string", required: false, hint: "e.g. $250/semester"}
+              - {label: "Open for Registration", name: "open", widget: "boolean", default: true}
+
+# ─────────────────────────────────────────────
+# TUITION & FEES
+# ─────────────────────────────────────────────
+
+  - label: "Tuition & Fees"
+    name: "tuition"
+    files:
+      - label: "Tuition & Fees"
+        name: "tuition_fees"
+        file: "data/tuition.json"
+        fields:
+          - label: "Note / Announcement"
+            name: "note"
+            widget: "text"
+            required: false
+            hint: "Optional message shown at the top of the tuition page."
+          - label: "Programs"
+            name: "programs"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - {label: "Program Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - label: "Fee Items"
+                name: "fees"
+                widget: "list"
+                fields:
+                  - {label: "Item", name: "item", widget: "string"}
+                  - {label: "Amount", name: "amount", widget: "string"}
+                  - {label: "Notes", name: "notes", widget: "string", required: false}
+
+# ─────────────────────────────────────────────
 # BOARD MEMBERS
 # ─────────────────────────────────────────────
 

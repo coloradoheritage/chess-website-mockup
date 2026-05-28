@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog & Resources — Colorado Heritage Education School System</title>
+    <title>Class Schedule — Colorado Heritage Education School System</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
@@ -29,9 +29,7 @@
         }
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        html { scroll-behavior: smooth; }
-    </style>
+    <style>html { scroll-behavior: smooth; }</style>
 </head>
 <body class="font-sans bg-parchment text-mountain-slate antialiased">
 
@@ -69,17 +67,17 @@
                     </div>
                     <a href="programs.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Programs</a>
                     <div class="relative group">
-                        <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">
+                        <button class="text-academy-gold font-bold border-b-2 border-academy-gold pb-0.5 flex items-center gap-1 py-4">
                             Admissions <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
                         <div class="absolute left-0 mt-0 w-56 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
                             <a href="apply.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Apply</a>
-                            <a href="schedule.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Class Schedule</a>
+                            <a href="schedule.html" class="block px-4 py-2.5 text-sm bg-parchment text-heritage-navy font-bold">Class Schedule</a>
                             <a href="tuition.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Tuition &amp; Fees</a>
                         </div>
                     </div>
                     <a href="#" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Resources</a>
-                    <a href="blog.html" class="text-academy-gold font-bold border-b-2 border-academy-gold pb-0.5">Blog</a>
+                    <a href="blog.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Blog</a>
                 </nav>
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="contact.html" class="text-heritage-navy hover:text-chess-blue font-bold flex items-center gap-2">
@@ -100,13 +98,13 @@
             <div class="border-b border-gray-50">
                 <p class="font-bold text-heritage-navy py-2">Admissions</p>
                 <div class="pl-3 pb-2 space-y-1">
-                    <a href="apply.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Apply</a>
-                    <a href="schedule.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Class Schedule</a>
+                    <a href="apply.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy font-semibold">Apply</a>
+                    <a href="schedule.html" class="block font-bold text-academy-gold py-1 text-sm">Class Schedule</a>
                     <a href="tuition.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Tuition &amp; Fees</a>
                 </div>
             </div>
             <a href="#" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">Resources</a>
-            <a href="blog.html" class="block font-bold text-academy-gold py-2">Blog</a>
+            <a href="blog.html" class="block font-bold text-heritage-navy py-2">Blog</a>
             <div class="pt-4 flex flex-col gap-3">
                 <a href="contact.html" class="text-center font-bold text-heritage-navy py-2 border border-heritage-navy rounded">Portals</a>
                 <a href="#" class="text-center bg-heritage-navy text-white font-bold py-2.5 rounded">Donate</a>
@@ -119,9 +117,9 @@
         <div class="absolute top-0 left-0 right-0 h-1 bg-academy-gold"></div>
         <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 28px 28px;"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
-            <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">From Our Team</p>
-            <h1 class="text-white font-serif font-bold text-4xl md:text-5xl mb-4">Blog & Resources</h1>
-            <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">Encouragement, insight, and news from the Colorado Heritage community.</p>
+            <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Admissions</p>
+            <h1 class="text-white font-serif font-bold text-4xl md:text-5xl mb-4">Class Schedule</h1>
+            <p id="hero-semester" class="text-blue-200 text-lg max-w-2xl leading-relaxed">Academy class offerings for the current academic year.</p>
         </div>
     </section>
 
@@ -131,21 +129,28 @@
             <nav class="flex items-center gap-2 text-xs text-gray-500">
                 <a href="index.html" class="hover:text-heritage-navy transition-colors">Home</a>
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                <span class="text-heritage-navy font-bold">Blog</span>
+                <span class="text-heritage-navy font-bold">Class Schedule</span>
             </nav>
         </div>
     </div>
 
-    <!-- POSTS GRID -->
+    <!-- SCHEDULE CONTENT -->
     <section class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Posts loaded by JavaScript below -->
-                <div class="col-span-full text-center py-12 text-gray-400">
+
+            <!-- Optional note banner (shown only if note field is set in CMS) -->
+            <div id="schedule-note" class="hidden mb-10 bg-chess-blue/10 border border-chess-blue/20 rounded-xl p-5 text-center">
+                <p id="schedule-note-text" class="text-heritage-navy text-sm font-semibold"></p>
+            </div>
+
+            <!-- Classes grid — loaded by JS -->
+            <div id="schedule-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="col-span-full text-center py-16 text-gray-400">
                     <i data-lucide="loader" class="w-8 h-8 mx-auto mb-3 animate-spin"></i>
-                    <p>Loading posts…</p>
+                    <p>Loading schedule…</p>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -170,7 +175,7 @@
                     <ul class="space-y-3 text-gray-400">
                         <li><a href="about.html#foundation" class="hover:text-academy-gold transition-colors block">Our Beliefs</a></li>
                         <li><a href="about.html#foundation" class="hover:text-academy-gold transition-colors block">Acceptance Policy</a></li>
-                        <li><a href="programs.html#academy" class="hover:text-academy-gold transition-colors block">Fee Schedule &amp; Scholarships</a></li>
+                        <li><a href="tuition.html" class="hover:text-academy-gold transition-colors block">Fee Schedule &amp; Scholarships</a></li>
                         <li><a href="#" class="hover:text-academy-gold transition-colors block">Homeschool Resources</a></li>
                         <li><a href="#" class="hover:text-academy-gold transition-colors block">Testimonials</a></li>
                     </ul>
@@ -202,12 +207,10 @@
 
     <script>
         lucide.createIcons();
-
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        // Load announcement bar
         fetch('/data/announcement.json')
             .then(r => r.json())
             .then(data => {
@@ -224,36 +227,56 @@
             })
             .catch(() => {});
 
-        // Load blog posts
-        fetch('/data/posts.json')
+        // Load class schedule from CMS
+        fetch('/data/schedule.json')
             .then(r => r.json())
             .then(data => {
-                const posts = Array.isArray(data) ? data : (data.posts || []);
-                const grid = document.getElementById('posts-grid');
-                if (!posts.length) {
-                    grid.innerHTML = '<p class="col-span-full text-center text-gray-400 py-12">No posts yet.</p>';
+                const grid = document.getElementById('schedule-grid');
+
+                // Update hero subtitle with semester name
+                if (data.semester) {
+                    document.getElementById('hero-semester').textContent = data.semester;
+                }
+
+                // Show optional note banner
+                if (data.note) {
+                    document.getElementById('schedule-note-text').textContent = data.note;
+                    document.getElementById('schedule-note').classList.remove('hidden');
+                }
+
+                const classes = data.classes || [];
+                if (!classes.length) {
+                    grid.innerHTML = `
+                        <div class="col-span-full text-center py-20">
+                            <i data-lucide="calendar" class="w-12 h-12 text-gray-200 mx-auto mb-4"></i>
+                            <h3 class="font-serif text-xl text-heritage-navy mb-2">Schedule Coming Soon</h3>
+                            <p class="text-mountain-slate text-sm max-w-sm mx-auto">The class schedule for the upcoming academic year will be posted here before registration opens.</p>
+                            <a href="contact.html" class="inline-block mt-6 bg-heritage-navy text-white font-bold px-6 py-2.5 rounded hover:bg-chess-blue transition-colors text-sm">Contact Our Office</a>
+                        </div>`;
+                    lucide.createIcons();
                     return;
                 }
-                grid.innerHTML = posts.map(post => `
-                    <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col border border-gray-100">
-                        ${post.image ? `<a href="post.html?slug=${post.slug}"><img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover"></a>` : ''}
-                        <div class="p-8 flex-grow">
-                            <span class="text-xs font-bold text-academy-gold uppercase tracking-wider">${post.date}</span>
-                            <h2 class="text-xl font-serif font-bold text-heritage-navy mt-3 mb-3 leading-snug">${post.title}</h2>
-                            <p class="text-sm text-mountain-slate leading-relaxed">${post.summary}</p>
+
+                grid.innerHTML = classes.map(c => `
+                    <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div class="bg-heritage-navy px-6 py-4">
+                            <h3 class="font-serif font-bold text-white text-lg leading-snug">${c.name}</h3>
+                            ${c.grade_levels ? `<p class="text-academy-gold text-xs font-bold uppercase tracking-wider mt-1">${c.grade_levels}</p>` : ''}
                         </div>
-                        <div class="px-8 pb-8 mt-auto">
-                            <a href="post.html?slug=${post.slug}" class="inline-flex items-center gap-2 text-sm font-bold text-heritage-navy hover:text-academy-gold transition-colors">
-                                Read Article <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                            </a>
+                        <div class="p-6 space-y-3 text-sm text-mountain-slate">
+                            ${c.description ? `<p class="leading-relaxed text-gray-600">${c.description}</p>` : ''}
+                            ${c.instructor ? `<p class="flex items-center gap-2"><svg class="w-4 h-4 text-academy-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg><span><strong>Instructor:</strong> ${c.instructor}</span></p>` : ''}
+                            ${c.days ? `<p class="flex items-center gap-2"><svg class="w-4 h-4 text-academy-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg><span>${c.days}${c.time ? ' &bull; ' + c.time : ''}</span></p>` : ''}
+                            ${c.fee ? `<p class="flex items-center gap-2"><svg class="w-4 h-4 text-academy-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><strong>Fee:</strong> ${c.fee}</span></p>` : ''}
                         </div>
-                    </article>
+                        ${c.open !== false ? `<div class="px-6 pb-5"><span class="inline-block text-xs font-bold text-green-700 bg-green-50 border border-green-200 rounded-full px-3 py-1">Open for Registration</span></div>` : `<div class="px-6 pb-5"><span class="inline-block text-xs font-bold text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-3 py-1">Registration Closed</span></div>`}
+                    </div>
                 `).join('');
                 lucide.createIcons();
             })
             .catch(() => {
-                document.getElementById('posts-grid').innerHTML =
-                    '<p class="col-span-full text-center text-gray-400 py-12">Could not load posts.</p>';
+                document.getElementById('schedule-grid').innerHTML =
+                    '<p class="col-span-full text-center text-gray-400 py-12">Could not load the class schedule. Please try again later.</p>';
             });
     </script>
 </body>
