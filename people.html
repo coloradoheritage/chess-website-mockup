@@ -295,7 +295,7 @@
     mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
 
     // Announcement bar
-    fetch('/data/announcement.json').then(r => r.json()).then(data => {
+    fetch('data/announcement.json').then(r => r.json()).then(data => {
         const bar = document.getElementById('announcement-bar');
         if (!bar) return;
         if (!data.active) { bar.style.display = 'none'; return; }
@@ -319,7 +319,7 @@
     }
 
     // Staff
-    fetch('/data/staff.json').then(r => r.json()).then(data => {
+    fetch('data/staff.json').then(r => r.json()).then(data => {
         const grid = document.getElementById('staff-grid');
         if (!grid) return;
         const members = data.members || [];
@@ -331,7 +331,7 @@
     }).catch(() => {});
 
     // Faculty
-    fetch('/data/faculty.json').then(r => r.json()).then(data => {
+    fetch('data/faculty.json').then(r => r.json()).then(data => {
         const grid = document.getElementById('faculty-grid');
         if (!grid) return;
         const members = data.members || [];
@@ -343,7 +343,7 @@
     }).catch(() => {});
 
     // Board
-    fetch('/data/board.json').then(r => r.json()).then(data => {
+    fetch('data/board.json').then(r => r.json()).then(data => {
         const grid = document.getElementById('board-grid');
         if (!grid) return;
         const members = data.members || [];

@@ -237,7 +237,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        fetch('/data/announcement.json')
+        fetch('data/announcement.json')
             .then(r => r.json())
             .then(data => {
                 const bar = document.getElementById('announcement-bar');
@@ -254,7 +254,7 @@
             .catch(() => {});
 
         // Load tuition data from CMS
-        fetch('/data/tuition.json')
+        fetch('data/tuition.json')
             .then(r => r.json())
             .then(data => {
                 const container = document.getElementById('tuition-programs');

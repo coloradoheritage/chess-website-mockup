@@ -228,7 +228,7 @@
         mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
         // Load announcement bar
-        fetch('/data/announcement.json')
+        fetch('data/announcement.json')
             .then(r => r.json())
             .then(data => {
                 const bar = document.getElementById('announcement-bar');
@@ -245,7 +245,7 @@
             .catch(() => {});
 
         // Load blog posts
-        fetch('/data/posts.json')
+        fetch('data/posts.json')
             .then(r => r.json())
             .then(data => {
                 const posts = Array.isArray(data) ? data : (data.posts || []);

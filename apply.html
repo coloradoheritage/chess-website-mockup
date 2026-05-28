@@ -1167,7 +1167,7 @@
             document.getElementById('mobile-menu').classList.toggle('hidden'));
 
         // Announcement
-        fetch('/data/announcement.json').then(r=>r.json()).then(data=>{
+        fetch('data/announcement.json').then(r=>r.json()).then(data=>{
             const bar=document.getElementById('announcement-bar');
             if(!bar)return; if(!data.active){bar.style.display='none';return;}
             const t=document.getElementById('announcement-text'),l=document.getElementById('announcement-link');

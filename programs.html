@@ -619,7 +619,7 @@
         mobileMenu.classList.toggle('hidden');
     });
         // Load announcement bar from CMS
-        fetch('/data/announcement.json')
+        fetch('data/announcement.json')
             .then(r => r.json())
             .then(data => {
                 const bar = document.getElementById('announcement-bar');

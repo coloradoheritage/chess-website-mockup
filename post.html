@@ -256,7 +256,7 @@
         mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
         // Load announcement bar
-        fetch('/data/announcement.json')
+        fetch('data/announcement.json')
             .then(r => r.json())
             .then(data => {
                 const bar = document.getElementById('announcement-bar');
@@ -279,7 +279,7 @@
             document.getElementById('post-loading').classList.add('hidden');
             document.getElementById('post-error').classList.remove('hidden');
         } else {
-            fetch('/data/posts.json')
+            fetch('data/posts.json')
                 .then(r => {
                     if (!r.ok) throw new Error('Could not load posts');
                     return r.json();
