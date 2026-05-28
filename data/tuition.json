@@ -1,1 +1,66 @@
-{"note": "", "programs": []}
+{
+  "note": "Although we seek to maintain our listed fee schedule, please contact our office to confirm current rates before enrolling. Thank you.",
+  "programs": [
+    {
+      "name": "Independent School",
+      "description": "Colorado Heritage serves as the school of record for all enrolled homeschool families. The annual enrollment fee covers record-keeping, official communication, and access to CHESS resources.",
+      "fees": [
+        { "item": "Annual Enrollment Fee", "amount": "$125.00", "notes": "Non-refundable, due at enrollment" },
+        { "item": "Late Re-enrollment Fee", "amount": "$50.00", "notes": "After September 30" },
+        { "item": "Late Paperwork Fee", "amount": "$25.00", "notes": "" }
+      ]
+    },
+    {
+      "name": "K-12 Academy — Class Tuition",
+      "description": "Academy classes run for two 14-week semesters each year. Tuition covers per-class instruction and the annual school administration fee. A technology fee applies to every student enrolled in Academy classes.",
+      "fees": [
+        { "item": "Elementary Course — 1 day/week", "amount": "$270.00", "notes": "Grades K–5" },
+        { "item": "Junior High Course — 1 day/week", "amount": "$270.00", "notes": "Grades 6–8" },
+        { "item": "Junior High Course — 2 days/week", "amount": "$430.00", "notes": "Grades 6–8" },
+        { "item": "High School Class — 1 day/week", "amount": "$335.00", "notes": "Grades 9–12" },
+        { "item": "High School Class — 2 days/week", "amount": "$480.00", "notes": "Grades 9–12" },
+        { "item": "Study Hall", "amount": "$50.00", "notes": "All grade levels; per Study Hall" },
+        { "item": "Supervised Lunch", "amount": "$50.00", "notes": "Grades K–2; per student" },
+        { "item": "Technology Fee", "amount": "$75.00", "notes": "Required per student enrolled in Academy" },
+        { "item": "Student ID", "amount": "$0.00", "notes": "" }
+      ]
+    },
+    {
+      "name": "High School Diploma Program",
+      "description": "The CHESS Diploma Program provides a customizable 4-year high school plan with an official CHESS transcript, four diploma tracks, and an optional graduation ceremony. Transcript transfer fees apply for students with academic or homeschool records from other institutions.",
+      "fees": [
+        { "item": "Application Fee", "amount": "$50.00", "notes": "Non-refundable" },
+        { "item": "Diploma Program Semester Fee", "amount": "$170.00", "notes": "Per semester" },
+        { "item": "Late Coursework Reporting Fee", "amount": "$50.00", "notes": "After deadline" },
+        { "item": "Transcript — from academic institution", "amount": "$35.00", "notes": "Per semester of transfer records" },
+        { "item": "Transcript — from homeschool records", "amount": "$40.00", "notes": "Per semester of transfer records" },
+        { "item": "CHESS Graduation Ceremony", "amount": "$150.00", "notes": "Diploma Program members" },
+        { "item": "Official Transcript — Electronic", "amount": "$15.00", "notes": "" },
+        { "item": "Official Transcript — Mailed", "amount": "$15.00", "notes": "" }
+      ]
+    },
+    {
+      "name": "Testing Services",
+      "description": "CHESS offers several testing options for independent school and diploma program students. Sibling discounts apply when two students from the same family test at the same session.",
+      "fees": [
+        { "item": "Private Test Session — CORE", "amount": "$85.00", "notes": "$70/test for 2 students from same family, same session" },
+        { "item": "Private Test Session — COMPLETE", "amount": "$100.00", "notes": "$85/test for 2 students from same family, same session" },
+        { "item": "Group Core", "amount": "$55.00", "notes": "" },
+        { "item": "Group Core and Complete", "amount": "$65.00", "notes": "" },
+        { "item": "CLT — Classic Learning Test", "amount": "$75.00", "notes": "" },
+        { "item": "Home Testing — Core (materials & hand scoring)", "amount": "$55.00", "notes": "" },
+        { "item": "Home Testing — Complete (materials & hand scoring)", "amount": "$65.00", "notes": "" }
+      ]
+    },
+    {
+      "name": "Non-Diploma Program Members",
+      "description": "The following services are available to families enrolled in the Independent School program who are not participating in the High School Diploma Program. Family transcripts and diplomas carry specific limitations — please read the note below carefully.",
+      "fees": [
+        { "item": "Family Transcript Compilation", "amount": "$50.00 / year", "notes": "Or $25.00 per semester" },
+        { "item": "CHESS Graduation Ceremony — IS Member", "amount": "$175.00", "notes": "Independent School enrolled families" },
+        { "item": "CHESS Graduation Ceremony — Non-member", "amount": "$200.00", "notes": "" },
+        { "item": "Diploma with Hard Cover", "amount": "$50.00", "notes": "" }
+      ]
+    }
+  ]
+}

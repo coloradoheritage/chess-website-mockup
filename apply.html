@@ -267,8 +267,6 @@
                                         <div class="flex-1">
                                             <div class="flex items-center gap-2 flex-wrap">
                                                 <p class="font-bold text-heritage-navy text-sm">Independent School</p>
-                                                <span class="fee-badge">$125 / year</span>
-                                                <span class="fee-badge bg-amber-50 border-amber-200 text-amber-800">$50 late re-enroll</span>
                                             </div>
                                             <p class="text-xs text-gray-500 mt-1">Colorado Heritage serves as your student's school of record. Required for all families using CHESS services.</p>
                                         </div>
@@ -280,8 +278,6 @@
                                         <div class="flex-1">
                                             <div class="flex items-center gap-2 flex-wrap">
                                                 <p class="font-bold text-heritage-navy text-sm">K-12 Academy Classes</p>
-                                                <span class="fee-badge">$270 – $480 / class</span>
-                                                <span class="fee-badge bg-blue-50 border-blue-200 text-blue-800">+$75 tech fee</span>
                                             </div>
                                             <p class="text-xs text-gray-500 mt-1">On-site classes for elementary, junior high, and high school students. Two 14-week semesters per year.</p>
                                         </div>
@@ -293,8 +289,6 @@
                                         <div class="flex-1">
                                             <div class="flex items-center gap-2 flex-wrap">
                                                 <p class="font-bold text-heritage-navy text-sm">High School Diploma Program</p>
-                                                <span class="fee-badge">$50 app fee</span>
-                                                <span class="fee-badge bg-green-50 border-green-200 text-green-800">$170 / semester</span>
                                             </div>
                                             <p class="text-xs text-gray-500 mt-1">A customizable 4-year high school plan with a CHESS official transcript and optional graduation ceremony.</p>
                                         </div>
@@ -443,6 +437,20 @@
                             <div>
                                 <label class="fl" for="church">Church / Congregation Name</label>
                                 <input id="church" name="church" type="text" class="fi" placeholder="e.g. Greeley Bible Church">
+                            </div>
+                        </div>
+
+                        <!-- Faith & Motivation Questions -->
+                        <div class="mt-6 space-y-5">
+                            <div>
+                                <label class="fl" for="faith_background">Describe your family's faith background and church involvement <span class="req">*</span></label>
+                                <textarea id="faith_background" name="faith_background" class="fi" required placeholder="Please share your church home, how long you have attended, your family's faith journey, and any ministry or small group involvement. We want to understand the spiritual community your family is part of."></textarea>
+                                <p class="ferr">This field is required.</p>
+                            </div>
+                            <div>
+                                <label class="fl" for="why_christian_ed">Why are you seeking a Christian education for your child(ren)? <span class="req">*</span></label>
+                                <textarea id="why_christian_ed" name="why_christian_ed" class="fi" required placeholder="We would love to hear what is drawing your family to Colorado Heritage — what role your faith plays in your educational philosophy, what you are hoping for your student(s), and why a Christ-centered environment matters to your family."></textarea>
+                                <p class="ferr">This field is required.</p>
                             </div>
                         </div>
                     </div>
@@ -610,7 +618,7 @@
                                         <option value="homeschool">Yes — from our own homeschool records</option>
                                         <option value="both">Yes — from both an institution and homeschool records</option>
                                     </select>
-                                    <p class="text-xs text-gray-400 mt-1.5">Transfer fee: $35/semester from an academic institution; $40/semester from homeschool records.</p>
+                                    <p class="text-xs text-gray-400 mt-1.5">Transfer fees apply. See the <a href="tuition.html" class="text-chess-blue underline">Tuition &amp; Fees page</a> for current rates.</p>
                                 </div>
                             </div>
                         </div>
@@ -618,15 +626,15 @@
                         <!-- K-12 Academy Details -->
                         <div id="detail-academy" class="mb-8 hidden">
                             <p class="sh"><i data-lucide="building" class="w-5 h-5 text-academy-gold"></i> K-12 Academy — Class Interests</p>
-                            <p class="text-xs text-gray-500 mb-4">Check all class types you are interested in. Final class registration will be completed through our office. <strong>A $75 technology fee applies per student enrolled in Academy classes.</strong></p>
+                            <p class="text-xs text-gray-500 mb-4">Check all class types you are interested in. Final class registration will be completed through our office. See the <a href="tuition.html" class="text-chess-blue underline font-bold">Tuition &amp; Fees page</a> for current rates.</p>
                             <div class="space-y-2 mb-5">
-                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="elem_1day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Elementary Course — 1 day/week</p><p class="text-xs text-gray-500">Grades K–5</p></div><span class="fee-badge">$270.00</span></label>
-                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="jh_1day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Junior High Course — 1 day/week</p><p class="text-xs text-gray-500">Grades 6–8</p></div><span class="fee-badge">$270.00</span></label>
-                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="jh_2day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Junior High Course — 2 days/week</p><p class="text-xs text-gray-500">Grades 6–8</p></div><span class="fee-badge">$430.00</span></label>
-                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="hs_1day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">High School Class — 1 day/week</p><p class="text-xs text-gray-500">Grades 9–12</p></div><span class="fee-badge">$335.00</span></label>
-                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="hs_2day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">High School Class — 2 days/week</p><p class="text-xs text-gray-500">Grades 9–12</p></div><span class="fee-badge">$480.00</span></label>
-                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="study_hall" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Study Hall</p><p class="text-xs text-gray-500">All grade levels</p></div><span class="fee-badge">$50.00</span></label>
-                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="supervised_lunch" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Supervised Lunch</p><p class="text-xs text-gray-500">Grades K–2 only</p></div><span class="fee-badge">$50.00/student</span></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="elem_1day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Elementary Course — 1 day/week</p><p class="text-xs text-gray-500">Grades K–5</p></div></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="jh_1day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Junior High Course — 1 day/week</p><p class="text-xs text-gray-500">Grades 6–8</p></div></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="jh_2day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Junior High Course — 2 days/week</p><p class="text-xs text-gray-500">Grades 6–8</p></div></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="hs_1day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">High School Class — 1 day/week</p><p class="text-xs text-gray-500">Grades 9–12</p></div></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="hs_2day" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">High School Class — 2 days/week</p><p class="text-xs text-gray-500">Grades 9–12</p></div></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="study_hall" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Study Hall</p><p class="text-xs text-gray-500">All grade levels</p></div></label>
+                                <label class="agree-row"><input type="checkbox" name="acad_classes" value="supervised_lunch" class="accent-heritage-navy"><div class="flex-1"><p class="text-sm font-bold text-heritage-navy">Supervised Lunch</p><p class="text-xs text-gray-500">Grades K–2 only</p></div></label>
                             </div>
                             <div>
                                 <label class="fl" for="acad_notes">Specific course interests or notes for our registrar</label>
@@ -649,7 +657,7 @@
                                 </div>
                                 <div id="dp_transcript_block" class="hidden bg-amber-50 border border-amber-200 rounded-xl p-4">
                                     <p class="text-sm font-bold text-amber-800 mb-2 flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Transcript Required</p>
-                                    <p class="text-xs text-amber-700 mb-3">Please email your transcript(s) to <a href="mailto:office@coloradoheritage.org" class="underline font-bold">office@coloradoheritage.org</a> before scheduling your Diploma Program meeting. Transfer fees: <strong>$35/semester</strong> from an academic institution; <strong>$40/semester</strong> from homeschool records.</p>
+                                    <p class="text-xs text-amber-700 mb-3">Please email your transcript(s) to <a href="mailto:office@coloradoheritage.org" class="underline font-bold">office@coloradoheritage.org</a> before scheduling your Diploma Program meeting. Transfer fees are listed on the <a href="tuition.html" class="underline font-bold">Tuition &amp; Fees page</a>.</p>
                                     <div>
                                         <label class="fl" for="dp_prev_school">Name of Previous High School</label>
                                         <input id="dp_prev_school" name="dp_prev_school" type="text" class="fi" placeholder="e.g. Greeley Central High School">
@@ -688,12 +696,12 @@
                                 <div class="mt-2">
                                     <p class="text-xs font-bold text-heritage-navy uppercase tracking-wider mb-3">Testing Services Interest <span class="normal-case font-normal text-gray-400 ml-1">(optional — check any you may need)</span></p>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                        <label class="agree-row"><input type="checkbox" name="testing" value="private_core" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Private Test — CORE</p></div><span class="fee-badge">$85/test</span></label>
-                                        <label class="agree-row"><input type="checkbox" name="testing" value="private_complete" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Private Test — COMPLETE</p></div><span class="fee-badge">$100/test</span></label>
-                                        <label class="agree-row"><input type="checkbox" name="testing" value="group_core" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Group Core</p></div><span class="fee-badge">$55</span></label>
-                                        <label class="agree-row"><input type="checkbox" name="testing" value="group_core_complete" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Group Core &amp; Complete</p></div><span class="fee-badge">$65</span></label>
-                                        <label class="agree-row"><input type="checkbox" name="testing" value="clt" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">CLT (Classic Learning Test)</p></div><span class="fee-badge">$75</span></label>
-                                        <label class="agree-row"><input type="checkbox" name="testing" value="home_core" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Home Testing — Core</p></div><span class="fee-badge">$55</span></label>
+                                        <label class="agree-row"><input type="checkbox" name="testing" value="private_core" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Private Test — CORE</p></div></label>
+                                        <label class="agree-row"><input type="checkbox" name="testing" value="private_complete" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Private Test — COMPLETE</p></div></label>
+                                        <label class="agree-row"><input type="checkbox" name="testing" value="group_core" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Group Core</p></div></label>
+                                        <label class="agree-row"><input type="checkbox" name="testing" value="group_core_complete" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Group Core &amp; Complete</p></div></label>
+                                        <label class="agree-row"><input type="checkbox" name="testing" value="clt" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">CLT (Classic Learning Test)</p></div></label>
+                                        <label class="agree-row"><input type="checkbox" name="testing" value="home_core" class="accent-heritage-navy"><div class="flex-1"><p class="text-xs font-bold text-heritage-navy">Home Testing — Core</p></div></label>
                                     </div>
                                 </div>
                             </div>
@@ -720,30 +728,49 @@
 
                         <!-- Policy summary box -->
                         <div class="bg-parchment border border-gray-200 rounded-xl p-5 mb-6">
-                            <p class="font-serif font-bold text-heritage-navy mb-2">Colorado Heritage Acceptance Policy</p>
-                            <p class="text-sm text-mountain-slate leading-relaxed mb-3">Colorado Heritage admits students from families who are committed to Christ-centered, parent-led education and whose values align with our foundational beliefs. We welcome students of any race, color, national, and ethnic origin. Our full Acceptance Policy outlines the biblical and educational standards that guide our community.</p>
+                            <p class="font-serif font-bold text-heritage-navy mb-2">Please Read Before Signing</p>
+                            <p class="text-sm text-mountain-slate leading-relaxed mb-3">Colorado Heritage is a <strong>Protestant Christian school</strong> operating under orthodox Christian theology. Enrollment is reserved for families who are in genuine agreement — not merely tolerant — of our foundational convictions. The statements below are not formalities; they reflect who we are and what our community is built on. Please read each one carefully before checking.</p>
                             <a href="acceptance.html" class="text-xs font-bold text-chess-blue hover:underline flex items-center gap-1"><i data-lucide="external-link" class="w-3.5 h-3.5"></i> Read the Full Acceptance Policy</a>
                         </div>
 
                         <div class="space-y-3 mb-6" id="agreement-list">
                             <label class="agree-row" id="agree-1-row">
                                 <input type="checkbox" name="agree" value="policy" class="accent-heritage-navy">
-                                <span class="text-sm text-mountain-slate">I have read the CHESS <strong>Acceptance Policy</strong> and confirm that our family's values align with the Colorado Heritage mission and community standards.</span>
+                                <div class="text-sm text-mountain-slate">
+                                    <p class="font-bold text-heritage-navy mb-1">Acceptance Policy</p>
+                                    <p>I have read the Colorado Heritage <strong>Acceptance Policy</strong> in full and affirm that our family is in agreement with its requirements — including our commitment to Christ-centered, parent-directed education and alignment with the values and standards of the CHESS community.</p>
+                                </div>
                             </label>
                             <label class="agree-row" id="agree-2-row">
-                                <input type="checkbox" name="agree" value="christian" class="accent-heritage-navy">
-                                <span class="text-sm text-mountain-slate">I understand that Colorado Heritage is a <strong>Christ-centered organization</strong> and that all programs, classes, and activities are conducted within a biblical framework.</span>
+                                <input type="checkbox" name="agree" value="protestant" class="accent-heritage-navy">
+                                <div class="text-sm text-mountain-slate">
+                                    <p class="font-bold text-heritage-navy mb-1">Protestant Faith &amp; Orthodox Theology</p>
+                                    <p>I understand that Colorado Heritage is a <strong>Protestant Christian school</strong> whose instruction, curriculum, community life, and policies are all grounded in the authority of Scripture and historic orthodox Christian theology. We affirm the essential doctrines of the Protestant Reformation. Families are expected to be in genuine agreement with this foundation — we are not a theologically neutral institution.</p>
+                                </div>
                             </label>
                             <label class="agree-row" id="agree-3-row">
-                                <input type="checkbox" name="agree" value="fees" class="accent-heritage-navy">
-                                <span class="text-sm text-mountain-slate">I acknowledge the applicable <strong>enrollment fee(s)</strong>: Independent School — $125.00 / year; Diploma Program — $50.00 application fee; Academy Technology Fee — $75.00 per student. <em>All fees are non-refundable.</em></span>
+                                <input type="checkbox" name="agree" value="sexuality" class="accent-heritage-navy">
+                                <div class="text-sm text-mountain-slate">
+                                    <p class="font-bold text-heritage-navy mb-1">Biblical View of Gender, Sexuality &amp; Family</p>
+                                    <p>I affirm that Colorado Heritage holds the <strong>biblical conviction that God created humanity as male and female</strong> (Genesis 1:27), that marriage is exclusively the covenant union of one man and one woman (Genesis 2:24), and that human sexuality is a gift to be expressed only within that covenant. All students are expected to conduct themselves consistently with their God-given biological sex. We do not enroll students who publicly identify contrary to their biological sex, nor students whose families are in active opposition to these convictions. This policy reflects our sincere religious belief and is applied to protect the integrity of our community.</p>
+                                </div>
                             </label>
                             <label class="agree-row" id="agree-4-row">
+                                <input type="checkbox" name="agree" value="fees" class="accent-heritage-navy">
+                                <div class="text-sm text-mountain-slate">
+                                    <p class="font-bold text-heritage-navy mb-1">Enrollment Fees</p>
+                                    <p>I have reviewed the <a href="tuition.html" class="text-chess-blue underline font-bold">Tuition &amp; Fees page</a> and acknowledge the applicable enrollment fee(s) for the program(s) I am applying for. I understand that <strong>all enrollment fees are non-refundable</strong> and that class placement is not guaranteed until confirmed in writing by the CHESS office.</p>
+                                </div>
+                            </label>
+                            <label class="agree-row" id="agree-5-row">
                                 <input type="checkbox" name="agree" value="not_final" class="accent-heritage-navy">
-                                <span class="text-sm text-mountain-slate">I understand that this application <strong>does not guarantee enrollment.</strong> The CHESS office will contact me within 3–5 business days to confirm next steps, which may include a principal interview.</span>
+                                <div class="text-sm text-mountain-slate">
+                                    <p class="font-bold text-heritage-navy mb-1">Application Not a Guarantee of Enrollment</p>
+                                    <p>I understand that submitting this application <strong>does not guarantee acceptance or enrollment.</strong> The CHESS office will contact me within 3–5 business days. Enrollment may require a principal interview and is subject to the CHESS office's discretion based on program capacity and alignment with our community standards as described above.</p>
+                                </div>
                             </label>
                         </div>
-                        <p id="err-agree" class="ferr mb-4">Please check all four boxes to continue.</p>
+                        <p id="err-agree" class="ferr mb-4">Please check all five boxes before continuing.</p>
 
                         <!-- E-Signature -->
                         <div class="bg-white border border-gray-200 rounded-xl p-5">
@@ -1048,6 +1075,8 @@
                 ['Address', `${get('addr_street')}, ${get('addr_city')}, ${get('addr_state')} ${get('addr_zip')}`],
                 ['How did you hear', get('referral')],
                 ['Church', get('church')],
+                ['Faith Background', get('faith_background') ? get('faith_background').substring(0,120) + (get('faith_background').length > 120 ? '…' : '') : ''],
+                ['Why Christian Ed', get('why_christian_ed') ? get('why_christian_ed').substring(0,120) + (get('why_christian_ed').length > 120 ? '…' : '') : ''],
             ], 2);
             html += rev('Students', studentRows, 3);
             const progDetails = [
@@ -1063,9 +1092,10 @@
             html += rev('Program Details', progDetails.length ? progDetails : [['Notes', get('general_notes') || 'None']], 4);
             html += rev('Agreements', [
                 ['Acceptance Policy', '✓ Agreed'],
-                ['Christ-Centered', '✓ Agreed'],
+                ['Protestant Faith & Orthodox Theology', '✓ Agreed'],
+                ['Biblical View of Gender & Sexuality', '✓ Affirmed'],
                 ['Enrollment Fees', '✓ Acknowledged'],
-                ['Not Final', '✓ Acknowledged'],
+                ['Application Not a Guarantee', '✓ Acknowledged'],
                 ['Signed By', get('sig_name')],
                 ['Signature Date', get('sig_date')],
             ], 5);
