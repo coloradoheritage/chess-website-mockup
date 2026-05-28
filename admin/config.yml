@@ -69,18 +69,20 @@ collections:
 
   - label: "Staff Directory"
     name: "staff"
-    file: "data/staff.json"
-    label_singular: "Staff Member"
-    fields:
+    files:
       - label: "Staff Members"
-        name: "members"
-        widget: "list"
+        name: "staff_members"
+        file: "data/staff.json"
         fields:
-          - {label: "Name", name: "name", widget: "string"}
-          - {label: "Title / Role", name: "role", widget: "string"}
-          - label: "Photo"
-            name: "photo"
-            widget: "image"
-            required: false
-            hint: "Upload a headshot photo."
-          - {label: "Bio", name: "bio", widget: "text", required: false}
+          - label: "Staff Members"
+            name: "members"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Title / Role", name: "role", widget: "string"}
+              - label: "Photo"
+                name: "photo"
+                widget: "image"
+                required: false
+                hint: "Upload a headshot photo."
+              - {label: "Bio", name: "bio", widget: "text", required: false}
