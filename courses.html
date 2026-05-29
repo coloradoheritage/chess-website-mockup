@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026/2027 Course Descriptions — Colorado Heritage Education School System</title>
+    <meta name="description" content="Full course descriptions for all CHESS K-12 Academy classes for the 2026/2027 school year. Browse by grade level: K–2, Grades 3–5, Grades 6–8, and Grades 9–12.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { 'heritage-navy': '#1A365D', 'academy-gold': '#D4AF37', 'chess-blue': '#0D008C', 'mountain-slate': '#2D3748', 'parchment': '#F7FAFC' }, fontFamily: { 'serif': ['Merriweather', 'serif'], 'sans': ['Lato', 'sans-serif'], 'garamond': ['EB Garamond', 'serif'] } } }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .course-body { display: none; }
+        .course-card.open .course-body { display: block; }
+        .course-card.open .chevron { transform: rotate(180deg); }
+        .chevron { transition: transform 0.2s; }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white font-sans text-mountain-slate antialiased">
+
+<!-- TOP ANNOUNCEMENT BAR -->
+<div id="announcement-bar" class="bg-chess-blue text-white text-sm font-semibold py-2 px-4 relative z-50 flex justify-center items-center gap-4 text-center">
+    <span class="flex items-center gap-2"><i data-lucide="bell" class="w-4 h-4 text-academy-gold animate-bounce"></i><span id="announcement-text">2026/2027 Academy Class Registration is scheduled to open Monday, June 1.</span></span>
+    <a id="announcement-link" href="programs.html#academy" class="underline text-academy-gold hover:text-white transition-colors">View Classes</a>
+</div>
+
+<!-- MAIN NAVIGATION -->
+<header class="bg-white shadow-sm sticky top-0 z-40 border-b-4 border-academy-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-24">
+            <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                <img src="chess-logo.png" alt="CHESS Logo" class="h-14 w-14 object-contain transition-transform group-hover:scale-105">
+                <div class="flex flex-col"><h1 class="font-serif text-2xl md:text-3xl font-bold text-heritage-navy leading-none tracking-tight">Colorado Heritage</h1><span class="font-sans text-xs font-bold tracking-widest text-academy-gold uppercase mt-1">Education School System</span></div>
+            </a>
+            <nav class="hidden lg:flex space-x-8 items-center">
+                <div class="relative group">
+                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">About Us <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                    <div class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="about.html#purpose" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Our Purpose</a>
+                        <a href="about.html#foundation" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our Foundation</a>
+                        <a href="about.html#history" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our History</a>
+                        <hr class="my-1 border-gray-100">
+                        <a href="people.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Faculty &amp; Staff</a>
+                        <a href="acceptance.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Acceptance Policy</a>
+                    </div>
+                </div>
+                <a href="programs.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Programs</a>
+                <div class="relative group">
+                    <button class="text-academy-gold font-bold flex items-center gap-1 py-4 border-b-2 border-academy-gold">Admissions <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                    <div class="absolute left-0 mt-0 w-56 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="apply.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Apply</a>
+                        <a href="schedule.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Class Schedule</a>
+                        <a href="courses.html" class="block px-4 py-2.5 text-sm bg-parchment text-heritage-navy font-bold">Course Descriptions</a>
+                        <a href="tuition.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Tuition &amp; Fees</a>
+                        <a href="policies.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Academy Policies</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">Resources <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                    <div class="absolute left-0 mt-0 w-64 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="resources.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Homeschool Resources</a>
+                        <a href="homeschool-law.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Colorado Homeschool Law</a>
+                        <a href="why-independent-school.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Why Independent School?</a>
+                        <hr class="my-1 border-gray-100">
+                        <a href="gallery.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Photo Gallery</a>
+                        <a href="testimonials.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Testimonials</a>
+                    </div>
+                </div>
+                <a href="blog.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Blog</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="contact.html" class="text-heritage-navy hover:text-chess-blue font-bold flex items-center gap-2"><i data-lucide="user-circle" class="w-5 h-5"></i> Portals</a>
+                <a href="donate.html" class="bg-heritage-navy hover:bg-chess-blue text-white px-6 py-2.5 rounded-md font-bold transition-all shadow-md hover:shadow-lg">Donate</a>
+            </div>
+            <div class="md:hidden flex items-center"><button id="mobile-menu-btn" class="text-heritage-navy hover:text-chess-blue"><i data-lucide="menu" class="w-8 h-8"></i></button></div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3 shadow-inner">
+        <a href="about.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">About Us</a>
+        <a href="programs.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">Programs</a>
+        <div class="border-b border-gray-50"><p class="font-bold text-heritage-navy py-2">Admissions</p><div class="pl-3 pb-2 space-y-1"><a href="apply.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Apply</a><a href="schedule.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Class Schedule</a><a href="courses.html" class="block font-bold text-academy-gold py-1 text-sm">Course Descriptions</a><a href="tuition.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Tuition &amp; Fees</a><a href="policies.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Academy Policies</a></div></div>
+        <div class="border-b border-gray-50"><p class="font-bold text-heritage-navy py-2">Resources</p><div class="pl-3 pb-2 space-y-1"><a href="resources.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Homeschool Resources</a><a href="homeschool-law.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Colorado Homeschool Law</a><a href="why-independent-school.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Why Independent School?</a><a href="gallery.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Photo Gallery</a><a href="testimonials.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Testimonials</a></div></div>
+        <a href="blog.html" class="block font-bold text-heritage-navy py-2">Blog</a>
+        <div class="pt-4 flex flex-col gap-3"><a href="contact.html" class="text-center font-bold text-heritage-navy py-2 border border-heritage-navy rounded">Portals</a><a href="donate.html" class="text-center bg-heritage-navy text-white font-bold py-2.5 rounded">Donate</a></div>
+    </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-heritage-navy relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-academy-gold"></div>
+    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 28px 28px;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">K-12 Academy</p>
+        <h1 class="text-white font-serif font-bold text-4xl md:text-5xl mb-4">2026/2027 Course Descriptions</h1>
+        <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">Full descriptions for all Academy classes offered this year. Select your student's grade level to browse available courses.</p>
+        <div class="flex flex-wrap gap-3 mt-6">
+            <span class="bg-white bg-opacity-10 text-blue-200 text-xs font-bold px-3 py-1.5 rounded-full">Two 14-week semesters</span>
+            <span class="bg-white bg-opacity-10 text-blue-200 text-xs font-bold px-3 py-1.5 rounded-full">Classes meet Tuesdays &amp; Thursdays</span>
+            <span class="bg-white bg-opacity-10 text-blue-200 text-xs font-bold px-3 py-1.5 rounded-full">Greeley, Colorado</span>
+        </div>
+    </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="bg-parchment border-b border-gray-200 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex items-center gap-2 text-xs text-gray-500">
+            <a href="index.html" class="hover:text-heritage-navy transition-colors">Home</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <a href="programs.html" class="hover:text-heritage-navy transition-colors">Admissions</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <span class="text-heritage-navy font-bold">Course Descriptions</span>
+        </nav>
+    </div>
+</div>
+
+<!-- GRADE TABS + COURSES -->
+<section class="py-12 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Tab buttons -->
+        <div class="flex flex-wrap gap-2 mb-10 border-b border-gray-200 pb-0">
+            <button onclick="switchTab('k2')" id="tab-btn-k2" class="tab-btn active-tab px-5 py-3 font-bold text-sm rounded-t-lg border border-b-0 border-gray-200 transition-colors">Grades K–2</button>
+            <button onclick="switchTab('g35')" id="tab-btn-g35" class="tab-btn px-5 py-3 font-bold text-sm rounded-t-lg border border-b-0 border-gray-200 transition-colors text-mountain-slate bg-parchment hover:bg-white">Grades 3–5</button>
+            <button onclick="switchTab('g68')" id="tab-btn-g68" class="tab-btn px-5 py-3 font-bold text-sm rounded-t-lg border border-b-0 border-gray-200 transition-colors text-mountain-slate bg-parchment hover:bg-white">Grades 6–8</button>
+            <button onclick="switchTab('g912')" id="tab-btn-g912" class="tab-btn px-5 py-3 font-bold text-sm rounded-t-lg border border-b-0 border-gray-200 transition-colors text-mountain-slate bg-parchment hover:bg-white">Grades 9–12</button>
+        </div>
+
+        <!-- Course grid -->
+        <div id="course-list" class="space-y-3"></div>
+
+        <!-- Register CTA -->
+        <div class="mt-12 bg-heritage-navy rounded-2xl p-8 text-center">
+            <h3 class="text-white font-serif font-bold text-2xl mb-3">Ready to Register?</h3>
+            <p class="text-blue-200 text-sm mb-6 max-w-lg mx-auto">Class registration is completed through our office. Review the full schedule, then begin your application or contact us with questions.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="schedule.html" class="inline-flex items-center justify-center gap-2 bg-academy-gold hover:bg-yellow-300 text-heritage-navy font-bold px-7 py-3 rounded transition-colors text-sm">
+                    <i data-lucide="calendar" class="w-4 h-4"></i> View Full Schedule
+                </a>
+                <a href="apply.html" class="inline-flex items-center justify-center gap-2 border-2 border-white hover:border-academy-gold text-white hover:text-academy-gold font-bold px-7 py-3 rounded transition-colors text-sm">
+                    <i data-lucide="file-text" class="w-4 h-4"></i> Begin Application
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-mountain-slate pt-16 pb-8 border-t-8 border-heritage-navy">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6"><img src="chess-logo.png" alt="CHESS Logo" class="h-10 w-10 object-contain"><h2 class="font-serif text-xl font-bold text-white tracking-tight">Colorado Heritage</h2></div>
+                <p class="text-gray-300 mb-6 font-garamond italic text-lg">"Pursuing the Knowledge of God."</p>
+                <div class="space-y-3 text-gray-400 text-sm">
+                    <p class="flex items-start gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-academy-gold shrink-0"></i><span>1300 9th Street<br>Greeley, Colorado 80631</span></p>
+                    <p class="flex items-center gap-3"><i data-lucide="phone" class="w-5 h-5 text-academy-gold shrink-0"></i>(970) 346-0099</p>
+                    <p class="flex items-center gap-3"><i data-lucide="mail" class="w-5 h-5 text-academy-gold shrink-0"></i><a href="mailto:office@coloradoheritage.org" class="hover:text-white transition-colors">office@coloradoheritage.org</a></p>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Quick Links</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="about.html#foundation" class="hover:text-academy-gold transition-colors block">Our Beliefs</a></li>
+                    <li><a href="acceptance.html" class="hover:text-academy-gold transition-colors block">Acceptance Policy</a></li>
+                    <li><a href="tuition.html" class="hover:text-academy-gold transition-colors block">Fee Schedule</a></li>
+                    <li><a href="courses.html" class="hover:text-academy-gold transition-colors block">Course Descriptions</a></li>
+                    <li><a href="schedule.html" class="hover:text-academy-gold transition-colors block">Class Schedule</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Access Portals</h4>
+                <div class="space-y-3">
+                    <a href="https://app.praxischool.com/parent_login.php?s=1300" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="users" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>PARENT Portal</a>
+                    <a href="https://app.praxischool.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="briefcase" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>FACULTY/STAFF Portal</a>
+                    <a href="https://app.praxischool.com/site_login.php?s=1300" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="user-plus" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>NEW APPLICANT Portal</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Support CHESS</h4>
+                <p class="text-gray-400 text-sm mb-4">Please consider donating to Colorado Heritage. Thank you for your continued support!</p>
+                <a href="donate.html" class="bg-academy-gold hover:bg-yellow-500 text-heritage-navy font-bold px-6 py-2 rounded-md inline-flex items-center gap-2 transition-colors w-full justify-center mb-6"><i data-lucide="heart" class="w-4 h-4"></i> Donate Now</a>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 text-xs text-gray-500 leading-relaxed text-justify md:text-center">
+            <p class="mb-4">Colorado Heritage Education School System admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at Colorado Heritage. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs.</p>
+            <p>Colorado Heritage Education School System is a 501 (c) (3) charitable organization. &copy; 1991 - 2026. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+lucide.createIcons();
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+fetch('data/announcement.json').then(r=>r.json()).then(data=>{
+    const bar=document.getElementById('announcement-bar');if(!bar)return;if(!data.active){bar.style.display='none';return;}
+    const te=document.getElementById('announcement-text');const le=document.getElementById('announcement-link');
+    if(te&&data.text)te.textContent=data.text;if(le){if(data.link_text)le.textContent=data.link_text;if(data.link_url)le.href=data.link_url;}
+}).catch(()=>{});
+
+// ── Course Data ───────────────────────────────────────────────────────────────
+const courses = [
+
+  // ═══════════════════════════════ K–2 ═══════════════════════════════
+  { tab:'k2', name:'Famous Americans', grades:'K–2', days:'Tuesday', time:'8:15 AM', freq:'1 day/week',
+    desc:'Students will be introduced to the lives and deeds of many extraordinary people from American history — learning how God used them to leave a legacy for us today. Individuals include Benjamin Franklin, Daniel Boone, and Laura Ingalls Wilder, among others. Class will often include hands-on activities. Abeka\'s <em>Our American Heritage</em> is the main source for the class.',
+    prereq:'None', text:'None required', hw:'None', fee:'None', passfail:false },
+
+  { tab:'k2', name:'Come Ye Children — The Parables of Jesus', grades:'K–2', days:'Tuesday', time:'8:15 AM', freq:'1 day/week',
+    desc:'Students will learn the Parables Jesus taught — one parable per week, followed by a game, craft, song, memory work, or similar activity to help them engage with the lesson. The goal is that your child will know the Bible and begin to have familiarity with basic Christian truths.',
+    prereq:'None', text:'None', hw:'None', fee:'$10', passfail:false },
+
+  { tab:'k2', name:'Elementary Choir', grades:'K–8', days:'Tuesday', time:'9:15 AM', freq:'1 day/week',
+    desc:'Students will learn themed or seasonal music from a variety of genres for performance each semester. The class focuses on vocal technique — especially learning how to control pitch and dynamics. Students are required to attend the end-of-semester performance, generally scheduled for the final week of each semester.',
+    prereq:'None', text:'None — music provided by teacher', hw:'None', fee:'None', passfail:false },
+
+  { tab:'k2', name:'Math Lab', grades:'K–2', days:'Tuesday', time:'10:15 AM', freq:'1 day/week',
+    desc:'This class helps students gain a positive perspective on math and improve their math concepts and skills. Students will use a variety of hands-on manipulatives, games, activities, and subject-related read-aloud books to explore numbers, patterns, shapes, measurement, place value, time, money, fractions, addition and subtraction, and real-life word problems.',
+    prereq:'None', text:'None', hw:'None', fee:'None', passfail:false },
+
+  { tab:'k2', name:'K–2 Art: ABC, Let\'s Draw!', grades:'K–2', days:'Tuesday', time:'11:15 AM', freq:'1 day/week',
+    desc:'An early-learning course designed for the development of using art materials, replication, imagination, and classroom participation — using a letter each week to remember what was learned. Students will try different art styles and learn the basics of colors and shapes, all while referring back to the way God created some really beautiful, fun, and crazy things.',
+    prereq:'None', text:'None', hw:'None', fee:'$10', passfail:true },
+
+  { tab:'k2', name:'Elementary Physical Education', grades:'K–2', days:'Tuesday', time:'1:15 PM', freq:'1 day/week',
+    desc:'This course is designed to encourage teamwork, hand-eye coordination, and exercise. The goal is to incorporate loving one another, humility, and the strengthening of our bodies, minds, and spirits through the teachings of Scripture — all while having fun.',
+    prereq:'None', text:'None', hw:'Scripture memorization', fee:'$5', passfail:true },
+
+  { tab:'k2', name:'Basic Sign Language', grades:'K–8', days:'Tuesday', time:'2:15 PM', freq:'1 day/week',
+    desc:'Students will learn many signs throughout the year. By the end of the school year, students should be able to have a brief conversation using sign language. Class will also discuss deaf culture and why understanding it is an important part of learning sign language. There will be quizzes and homework.',
+    prereq:'None', text:'None', hw:'~3½ hours/week (30 min/day)', fee:'None', passfail:false },
+
+  // ═══════════════════════════════ 3–5 ═══════════════════════════════
+  { tab:'g35', name:'Art', grades:'Grades 3–5', days:'Tuesday', time:'8:15 AM', freq:'1 day/week',
+    desc:'Students will focus on the basics used for many different art forms — painting, pencil, and pen. Topics include composition and color: how to set up and lay out a picture, how to achieve the correct color, and how colors work together. Each component points to what God has designed and created, with the goal of helping students become more confident in their artistic ability.',
+    prereq:'None', text:'None', hw:'Occasional light homework', fee:'$10', passfail:false },
+
+  { tab:'g35', name:'Drama', grades:'Grades 4–12', days:'Tuesday', time:'8:15 AM', freq:'1 day/week',
+    desc:'Students will learn how to put on a theatrical performance. Each week covers acting skills and terms — projecting voices, moving on stage, becoming your character, and more — using theatrical games and exercises leading up to a spring performance. Students will also learn that all media, including stage performances, should be for the glory of God.',
+    prereq:'Good reading skills', text:'None', hw:'2–3 hours/week; weekly line memorization once assigned', fee:'$10', passfail:false },
+
+  { tab:'g35', name:'Zoology I', grades:'Grades 3–5', days:'Tuesday', time:'8:15 AM', freq:'1 day/week',
+    desc:'Using Apologia\'s <em>Flying Creatures of the Fifth Day</em>, students will be in awe of God\'s amazing creation as they learn about His designs and purposes revealed in flying creatures. Students will read weekly (independently or with a parent), give oral reports, and complete grade-appropriate quizzes and tests. A favorite project each semester is creating and displaying dioramas at the Student Showcase Night!',
+    prereq:'Early to mid-level reading ability', text:'<em>Flying Creatures of the Fifth Day</em>, Apologia — ISBN 978-1-935495-116. Limited copies available from CHESS for donation; contact office.', hw:'1 hour or less/week', fee:'None', passfail:false },
+
+  { tab:'g35', name:'Elementary Choir', grades:'K–8', days:'Tuesday', time:'9:15 AM', freq:'1 day/week',
+    desc:'Students will learn themed or seasonal music from a variety of genres for performance each semester. The class focuses on vocal technique — especially learning how to control pitch and dynamics. Students are required to attend the end-of-semester performance, generally scheduled for the final week of each semester.',
+    prereq:'None', text:'None — music provided by teacher', hw:'None', fee:'None', passfail:false },
+
+  { tab:'g35', name:'Creative Writing', grades:'Grades 3–5', days:'Tuesday', time:'10:15 AM', freq:'1 day/week',
+    desc:'Using the <em>Excellence in Writing</em> program, this class gives students an opportunity to spread their imaginative wings while learning techniques to improve their writing skills. Truly fun for both the willing and reluctant writer! Most work is done in class.',
+    prereq:'Student should be able to write words and simple sentences independently', text:'None', hw:'Occasional (e.g., writing a story or poem)', fee:'$5', passfail:false },
+
+  { tab:'g35', name:'Basic Bible', grades:'Grades 3–5', days:'Tuesday', time:'10:15 AM', freq:'1 day/week',
+    desc:'Students will mainly study the Kings and Prophets of the Old Testament, tracing the theme of redemption and God\'s steadfast love and faithfulness to His people. The goal is to engage in basic Biblical terms and concepts so children may grow in their faith and understanding of the Lord. Students may expect to read several chapters from the Bible each week and be assigned memory verses and other activities.',
+    prereq:'None', text:'ESV (English Standard Version) Bible — one that can be marked in', hw:'1–3 hours/week', fee:'$5', passfail:false },
+
+  { tab:'g35', name:'Crocheting', grades:'Grades 3+', days:'Tuesday', time:'10:15 AM', freq:'1 day/week',
+    desc:'Students will learn to crochet using a variety of stitches and types of yarn. The class will make many small projects and learn to read patterns according to each student\'s abilities. Appropriate for all skill levels for students in 3rd grade and up.',
+    prereq:'None (all skill levels welcome)', text:'None', hw:'None', fee:'None', passfail:false },
+
+  { tab:'g35', name:'Kids in the Kitchen', grades:'Grades 3–5', days:'Tuesday', time:'11:15 AM', freq:'1 day/week',
+    desc:'Students will learn basic cooking and measuring skills as they master kid-friendly recipes. Your student will develop important motor skills and kitchen confidence while making fun and delicious recipes!',
+    prereq:'None', text:'None', hw:'None', fee:'$10', passfail:false },
+
+  { tab:'g35', name:'Elementary Literature', grades:'Grades 3–5', days:'Tuesday', time:'11:15 AM', freq:'1 day/week',
+    desc:'Students will study C.S. Lewis\' <em>The Chronicles of Narnia</em>. The goal is to teach children how to learn from the books they read and to develop a basic understanding of literary techniques — covering simple literary styles, basic writing structure, and a brief history of the time period. Students can expect about one hour of reading per week with small essays or other assignments.',
+    prereq:'None', text:'<em>The Lion, the Witch, and the Wardrobe</em>; <em>Prince Caspian</em>; <em>The Voyage of the Dawn Treader</em> — all by C.S. Lewis', hw:'1–3 hours/week', fee:'$5', passfail:false },
+
+  { tab:'g35', name:'Beginner Ensemble', grades:'Any age', days:'Tuesday', time:'1:15 PM', freq:'1 day/week',
+    desc:'Students will concentrate on reading music, playing on pitch, and playing with correct timing. The ensemble performs in conjunction with the Elementary Choir performance each semester — often playing arrangements of classical themes, hymns, Gospel songs, and folk music. Students are required to attend the end-of-semester performance.',
+    prereq:'Must be able to play an orchestral instrument, read music, and play at approximately beginner level (approx. Suzuki Level 1)', text:'None — music provided by teacher', hw:'Individual to student', fee:'None', passfail:false },
+
+  { tab:'g35', name:'Sewing', grades:'Grades 3+', days:'Tuesday', time:'1:15 PM', freq:'1 day/week',
+    desc:'A wide range of sewing skills and projects. First semester covers hand-sewing techniques including a variety of stitches. Second semester students use sewing machines to sew small projects and use simple patterns according to each student\'s abilities. Appropriate for all skill levels for students in 3rd grade and up.',
+    prereq:'All skill levels welcome; grades 3+', text:'None', hw:'None', fee:'None', passfail:false },
+
+  { tab:'g35', name:'Basic Sign Language', grades:'K–8', days:'Tuesday', time:'2:15 PM', freq:'1 day/week',
+    desc:'Students will learn many signs throughout the year. By the end of the school year, students should be able to have a brief conversation using sign language. Class will also discuss deaf culture and why understanding it is an important part of learning sign language. There will be quizzes and homework.',
+    prereq:'None', text:'None', hw:'~3½ hours/week (30 min/day)', fee:'None', passfail:false },
+
+  { tab:'g35', name:'Elementary Physical Education', grades:'Grades 3–5', days:'Tuesday', time:'2:15 PM', freq:'1 day/week',
+    desc:'Designed to encourage teamwork, hand-eye coordination, and exercise. The goal is to incorporate loving one another, humility, and the strengthening of our bodies, minds, and spirits through the teachings of Scripture — all while having fun.',
+    prereq:'None', text:'None', hw:'Scripture memorization', fee:'$5', passfail:true },
+
+  // ═══════════════════════════════ 6–8 ═══════════════════════════════
+  { tab:'g68', name:'Drama', grades:'Grades 4–12', days:'Tuesday', time:'8:15 AM', freq:'1 day/week',
+    desc:'Students will learn how to put on a theatrical performance. Each week covers acting skills and terms — projecting voices, moving on stage, becoming your character, and more — using theatrical games and exercises leading up to a spring performance. Students will also learn that all media, including stage performances, should be for the glory of God.',
+    prereq:'Good reading skills', text:'None', hw:'2–3 hours/week; weekly line memorization once assigned', fee:'$10', passfail:false },
+
+  { tab:'g68', name:'Physical Science', grades:'Grades 6–8', days:'Tuesday & Thursday', time:'8:15 AM', freq:'2 days/week',
+    desc:'Students will be introduced to basic chemistry, physics, and earth science. This course is designed to ease the transition between elementary and high school science courses. There will be reading and homework assignments each week, with labs during regular class periods.',
+    prereq:'None', text:'<em>Apologia Exploring Creation with Physical Science</em>, 2nd edition — ISBN 978-1-932012-774. Limited copies available from CHESS for donation; contact office.', hw:'2–4 hours/week', fee:'None', passfail:false },
+
+  { tab:'g68', name:'Elementary Choir', grades:'K–8', days:'Tuesday', time:'9:15 AM', freq:'1 day/week',
+    desc:'Students will learn themed or seasonal music from a variety of genres for performance each semester, focusing on vocal technique, pitch, and dynamics. A dress rehearsal and one performance are required each semester.',
+    prereq:'None', text:'None — music provided by teacher', hw:'None', fee:'None', passfail:false },
+
+  { tab:'g68', name:'JH/HS Art: Story & Illustration', grades:'Grades 6–12', days:'Tuesday', time:'10:15 AM', freq:'1 day/week',
+    desc:'The focus of this class is learning consistent style and layout for illustration and storytelling through art. Themes, color, and style are all important when pairing pictures with stories. Students will work through the process of storytelling in pictures and art — reflecting how God has made the world delightful to the eyes.',
+    prereq:'None', text:'None', hw:'2–4 hours per homework project', fee:'$10', passfail:false },
+
+  { tab:'g68', name:'Junior High Literature', grades:'Grades 5–8', days:'Tuesday & Thursday', time:'10:15 AM', freq:'2 days/week',
+    desc:'Fall semester: John Bunyan\'s <em>Christiana</em> (Pilgrim\'s Progress, Part 2). Spring semester: <em>The Bark of the Bog Owl</em> by Jonathan Rogers and <em>The Bronze Bow</em> by Elizabeth George Speare. This course prepares students for the rigors of high school literature, building vocabulary and appreciation for older literature with richer content. Frequent quizzes and short essays help students analyze and articulate ideas.',
+    prereq:'Grades 5–8; intermediate reading and writing skills. Teacher will provide all books — do not purchase separately.', text:'Teacher-provided — included in $45 book fee (covers all books for the full year)', hw:'30–35 pages of reading/week; frequent quizzes; short essays', fee:'$45 book fee (covers all texts for the full year)', passfail:false },
+
+  { tab:'g68', name:'Structure & Style', grades:'Grades 6–8', days:'Tuesday', time:'11:15 AM', freq:'1 day/week',
+    desc:'Students will review and learn the mechanics of writing (punctuation, parts of speech, paragraphs), writing structure, and elements of style using the <em>Excellence in Writing</em> program. Compositions will include paragraphs, book reports, movie critiques, and more.',
+    prereq:'Basic writing and reading skills', text:'None', hw:'2–3 hours/week', fee:'$5', passfail:false },
+
+  { tab:'g68', name:'Cooking Class', grades:'Grades 6–8 (open to 9–12)', days:'Thursday', time:'11:15 AM', freq:'1 day/week',
+    desc:'A less intensive cooking class that meets once a week. Students will learn to make chili and beef stew from scratch, fresh sourdough bread, pumpkin and apple pie, and more. Using <em>Salt, Fat, Acid, Heat</em> by Samin Nosrat as the text, students learn the principles behind cooking and develop skills to improvise with ingredients on hand — creating delicious food to bless and serve their families.',
+    prereq:'None', text:'<em>Salt, Fat, Acid, Heat</em> by Samin Nosrat', hw:'Occasional at-home projects and weekly reading/quizzes', fee:'$50 (approx. $1.80/week for the full year)', passfail:false },
+
+  { tab:'g68', name:'Speech', grades:'Grades 6–8', days:'Tuesday', time:'1:15 PM', freq:'1 day/week',
+    desc:'Students will learn to utilize written and spoken tools of the English language to communicate effectively — writing clear sentences, identifying and avoiding logical fallacies, and speaking clearly with purpose in front of others. Students must be willing to give both prepared and impromptu speeches. A loose-leaf notebook with page protectors is required; it will be graded at the end of class.',
+    prereq:'Willingness to stand before the class and speak', text:'<em>Sound Speech</em> by BJU Press — ISBN 978-60682-236-4. Limited copies available from CHESS for donation; contact office.', hw:'1–2 hours/week', fee:'None (loose-leaf notebook with paper and page protectors required)', passfail:false },
+
+  { tab:'g68', name:'Colorado History', grades:'Grades 6–8', days:'Thursday', time:'1:15 PM', freq:'1 day/week',
+    desc:'Students will journey through Colorado\'s history — meeting the Native Americans who first lived in the area, exploring the history of Greeley, and tackling harder interpretive issues such as colonialism and the Meeker Incident. The course emphasizes using the Bible and historical facts as tools for understanding these issues. In the fall semester, students will work on a first-person presentation for the CHESS Fall Open House!',
+    prereq:'None', text:'TBD — contact office', hw:'1–2 hours/week (reading, projects)', fee:'None', passfail:false },
+
+  { tab:'g68', name:'Bible Class', grades:'Grades 6–8', days:'Tuesday', time:'1:15 PM', freq:'1 day/week',
+    desc:'Students will study the book of John, focusing on the person and work of Christ as expressed in the Gospel. The goal is to learn who Jesus is so students may grow in their faith and personal walk with the Lord. Students will do an in-depth study of John alongside personal life applications, with weekly reading, memory verses, and activities.',
+    prereq:'None', text:'ESV (English Standard Version) Bible — one that can be marked in', hw:'1–3 hours/week', fee:'$5', passfail:false },
+
+  { tab:'g68', name:'Advanced Chamber Ensemble', grades:'Grades 6–12', days:'Tuesday', time:'2:15 PM', freq:'1 day/week',
+    desc:'Students will learn a combination of standard chamber music and hymn arrangements to perform in conjunction with the chorale performance each semester. Material is selected seasonally or topically. Students are required to attend the end-of-semester performance.',
+    prereq:'Must be able to play an orchestral instrument, read music, and play at approximately advanced beginner level (approx. Suzuki Level 3)', text:'None — music provided by teacher', hw:'None required; practicing at home may be beneficial', fee:'None', passfail:false },
+
+  { tab:'g68', name:'Elementary Physical Education', grades:'Grades 3–8', days:'Tuesday', time:'2:15 PM', freq:'1 day/week',
+    desc:'Designed to encourage teamwork, hand-eye coordination, and exercise. The goal is to incorporate loving one another, humility, and the strengthening of our bodies, minds, and spirits through the teachings of Scripture — all while having fun.',
+    prereq:'None', text:'None', hw:'Scripture memorization', fee:'$5', passfail:true },
+
+  // ═══════════════════════════════ 9–12 ═══════════════════════════════
+  { tab:'g912', name:'Drama', grades:'Grades 4–12', days:'Tuesday', time:'8:15 AM', freq:'1 day/week',
+    desc:'Students will learn how to put on a theatrical performance. Each week covers acting skills and terms — projecting voices, moving on stage, becoming your character, and more — using theatrical games and exercises leading up to a spring performance. Students will also learn that all media, including stage performances, should be for the glory of God.',
+    prereq:'Good reading skills', text:'None', hw:'2–3 hours/week; weekly line memorization once assigned', fee:'$10', passfail:false },
+
+  { tab:'g912', name:'World War II', grades:'Grades 9–12', days:'Tuesday', time:'8:15 AM', freq:'1 day/week',
+    desc:'A review of the basic narrative of the Second World War from beginning to end, alongside a more detailed analysis of select events and concepts. This is a reading and writing-intensive course with significant in-class discussion.',
+    prereq:'None', text:'<em>The Second World War</em>, Martin Gilbert — ISBN 0-8050-1788-7 (no specific edition required)', hw:'~2 hours/week; more for writing assignments', fee:'None', passfail:false },
+
+  { tab:'g912', name:'Principles of Bible Study', grades:'Grades 9–12 (Diploma Program freshmen)', days:'Thursday', time:'8:15 AM', freq:'1 day/week',
+    desc:'Designed for freshmen Diploma Program students, this class equips students with the principles of Hermeneutics and establishes the importance of doctrines including Inerrancy, Inspiration, and Sufficiency. Students will learn various methods of interpretation, gaining tools to work through hard passages and allow the Bible to change them as they grow in knowledge.',
+    prereq:'High school-level reading and comprehension', text:'<em>Grasping God\'s Word</em>, 4th Edition, by J. Scot Duvall & J. Daniel Hays — ISBN-10: 0310109175', hw:'1–2 hours/week', fee:'None', passfail:false },
+
+  { tab:'g912', name:'Speech & Debate', grades:'Grades 9–12', days:'Thursday', time:'8:15 AM', freq:'1 day/week',
+    desc:'Students will learn to develop strong arguments using clear logic, communicate persuasively, appeal to people\'s emotions appropriately, and strengthen credibility through thoughtful communication, effective humor, and well-chosen quotations. The course covers analyzing opposing viewpoints and presenting arguments in both informal and formal debate. Much of the class is interactive — Socratic discussion, structured debate, and regular student participation. Grades are based on effort, participation in debates, and completion of homework.',
+    prereq:'Must be in grades 9–12. Teacher provides book — do not purchase separately.', text:'<em>Everyday Debate & Discussion</em> by Dr. Shelly Johnson — included in $45 book fee', hw:'20–40 pages of reading/week; papers required', fee:'$45 book fee (covers text for the full year)', passfail:false },
+
+  { tab:'g912', name:'U.S. Civil War', grades:'Grades 9–12', days:'Tuesday', time:'9:15 AM', freq:'1 day/week',
+    desc:'An in-depth study of the Civil War era — examining the many years of events that led to the War Between the States, the actual battles, politics, and life in general during this era. Special emphasis is given to discussing material to facilitate a better understanding of historical concepts and events within their historical context.',
+    prereq:'None', text:'<em>Battle Cry of Freedom</em> by James McPherson — ISBN 978-0-19-516895-2. Limited copies available from CHESS for donation; contact office.', hw:'1–2 hours/week (more during paper-writing)', fee:'None', passfail:false },
+
+  { tab:'g912', name:'General Chemistry with Lab', grades:'Grades 9–12', days:'Tuesday & Thursday', time:'9:15 AM', freq:'2 days/week',
+    desc:'Students will explore the wonders of the chemical world — learning about atomic structure, chemical bonds, and the Periodic Table, then tackling thermodynamics, acid/base chemistry, rate kinetics, stoichiometry, and more. A full, but fun, year!',
+    prereq:'Algebra 1', text:'<em>Apologia Exploring Creation with Chemistry</em>, 3rd edition (white cover) — ISBN 978-1-940110-2-57. Limited copies available from CHESS for donation; contact office.', hw:'3–4 hours/week', fee:'$20 lab fee', passfail:false },
+
+  { tab:'g912', name:'British Literature', grades:'Grades 9–12', days:'Tuesday & Thursday', time:'9:15 AM', freq:'2 days/week',
+    desc:'A survey of well over a millennium of English Literature — with each of the eight units including a historical introduction covering political, cultural, linguistic, and literary backgrounds from eight literary periods. The course traces the earliest beginnings of Christianity in Britain and its tremendous influence on British Literature. Selections include Beowulf, Macbeth, Chaucer, Spenser, Milton, Swift, Wordsworth, and more. Whole book reads include Ivanhoe, The Fellowship of the Ring, Pride and Prejudice, and The Great Divorce. A loose-leaf notebook with page protectors is required.',
+    prereq:'Commitment to reading large chunks of literature weekly (some difficult due to older language)', text:'<em>British Literature</em>, updated 2nd ed., Bob Jones University Press — ISBN 978-1-57924-951-9. Limited copies available from CHESS for donation. Other whole-book texts provided by teacher.', hw:'Reading, writing, and essay assignments', fee:'None', passfail:false },
+
+  { tab:'g912', name:'Old Testament Survey', grades:'Grades 9–12', days:'Tuesday (9:15 AM) & Thursday (2:15 PM)', time:'Two sections', freq:'2 days/week',
+    desc:'A significant survey of the Old Testament portions of Scripture. The goal is to equip students to know the contents of each book of the Old Testament and have a broad understanding of the key themes, characters, and doctrines that the Old Testament teaches.',
+    prereq:'High school-level reading and comprehension', text:'<em>The World and the Word: An Introduction to the Old Testament</em> by Merrill, Rooker, Grisanti — ISBN-10: 0805440313', hw:'4–5 hours/week', fee:'None', passfail:false },
+
+  { tab:'g912', name:'JH/HS Art: Story & Illustration', grades:'Grades 6–12', days:'Tuesday', time:'10:15 AM', freq:'1 day/week',
+    desc:'The focus is learning consistent style and layout for illustration and storytelling through art. Themes, color, and style are important when pairing pictures with stories. Students will work through the process of storytelling in pictures — reflecting how God has made the world delightful to the eyes.',
+    prereq:'None', text:'None', hw:'2–4 hours per homework project', fee:'$10', passfail:false },
+
+  { tab:'g912', name:'U.S. Government', grades:'Grades 9–12', days:'Tuesday & Thursday', time:'10:15 AM', freq:'2 days/week',
+    desc:'A comprehensive study of the foundations, structure, and function of the United States government within the context of a Biblical worldview. Students will examine the philosophical and Scriptural principles behind civil government, the American constitutional republic, the three branches of government, checks and balances, political parties, elections, and the responsibilities of citizens in a free society. Students will think critically about current events through constitutional principles, historical context, and biblical truth.',
+    prereq:'Must be in grades 9–12', text:'<em>American Government</em>, 4th Edition, BJU Press — ISBN 978-1-62856-424-2', hw:'20–40 pages of reading/week; section reviews and chapter activities', fee:'$10', passfail:false },
+
+  { tab:'g912', name:'Algebra II', grades:'Grades 9–12', days:'Tuesday & Thursday', time:'10:15 AM', freq:'2 days/week',
+    desc:'Building on Algebra I and Geometry, students will work with imaginary and complex numbers, apply the binomial theorem, solve quadratic equations, work with equations with three unknowns, apply analytic geometry to conic sections, and more. Students will need access to Google Classroom using a Colorado Heritage Gmail account — contact the office if needed. Syllabi and pre-class assignments will be available in the Praxi Parent Portal by end of July.',
+    prereq:'Successful completion of Algebra I and Geometry', text:'Math-U-See Algebra II Instruction Manual and DVD (student workbook and test booklet not necessary). Other materials: graph paper, lined paper, ruler, pencil.', hw:'3–5 hours/week', fee:'$6', passfail:false },
+
+  { tab:'g912', name:'Heritage Chorale', grades:'Ages 12+', days:'Tuesday', time:'11:15 AM', freq:'1 day/week',
+    desc:'Each semester, students will perform a themed concert with songs from a variety of eras and genres. The class focuses on vocal technique, sight-reading, and performance values. No audition required. Students are required to attend the end-of-semester performance, generally scheduled for the final week of the semester.',
+    prereq:'None', text:'None — music provided by teacher', hw:'None', fee:'None', passfail:false },
+
+  { tab:'g912', name:'New Testament Survey', grades:'Grades 9–12', days:'Thursday', time:'11:15 AM', freq:'1 day/week',
+    desc:'A significant survey of the New Testament portions of Scripture. The goal is to equip students to know the contents of each book of the New Testament and have a broad understanding of the key themes, characters, and doctrines that the New Testament teaches.',
+    prereq:'High school-level reading and comprehension', text:'<em>The Cradle, the Cross, and the Crown: An Introduction to the New Testament</em> by Köstenberger, Kellum, and Quarles — ISBN-10: 1433684004', hw:'3–4 hours/week', fee:'None', passfail:false },
+
+  { tab:'g912', name:'Research & Composition', grades:'Grades 9–12', days:'Tuesday & Thursday', time:'1:15 PM', freq:'2 days/week',
+    desc:'Students will engage in activities designed to develop research and writing skills. Emphasis is placed on quality composition with citations using MLA and Chicago Style. One full research paper is required per semester. Diploma Program students may opt to submit their Biographical Sketch as their spring semester research paper.',
+    prereq:'A basic high school composition course', text:'<em>The Elements of Style</em> by Strunk & White (4th edition or newer)', hw:'2–3 hours/week', fee:'None', passfail:false },
+
+  { tab:'g912', name:'Algebra 1', grades:'Grades 9–12', days:'Tuesday & Thursday', time:'1:15 PM', freq:'2 days/week',
+    desc:'Students will delve into Algebra 1 using the Math-U-See curriculum — covering distributive property, graphing lines and inequalities, polynomials, factoring trinomials, solving equations, and more. Through completion of the course, students will find that God has created numbers to bring order to our world. Pre-class assignments will be given in the syllabus, due on the first day of classes. Syllabi will be available in the Praxi Parent Portal by end of July.',
+    prereq:'Successful completion of Pre-Algebra with Math-U-See OR use the Math-U-See Placement Tool at placement.mathusee.com', text:'Math-U-See Algebra 1: Legacy Instruction Manual Set (with DVD) and Legacy Student Workbook Set with 35 lessons (released 2nd half of 2009). Graph paper, lined paper, ruler, pencil required.', hw:'3–5 hours/week', fee:'None', passfail:false },
+
+  { tab:'g912', name:'Advanced Chamber Ensemble', grades:'Grades 6–12', days:'Tuesday', time:'2:15 PM', freq:'1 day/week',
+    desc:'Students will learn a combination of standard chamber music and hymn arrangements to perform in conjunction with the chorale performance each semester. Material is selected seasonally or topically. Students are required to attend the end-of-semester performance.',
+    prereq:'Must be able to play an orchestral instrument, read music, and play at approximately advanced beginner level (approx. Suzuki Level 3)', text:'None — music provided by teacher', hw:'None required; practicing at home may be beneficial', fee:'None', passfail:false },
+
+  { tab:'g912', name:'Computer Graphics', grades:'Grades 9–12', days:'Thursday', time:'2:15 PM', freq:'1 day/week',
+    desc:'Students will learn the basics of graphic design and how to use it practically — including color theory, typography, sizing, and more. Students will create a mock business, design logos, and learn how to use art skills practically. <strong>Note:</strong> Students will be required to use CHESS-supplied computers for all class assignments, both at school and at home. These computers are monitored by the school\'s computer safety app even while in use at home.',
+    prereq:'None', text:'<em>Graphic Design for Everyone</em> by Cath Caldwell. Internet and free Canva account required (premium not needed).', hw:'1–2 hours/week on digital art projects and/or video lectures', fee:'$75 technology fee', passfail:false },
+
+  { tab:'g912', name:'Weight Training', grades:'Grades 9–12', days:'Alternates Tuesday & Thursday', time:'3:15 PM', freq:'1 day/week (alternating T/TH every 2 weeks)',
+    desc:'Students will learn how to properly train in weightlifting — including the science behind physical fitness and how to continue training with as much or as little equipment as possible. Physical fitness training is a powerful outlet for young people as they face the stresses of life. Instruction will include encouragements to advance in both physical and spiritual fitness.',
+    prereq:'None', text:'None', hw:'Minimal, if any', fee:'$5', passfail:false },
+
+];
+
+// ── Render ────────────────────────────────────────────────────────────────────
+let activeTab = 'k2';
+
+function switchTab(tab) {
+    activeTab = tab;
+    const tabs = ['k2','g35','g68','g912'];
+    tabs.forEach(t => {
+        const btn = document.getElementById('tab-btn-' + t);
+        if (t === tab) {
+            btn.className = 'tab-btn px-5 py-3 font-bold text-sm rounded-t-lg border border-b-0 border-gray-200 transition-colors bg-white text-heritage-navy border-b-white';
+            btn.style.borderBottomColor = 'white';
+            btn.style.marginBottom = '-1px';
+        } else {
+            btn.className = 'tab-btn px-5 py-3 font-bold text-sm rounded-t-lg border border-b-0 border-gray-200 transition-colors text-mountain-slate bg-parchment hover:bg-white';
+            btn.style.borderBottomColor = '';
+            btn.style.marginBottom = '';
+        }
+    });
+    renderCourses();
+}
+
+function renderCourses() {
+    const list = document.getElementById('course-list');
+    const filtered = courses.filter(c => c.tab === activeTab);
+    if (!filtered.length) { list.innerHTML = ''; return; }
+
+    list.innerHTML = filtered.map((c, i) => {
+        const feeColor = c.fee === 'None' ? 'bg-green-50 text-green-700 border-green-200' : 'bg-amber-50 text-amber-700 border-amber-200';
+        const daysColor = c.freq === '2 days/week' ? 'bg-chess-blue text-white' : 'bg-heritage-navy text-white';
+        return `<div class="course-card border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+            <button onclick="this.closest('.course-card').classList.toggle('open')" class="w-full text-left flex items-start justify-between gap-4 p-5 hover:bg-parchment transition-colors">
+                <div class="flex-1 min-w-0">
+                    <div class="flex flex-wrap items-center gap-2 mb-1">
+                        <h3 class="font-serif font-bold text-heritage-navy text-base">${c.name}</h3>
+                        ${c.passfail ? '<span class="text-xs font-bold bg-blue-50 text-blue-600 border border-blue-200 px-2 py-0.5 rounded-full">Pass/Fail</span>' : ''}
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="font-semibold text-mountain-slate">${c.grades}</span>
+                        <span class="text-gray-400">·</span>
+                        <span class="text-mountain-slate">${c.days}</span>
+                        <span class="text-gray-400">·</span>
+                        <span class="text-mountain-slate">${c.time}</span>
+                        <span class="text-gray-400">·</span>
+                        <span class="${daysColor} px-2 py-0.5 rounded-full font-bold">${c.freq}</span>
+                        ${c.fee !== 'None' ? `<span class="border ${feeColor} px-2 py-0.5 rounded-full font-bold">Fee: ${c.fee.split(' ')[0]}</span>` : ''}
+                    </div>
+                </div>
+                <svg class="chevron w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="course-body border-t border-gray-100 bg-parchment px-5 py-5">
+                <p class="text-mountain-slate text-sm leading-relaxed mb-5">${c.desc}</p>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <div class="bg-white border border-gray-200 rounded-lg p-3">
+                        <p class="text-xs font-bold text-heritage-navy uppercase tracking-wider mb-1">Prerequisite</p>
+                        <p class="text-mountain-slate text-sm">${c.prereq}</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-3">
+                        <p class="text-xs font-bold text-heritage-navy uppercase tracking-wider mb-1">Homework</p>
+                        <p class="text-mountain-slate text-sm">${c.hw}</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-3">
+                        <p class="text-xs font-bold text-heritage-navy uppercase tracking-wider mb-1">Material / Book Fee</p>
+                        <p class="text-mountain-slate text-sm">${c.fee}</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-3">
+                        <p class="text-xs font-bold text-heritage-navy uppercase tracking-wider mb-1">Textbook</p>
+                        <p class="text-mountain-slate text-sm">${c.text}</p>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+// Initial render
+switchTab('k2');
+</script>
+</body>
+</html>
