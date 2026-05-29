@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Colorado Heritage in Greeley, CO — office hours, phone, email, portal access, and scheduling a meeting with our team.">
     <title>Contact — Colorado Heritage Education School System</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -195,7 +196,7 @@
                 <h2 class="text-heritage-navy font-serif font-bold text-3xl md:text-4xl mb-6">We're Here to Help</h2>
                 <div class="w-12 h-0.5 bg-academy-gold mb-8"></div>
 
-                <p class="text-mountain-slate text-base leading-relaxed mb-10">Whether you're a new family exploring your options or a returning family with questions about enrollment, our staff is ready to assist. Reach out by phone, email, or schedule an in-person appointment.</p>
+                <p class="text-mountain-slate text-base leading-relaxed mb-10">Colorado Heritage would love to meet with you to discuss our services to homeschooling families. Please call <a href="tel:9703460099" class="font-bold text-chess-blue hover:text-heritage-navy transition-colors">(970) 346-0099</a> or schedule a meeting with us using our calendar below.</p>
 
                 <!-- Contact Cards -->
                 <div class="space-y-5">
@@ -233,18 +234,51 @@
                         <div class="w-11 h-11 bg-heritage-navy rounded-xl flex items-center justify-center flex-shrink-0">
                             <svg class="w-5 h-5 text-academy-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         </div>
-                        <div>
-                            <p class="font-bold text-heritage-navy text-sm uppercase tracking-wider mb-1">Office Hours</p>
-                            <p class="text-mountain-slate text-sm leading-relaxed italic text-gray-400">Current office hours will be listed here.<br>Contact us to schedule an appointment.</p>
+                        <div class="flex-1">
+                            <p class="font-bold text-heritage-navy text-sm uppercase tracking-wider mb-3">Office Hours</p>
+                            <div class="space-y-3 text-sm">
+                                <div>
+                                    <p class="font-bold text-heritage-navy text-xs uppercase tracking-wider mb-0.5">Summer Hours</p>
+                                    <p class="text-mountain-slate leading-relaxed">Mon – Thu: 10:00 am – 1:00 pm</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-heritage-navy text-xs uppercase tracking-wider mb-0.5">School Year</p>
+                                    <p class="text-mountain-slate leading-relaxed">Mon &amp; Wed: 10:00 am – 1:00 pm<br><span class="text-gray-500 italic">Tue &amp; Thu: No availability for non-Academy needs</span></p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-heritage-navy text-xs uppercase tracking-wider mb-0.5">By Appointment</p>
+                                    <p class="text-mountain-slate leading-relaxed">Use the calendar below to schedule a meeting.</p>
+                                </div>
+                                <div class="pt-1 border-t border-gray-200">
+                                    <p class="font-bold text-heritage-navy text-xs uppercase tracking-wider mb-0.5">Closed</p>
+                                    <p class="text-mountain-slate leading-relaxed">Fri / Sat / Sun — year-round<br>Memorial Day · Labor Day<br>Thanksgiving week<br>Dec 13 – Jan 3</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Map placeholder -->
-                <div class="mt-8 bg-gray-100 rounded-xl h-48 flex flex-col items-center justify-center border border-gray-200">
-                    <svg class="w-10 h-10 text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-                    <p class="text-xs text-gray-400 uppercase tracking-wider font-bold">Map Embed</p>
-                    <p class="text-xs text-gray-400 mt-1">1300 9th Street, Greeley, CO 80631</p>
+                <!-- Google Maps Embed -->
+                <div class="mt-8 rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3042.8!2d-104.7088!3d40.4233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876ea0e9de9f3db7%3A0x0!2s1300+9th+St%2C+Greeley%2C+CO+80631!5e0!3m2!1sen!2sus!4v1"
+                        width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Colorado Heritage — 1300 9th Street, Greeley, CO 80631">
+                    </iframe>
+                </div>
+
+                <!-- Appointment Calendar -->
+                <div class="mt-8">
+                    <p class="font-bold text-heritage-navy text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <svg class="w-4 h-4 text-academy-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        Schedule a Meeting
+                    </p>
+                    <!-- Appointment calendar embed goes here (e.g., Calendly) -->
+                    <div id="calendar-embed" class="bg-parchment border border-gray-200 rounded-xl p-8 text-center">
+                        <svg class="w-10 h-10 text-academy-gold mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        <p class="font-bold text-heritage-navy text-sm mb-1">Appointment Scheduling</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">Our online calendar will appear here.<br>In the meantime, please call <a href="tel:9703460099" class="text-chess-blue font-bold hover:text-heritage-navy">(970) 346-0099</a> to set up a time.</p>
+                    </div>
                 </div>
             </div>
 
@@ -254,31 +288,32 @@
                 <h2 class="text-heritage-navy font-serif font-bold text-2xl md:text-3xl mb-6">Get in Touch</h2>
                 <div class="w-12 h-0.5 bg-academy-gold mb-8"></div>
 
-                <form class="space-y-5">
+                <form name="contact" method="POST" data-netlify="true" class="space-y-5">
+                    <input type="hidden" name="form-name" value="contact">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-xs font-bold text-heritage-navy uppercase tracking-wider mb-2">First Name *</label>
-                            <input type="text" placeholder="Jane" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
+                            <input type="text" name="first-name" placeholder="Jane" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-heritage-navy uppercase tracking-wider mb-2">Last Name *</label>
-                            <input type="text" placeholder="Smith" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
+                            <input type="text" name="last-name" placeholder="Smith" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-heritage-navy uppercase tracking-wider mb-2">Email Address *</label>
-                        <input type="email" placeholder="jane@example.com" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
+                        <input type="email" name="email" placeholder="jane@example.com" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-heritage-navy uppercase tracking-wider mb-2">Phone Number</label>
-                        <input type="tel" placeholder="(970) 555-0000" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
+                        <input type="tel" name="phone" placeholder="(970) 555-0000" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-heritage-navy uppercase tracking-wider mb-2">I'm Interested In</label>
-                        <select class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm bg-white transition-all">
+                        <select name="interest" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm bg-white transition-all">
                             <option value="" disabled selected>Select a program…</option>
                             <option>Independent School (Umbrella School)</option>
                             <option>K–12 Academy Classes</option>
@@ -290,7 +325,7 @@
 
                     <div>
                         <label class="block text-xs font-bold text-heritage-navy uppercase tracking-wider mb-2">Message</label>
-                        <textarea rows="5" placeholder="Tell us about your family and how we can help…" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all resize-none"></textarea>
+                        <textarea name="message" rows="5" placeholder="Tell us about your family and how we can help…" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all resize-none"></textarea>
                     </div>
 
                     <button type="submit" class="w-full bg-heritage-navy text-white font-bold py-4 px-8 rounded uppercase tracking-wider text-sm hover:bg-blue-900 transition-colors">
@@ -438,11 +473,9 @@
                     <i data-lucide="heart" class="w-4 h-4"></i> Donate Now
                 </a>
                 <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors">
-                        <i data-lucide="youtube" class="w-5 h-5"></i>
+                    <a href="https://www.youtube.com/channel/UCFtMowGUdhluaSp85vJBXKw/videos?view=0" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors">
-                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    <a href="https://www.facebook.com/coloradoheritage" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i>
                     </a>
                 </div>
             </div>
