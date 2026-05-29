@@ -163,17 +163,38 @@
     <section class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <!-- Optional note banner (shown only if note field is set in CMS) -->
-            <div id="schedule-note" class="hidden mb-10 bg-chess-blue/10 border border-chess-blue/20 rounded-xl p-5 text-center">
-                <p id="schedule-note-text" class="text-heritage-navy text-sm font-semibold"></p>
+            <!-- Semester + note banner -->
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
+                <div>
+                    <p id="semester-label" class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-1">Academic Year</p>
+                    <h2 id="semester-title" class="text-heritage-navy font-serif font-bold text-2xl md:text-3xl">Loading…</h2>
+                </div>
+                <div id="schedule-note" class="hidden bg-chess-blue bg-opacity-10 border border-blue-200 rounded-xl px-5 py-3">
+                    <p id="schedule-note-text" class="text-heritage-navy text-sm font-semibold text-center"></p>
+                </div>
             </div>
 
-            <!-- Classes grid — loaded by JS -->
-            <div id="schedule-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="col-span-full text-center py-16 text-gray-400">
+            <!-- Grade band tabs -->
+            <div class="flex flex-wrap gap-2 mb-8" id="tab-bar">
+                <button onclick="switchBand('K-2')"  id="tab-K-2"  class="tab-btn px-5 py-2.5 rounded-lg text-sm font-bold border-2 transition-colors">Grades K–2</button>
+                <button onclick="switchBand('3-5')"  id="tab-3-5"  class="tab-btn px-5 py-2.5 rounded-lg text-sm font-bold border-2 transition-colors">Grades 3–5</button>
+                <button onclick="switchBand('6-8')"  id="tab-6-8"  class="tab-btn px-5 py-2.5 rounded-lg text-sm font-bold border-2 transition-colors">Grades 6–8</button>
+                <button onclick="switchBand('9-12')" id="tab-9-12" class="tab-btn px-5 py-2.5 rounded-lg text-sm font-bold border-2 transition-colors">Grades 9–12</button>
+            </div>
+
+            <!-- Schedule table -->
+            <div id="schedule-panel" class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                <div class="text-center py-16 text-gray-400">
                     <i data-lucide="loader" class="w-8 h-8 mx-auto mb-3 animate-spin"></i>
                     <p>Loading schedule…</p>
                 </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="mt-6 flex flex-wrap gap-4 text-xs text-gray-500">
+                <span class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-sm bg-blue-50 border border-blue-200"></span> Tuesday</span>
+                <span class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-sm bg-amber-50 border border-amber-200"></span> Thursday</span>
+                <span class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-sm bg-purple-50 border border-purple-200"></span> Tues &amp; Thurs</span>
             </div>
 
         </div>
@@ -232,9 +253,8 @@
 
     <script>
         lucide.createIcons();
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.getElementById('mobile-menu-btn').addEventListener('click', () =>
+            document.getElementById('mobile-menu').classList.toggle('hidden'));
 
         fetch('data/announcement.json')
             .then(r => r.json())
@@ -249,59 +269,105 @@
                     if (data.link_text) linkEl.textContent = data.link_text;
                     if (data.link_url) linkEl.href = data.link_url;
                 }
-            })
-            .catch(() => {});
+            }).catch(() => {});
 
-        // Load class schedule from CMS
+        // ── Time sort helper ────────────────────────────────────────
+        const TIME_ORDER = ['8:15','9:15','10:15','11:15','1:15','2:15','3:15'];
+        function timeRank(t) { const i = TIME_ORDER.indexOf(t); return i < 0 ? 99 : i; }
+
+        // ── Day styling ─────────────────────────────────────────────
+        function dayBadge(day) {
+            if (day === 'Tuesday')    return '<span class="inline-block text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200 rounded px-2 py-0.5">Tue</span>';
+            if (day === 'Thursday')   return '<span class="inline-block text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200 rounded px-2 py-0.5">Thu</span>';
+            return '<span class="inline-block text-xs font-bold bg-purple-50 text-purple-700 border border-purple-200 rounded px-2 py-0.5">'+day+'</span>';
+        }
+        function rowBg(day) {
+            if (day === 'Tuesday')    return 'bg-blue-50 bg-opacity-40';
+            if (day === 'Thursday')   return 'bg-amber-50 bg-opacity-40';
+            return 'bg-purple-50 bg-opacity-40';
+        }
+
+        // ── Globals set after fetch ──────────────────────────────────
+        let allClasses = [];
+        let activeBand = 'K-2';
+
+        function switchBand(band) {
+            activeBand = band;
+            const bands = ['K-2','3-5','6-8','9-12'];
+            bands.forEach(b => {
+                const btn = document.getElementById('tab-' + b);
+                if (b === band) {
+                    btn.classList.add('bg-heritage-navy','text-white','border-heritage-navy');
+                    btn.classList.remove('bg-white','text-heritage-navy','border-gray-300','hover:border-heritage-navy');
+                } else {
+                    btn.classList.remove('bg-heritage-navy','text-white','border-heritage-navy');
+                    btn.classList.add('bg-white','text-heritage-navy','border-gray-300','hover:border-heritage-navy');
+                }
+            });
+            renderTable(allClasses.filter(c => c.grade_band === band));
+        }
+
+        function renderTable(classes) {
+            const panel = document.getElementById('schedule-panel');
+            if (!classes.length) {
+                panel.innerHTML = '<p class="text-center text-gray-400 py-12">No classes found for this grade band.</p>';
+                return;
+            }
+            // Sort by time then by day (Tue before Thu)
+            const sorted = [...classes].sort((a, b) => {
+                const td = timeRank(a.time) - timeRank(b.time);
+                if (td !== 0) return td;
+                return (a.day === 'Tuesday' ? 0 : 1) - (b.day === 'Tuesday' ? 0 : 1);
+            });
+
+            // Group by time slot for visual separation
+            const groups = {};
+            sorted.forEach(c => {
+                (groups[c.time] = groups[c.time] || []).push(c);
+            });
+
+            let html = '<div class="overflow-x-auto"><table class="w-full text-sm">';
+            html += '<thead><tr class="bg-heritage-navy text-white">'
+                  + '<th class="px-5 py-3 text-left font-bold text-xs uppercase tracking-wider w-20">Time</th>'
+                  + '<th class="px-5 py-3 text-left font-bold text-xs uppercase tracking-wider w-24">Day</th>'
+                  + '<th class="px-5 py-3 text-left font-bold text-xs uppercase tracking-wider">Class</th>'
+                  + '<th class="px-5 py-3 text-left font-bold text-xs uppercase tracking-wider hidden md:table-cell">Instructor</th>'
+                  + '</tr></thead><tbody>';
+
+            Object.entries(groups).forEach(([time, rows], gi) => {
+                rows.forEach((c, ri) => {
+                    const border = ri === 0 && gi > 0 ? 'border-t-2 border-gray-200' : 'border-t border-gray-100';
+                    html += `<tr class="${rowBg(c.day)} ${border} hover:brightness-95 transition-all">`;
+                    html += `<td class="px-5 py-3 font-bold text-heritage-navy whitespace-nowrap">${ri === 0 ? time : ''}</td>`;
+                    html += `<td class="px-5 py-3">${dayBadge(c.day)}</td>`;
+                    html += `<td class="px-5 py-3 font-semibold text-mountain-slate">${c.name}</td>`;
+                    html += `<td class="px-5 py-3 text-gray-500 hidden md:table-cell">${c.instructor || ''}</td>`;
+                    html += '</tr>';
+                });
+            });
+
+            html += '</tbody></table></div>';
+            panel.innerHTML = html;
+        }
+
+        // ── Load schedule.json ──────────────────────────────────────
         fetch('data/schedule.json')
             .then(r => r.json())
             .then(data => {
-                const grid = document.getElementById('schedule-grid');
-
-                // Update hero subtitle with semester name
                 if (data.semester) {
+                    document.getElementById('semester-title').textContent = data.semester;
                     document.getElementById('hero-semester').textContent = data.semester;
                 }
-
-                // Show optional note banner
                 if (data.note) {
                     document.getElementById('schedule-note-text').textContent = data.note;
                     document.getElementById('schedule-note').classList.remove('hidden');
                 }
-
-                const classes = data.classes || [];
-                if (!classes.length) {
-                    grid.innerHTML = `
-                        <div class="col-span-full text-center py-20">
-                            <i data-lucide="calendar" class="w-12 h-12 text-gray-200 mx-auto mb-4"></i>
-                            <h3 class="font-serif text-xl text-heritage-navy mb-2">Schedule Coming Soon</h3>
-                            <p class="text-mountain-slate text-sm max-w-sm mx-auto">The class schedule for the upcoming academic year will be posted here before registration opens.</p>
-                            <a href="contact.html" class="inline-block mt-6 bg-heritage-navy text-white font-bold px-6 py-2.5 rounded hover:bg-chess-blue transition-colors text-sm">Contact Our Office</a>
-                        </div>`;
-                    lucide.createIcons();
-                    return;
-                }
-
-                grid.innerHTML = classes.map(c => `
-                    <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                        <div class="bg-heritage-navy px-6 py-4">
-                            <h3 class="font-serif font-bold text-white text-lg leading-snug">${c.name}</h3>
-                            ${c.grade_levels ? `<p class="text-academy-gold text-xs font-bold uppercase tracking-wider mt-1">${c.grade_levels}</p>` : ''}
-                        </div>
-                        <div class="p-6 space-y-3 text-sm text-mountain-slate">
-                            ${c.description ? `<p class="leading-relaxed text-gray-600">${c.description}</p>` : ''}
-                            ${c.instructor ? `<p class="flex items-center gap-2"><svg class="w-4 h-4 text-academy-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg><span><strong>Instructor:</strong> ${c.instructor}</span></p>` : ''}
-                            ${c.days ? `<p class="flex items-center gap-2"><svg class="w-4 h-4 text-academy-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg><span>${c.days}${c.time ? ' &bull; ' + c.time : ''}</span></p>` : ''}
-                            ${c.fee ? `<p class="flex items-center gap-2"><svg class="w-4 h-4 text-academy-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><strong>Fee:</strong> ${c.fee}</span></p>` : ''}
-                        </div>
-                        ${c.open !== false ? `<div class="px-6 pb-5"><span class="inline-block text-xs font-bold text-green-700 bg-green-50 border border-green-200 rounded-full px-3 py-1">Open for Registration</span></div>` : `<div class="px-6 pb-5"><span class="inline-block text-xs font-bold text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-3 py-1">Registration Closed</span></div>`}
-                    </div>
-                `).join('');
-                lucide.createIcons();
+                allClasses = data.classes || [];
+                switchBand('K-2');
             })
             .catch(() => {
-                document.getElementById('schedule-grid').innerHTML =
-                    '<p class="col-span-full text-center text-gray-400 py-12">Could not load the class schedule. Please try again later.</p>';
+                document.getElementById('schedule-panel').innerHTML =
+                    '<p class="text-center text-gray-400 py-12">Could not load the class schedule. Please try again later.</p>';
             });
     </script>
 </body>
