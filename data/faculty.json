@@ -1,20 +1,82 @@
 {
   "members": [
     {
-      "name": "Noah Nelson",
-      "role": "Teacher"
+      "name": "Miss Lilah Barth",
+      "role": "History & Drama",
+      "photo": "",
+      "bio": "Miss Barth has blessed CHESS with her amazing teaching skills since December 2021. She holds a B.S. in History from Liberty University and was homeschooled from 4th grade through graduation. She has worked at a living history museum and continues studying church history. She teaches history from a Christian standpoint and loves inspiring \"that moment where I can audibly hear 'oh' in the class.\" Her hobbies include audiobook listening, digital and sketch art, playwriting, and various forms of dancing."
     },
     {
-      "name": "Annie Nelson ",
-      "role": "Teacher / English "
+      "name": "Mrs. Shana Chavez",
+      "role": "Choir, Elementary Math & Sewing/Crafts",
+      "photo": "",
+      "bio": "Mrs. Chavez holds a B.S. in Elementary Education & Mathematics from Bob Jones University. She has taught and volunteered at Colorado Heritage since 2017. A veteran homeschool mom and pastor's wife, she taught in Christian schools for four years before homeschooling her own children. She has instructed sewing, knitting, crocheting, Math Lab, and choir at CHESS. Her approach ties all subjects to \"the wonderful works of God\" and tailors instruction to individual learning styles."
     },
     {
-      "name": "Baxter Ong",
-      "role": "Teacher / Bible and Greek"
+      "name": "Mr. Joshua Franklin",
+      "role": "History",
+      "photo": "",
+      "bio": "Mr. Franklin holds a B.A. in History from Colorado State University and co-authored America from the Beginning, A U.S. History Curriculum for Grades 3–8. He was homeschooled from beginning to end and homeschools his two children with his wife Rachel. He has taught for CHESS since 2012 and emphasizes helping students analyze resources, think critically, and articulate learning through speaking and writing from a biblical and historically accurate perspective."
     },
     {
-      "name": "Bob Jones",
-      "role": "Teacher / English "
+      "name": "Mrs. Amy Kearns",
+      "role": "Mathematics",
+      "photo": "",
+      "bio": "Mrs. Kearns holds a B.A. in Sociology and has homeschooled her children for over 16 years. She describes her own math journey as requiring hard work, which she believes makes her a better teacher. She has served CHESS since 2019 and emphasizes that \"needing to work hard to understand schoolwork\" actually facilitates success in life."
+    },
+    {
+      "name": "Mr. Paul leDuc",
+      "role": "Bible (K–5) & Junior High Literature",
+      "photo": "",
+      "bio": "Mr. leDuc enrolled at Colorado Heritage in 2015 and values \"a solid education that is Christ-centered.\" He graduated from the Diploma Program in 2021 and currently studies Pastoral Ministry at Chambers College. His favorite Bible passage is Philippians 2:5–11. He enjoys Bible-related conversations, hiking, board games, sketching, and trying new experiences with friends."
+    },
+    {
+      "name": "Mrs. Annie Nelson",
+      "role": "Literature & Kitchen Home Economics",
+      "photo": "",
+      "bio": "Mrs. Nelson holds a B.A. in Education from Northland Baptist Bible College. She was shaped by stories from an early age and has homeschooled ten children for thirty years. She began teaching literature in her home in 2003 and joined CHESS in 2007. She describes CHESS as a \"huge blessing\" and has taught there since 2008. She enjoys literature, gardening, and cooking, and is grandmother to thirteen (and counting!) grandchildren."
+    },
+    {
+      "name": "Mr. Noah Nelson",
+      "role": "Financial Stewardship, U.S. Constitution & Computer Applications",
+      "photo": "https://images.squarespace-cdn.com/content/v1/55394088e4b0d960c417cc23/77bc6eee-ef34-4bfc-ba27-81022fd4f24a/Noah+Nelson+ID+picture.png?format=500w",
+      "bio": "Homeschooling played a vital role in shaping Mr. Nelson's character and love for learning. From an early age, his mother cultivated in him and his siblings a deep appreciation for literature by reading to them daily, while his great-aunt's phonics curriculum laid the foundation for a lifelong love of reading. Growing up on the family farm further enriched this education, instilling responsibility, diligence, and the value of hard work. He was taught to view all subjects through the lens of God's ownership of all things — that every field of study, including mathematics, is grounded in the reality of God's existence and character. Mr. Nelson is a Colorado Heritage graduate and holds an A.A. in Liberal Arts and a B.S. in Interdisciplinary Studies with concentrations in Global Leadership and Media Production. He enjoys photography, classical music, and reading."
+    },
+    {
+      "name": "Pastor Baxter Ong",
+      "role": "Bible, Church History, Apologetics, Logic, Philosophy, Hermeneutics, Greek & Hebrew",
+      "photo": "",
+      "bio": "Pastor Ong was born the year CHESS was founded by his parents, Steve and Teri Ong. He graduated from the Honors Diploma Program and earned his B.A. in Christian Ministry at age 19. He obtained his Master of Divinity from Shepherds Theological Seminary and serves as senior pastor of Reformation Baptist Church and president of Chambers College. He has taught CHESS since 2018 and is deeply passionate about hermeneutics and the careful study of Scripture."
+    },
+    {
+      "name": "Mrs. Teri Ong",
+      "role": "Music & Choir",
+      "photo": "",
+      "bio": "Mrs. Ong holds a B.A. in Church Music Education from Denver Baptist Bible College, an M.A. in Elementary Education from the University of Northern Colorado, and an M.A. in Christian Liberal Arts from Chambers College. She co-founded CHESS in 1991 with her husband Steve and has taught there continuously ever since. She oversees the fall and spring concerts and teaches choir and ensemble classes. Her creative hobbies include writing, sewing, painting, and playing violin with the Loveland Orchestra."
+    },
+    {
+      "name": "Mr. Matthew Salzmann",
+      "role": "Weight Training",
+      "photo": "",
+      "bio": "Mr. Salzmann recently graduated from Colorado Heritage's Diploma Program with \"All-Star Student\" designation. A godly young man committed to serving the Lord, he invests in others' spiritual well-being both inside and outside the classroom. His hobbies include exercising, dancing, mission work, reading, and martial arts. He desired to give back to the institutions integral to his Christian growth and has a heart for the students he teaches."
+    },
+    {
+      "name": "Mr. Cliff Smart",
+      "role": "Science",
+      "photo": "",
+      "bio": "Mr. Smart holds a B.A. in Biology with minors in Chemistry and Psychology. He worked as an analyst in testing laboratories and as a chemist and environmentalist in a power plant for over 40 years. He and his wife Christina homeschooled their three children and have both taught at Colorado Heritage. He has been teaching at CHESS since 2023 and describes asking God to \"re-purpose\" him after retirement to invest in the next generation."
+    },
+    {
+      "name": "Mrs. Chris Smart",
+      "role": "Writing (grades 3–12) & History (K–5)",
+      "photo": "",
+      "bio": "Mrs. Smart holds a B.A. in Christian Ministry from Chambers College and has taught private and enrichment classes for over 26 years, including 14 years with CHESS. She and her husband homeschooled their three college-graduated children. Her favorite subject is writing, and she loves helping \"students discover that writing does not need to be a chore; it can actually be fun!\" She has served CHESS since 2009."
+    },
+    {
+      "name": "Mrs. Alice Wishart",
+      "role": "Art",
+      "photo": "",
+      "bio": "Mrs. Wishart was born the year CHESS was founded by her parents, Pastor and Mrs. Ong. She took CHESS classes from age 4–18 and graduated as a \"Highest Honors, All Star Student.\" She is currently homeschooling her own children and has always loved creativity. She enjoys painting, drawing, floral arranging, and playing cello, piano, and violin. She has taught CHESS since 2017."
     }
   ]
 }

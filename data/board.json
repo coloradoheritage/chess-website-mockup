@@ -1,1 +1,46 @@
-{"members": []}
+{
+  "members": [
+    {
+      "name": "Mr. Nels Nelson",
+      "role": "Chairman",
+      "photo": "",
+      "bio": ""
+    },
+    {
+      "name": "Mr. Clyde Brown",
+      "role": "Treasurer",
+      "photo": "",
+      "bio": ""
+    },
+    {
+      "name": "Mrs. Teri Ong",
+      "role": "Board Member",
+      "photo": "",
+      "bio": ""
+    },
+    {
+      "name": "Pastor Baxter Ong",
+      "role": "Board Member",
+      "photo": "",
+      "bio": ""
+    },
+    {
+      "name": "Mr. Seth Nelson",
+      "role": "Board Member",
+      "photo": "",
+      "bio": ""
+    },
+    {
+      "name": "Mrs. Mary Brown",
+      "role": "Advisory Board Member",
+      "photo": "",
+      "bio": ""
+    },
+    {
+      "name": "Mrs. Annie Nelson",
+      "role": "Secretary — Advisory Board",
+      "photo": "",
+      "bio": ""
+    }
+  ]
+}

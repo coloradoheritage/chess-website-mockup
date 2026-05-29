@@ -288,6 +288,25 @@
     </div>
 </footer>
 
+<!-- BIO MODAL -->
+<div id="bio-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto">
+        <div class="flex items-start gap-5 p-7 border-b border-gray-100">
+            <div id="modal-photo-wrap" class="w-20 h-20 rounded-full overflow-hidden border-2 border-academy-gold flex-shrink-0">
+                <img id="modal-photo" src="" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1 min-w-0 pt-1">
+                <p id="modal-name" class="font-serif font-bold text-heritage-navy text-xl leading-tight"></p>
+                <p id="modal-role" class="text-academy-gold text-xs uppercase tracking-wider font-bold mt-1"></p>
+            </div>
+            <button id="modal-close" class="text-gray-400 hover:text-heritage-navy transition-colors flex-shrink-0 mt-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div id="modal-bio" class="p-7 text-mountain-slate text-sm leading-relaxed"></div>
+    </div>
+</div>
+
 <script>
     lucide.createIcons();
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -305,19 +324,71 @@
         if (linkEl) { if (data.link_text) linkEl.textContent = data.link_text; if (data.link_url) linkEl.href = data.link_url; }
     }).catch(() => {});
 
-    // Person card template
-    function personCard(m, size = 'large') {
-        const w = size === 'large' ? 'w-28 h-28' : 'w-20 h-20';
-        return `<div class="text-center">
-            <div class="${w} rounded-full overflow-hidden border-2 border-academy-gold mx-auto mb-4 flex items-center justify-center bg-gray-100">
-                ${m.photo ? `<img src="${m.photo}" alt="${m.name}" class="w-full h-full object-cover">` : '<svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>'}
+    // ── Bio modal ──────────────────────────────────────────────
+    const modal = document.getElementById('bio-modal');
+    const modalName = document.getElementById('modal-name');
+    const modalRole = document.getElementById('modal-role');
+    const modalPhoto = document.getElementById('modal-photo');
+    const modalPhotoWrap = document.getElementById('modal-photo-wrap');
+    const modalBio = document.getElementById('modal-bio');
+
+    function openModal(m) {
+        modalName.textContent = m.name;
+        modalRole.textContent = m.role || '';
+        if (m.photo) {
+            modalPhoto.src = m.photo;
+            modalPhoto.alt = m.name;
+            modalPhotoWrap.classList.remove('hidden');
+        } else {
+            modalPhotoWrap.classList.add('hidden');
+        }
+        modalBio.innerHTML = (m.bio || '').split('\n\n').map(p => `<p class="mb-3 last:mb-0">${p}</p>`).join('');
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // ── Card templates ──────────────────────────────────────────
+    let allMembers = [];
+    window.allMembers = allMembers;
+    window.openModal = openModal;
+
+    function personCard(m, idx, accent = 'gold') {
+        const borderColor = accent === 'navy' ? 'border-heritage-navy' : 'border-academy-gold';
+        const placeholder = `<svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>`;
+        const bioBtn = m.bio ? `<button onclick="openModal(allMembers[${idx}])" class="mt-3 text-xs font-bold text-chess-blue hover:text-heritage-navy underline underline-offset-2 transition-colors">Read bio →</button>` : '';
+        return `<div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
+            <div class="w-24 h-24 rounded-full overflow-hidden border-2 ${borderColor} mb-4 flex items-center justify-center bg-gray-100 flex-shrink-0">
+                ${m.photo ? `<img src="${m.photo}" alt="${m.name}" class="w-full h-full object-cover">` : placeholder}
             </div>
-            <p class="font-serif font-bold text-heritage-navy text-lg">${m.name}</p>
-            <p class="text-academy-gold text-xs uppercase tracking-wider font-bold mt-1">${m.role}</p>
-            ${m.bio ? `<p class="text-mountain-slate text-sm mt-2 leading-relaxed max-w-xs mx-auto">${m.bio}</p>` : ''}
+            <p class="font-serif font-bold text-heritage-navy text-base leading-tight">${m.name}</p>
+            <p class="text-academy-gold text-xs uppercase tracking-wider font-bold mt-1 leading-tight">${m.role}</p>
+            ${bioBtn}
         </div>`;
     }
 
+    function boardCard(m, idx) {
+        const placeholder = `<svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>`;
+        const bioBtn = m.bio ? `<button onclick="openModal(allMembers[${idx}])" class="mt-2 text-xs font-bold text-chess-blue hover:text-heritage-navy underline underline-offset-2 transition-colors">Read bio →</button>` : '';
+        return `<div class="bg-parchment border border-gray-200 rounded-xl p-6 text-center shadow-sm">
+            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-heritage-navy mx-auto mb-3 flex items-center justify-center bg-gray-100">
+                ${m.photo ? `<img src="${m.photo}" alt="${m.name}" class="w-full h-full object-cover">` : placeholder}
+            </div>
+            <p class="font-serif font-bold text-heritage-navy">${m.name}</p>
+            <p class="text-academy-gold text-xs uppercase tracking-wider font-bold mt-1">${m.role || 'Board Member'}</p>
+            ${bioBtn}
+        </div>`;
+    }
+
+    // ── Load sections ───────────────────────────────────────────
     // Staff
     fetch('data/staff.json').then(r => r.json()).then(data => {
         const grid = document.getElementById('staff-grid');
@@ -327,7 +398,9 @@
             grid.innerHTML = '<div class="col-span-full mt-4 bg-parchment border border-gray-200 rounded-xl p-6 max-w-xl mx-auto text-center"><p class="text-mountain-slate text-sm italic">Staff information will be listed here. Contact us at <a href="mailto:office@coloradoheritage.org" class="text-chess-blue underline font-bold">office@coloradoheritage.org</a> to reach our team.</p></div>';
             return;
         }
-        grid.innerHTML = members.map(m => personCard(m)).join('');
+        const offset = allMembers.length;
+        allMembers.push(...members);
+        grid.innerHTML = members.map((m, i) => personCard(m, offset + i, 'gold')).join('');
     }).catch(() => {});
 
     // Faculty
@@ -339,7 +412,9 @@
             grid.innerHTML = '<div class="col-span-full mt-4 bg-white border border-gray-200 rounded-xl p-6 max-w-xl mx-auto text-center"><p class="text-mountain-slate text-sm italic">Faculty information will be listed here. Contact us at <a href="mailto:office@coloradoheritage.org" class="text-chess-blue underline font-bold">office@coloradoheritage.org</a> to reach our team.</p></div>';
             return;
         }
-        grid.innerHTML = members.map(m => personCard(m)).join('');
+        const offset = allMembers.length;
+        allMembers.push(...members);
+        grid.innerHTML = members.map((m, i) => personCard(m, offset + i, 'gold')).join('');
     }).catch(() => {});
 
     // Board
@@ -348,15 +423,10 @@
         if (!grid) return;
         const members = data.members || [];
         if (!members.length) return;
-        grid.innerHTML = '<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">' +
-            members.map(m => `<div class="text-center bg-parchment border border-gray-200 rounded-xl p-6 shadow-sm">
-                <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-heritage-navy mx-auto mb-4 flex items-center justify-center bg-gray-100">
-                    ${m.photo ? `<img src="${m.photo}" alt="${m.name}" class="w-full h-full object-cover">` : '<svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>'}
-                </div>
-                <p class="font-serif font-bold text-heritage-navy">${m.name}</p>
-                <p class="text-academy-gold text-xs uppercase tracking-wider font-bold mt-1">${m.role || 'Board Member'}</p>
-                ${m.bio ? `<p class="text-mountain-slate text-sm mt-2 leading-relaxed">${m.bio}</p>` : ''}
-            </div>`).join('') + '</div>';
+        const offset = allMembers.length;
+        allMembers.push(...members);
+        grid.innerHTML = '<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">' +
+            members.map((m, i) => boardCard(m, offset + i)).join('') + '</div>';
     }).catch(() => {});
 </script>
 </body>
