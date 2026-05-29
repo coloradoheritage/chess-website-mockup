@@ -1,8 +1,44 @@
 {
   "testimonials": [
     {
-      "name": "Jorden B.",
-      "quote": "We love that chess meets us where we are"
+      "name": "Kortney",
+      "location": "Greeley, CO",
+      "quote": "When my daughter decided she wanted to homeschool her high school years, we were looking for a school to umbrella us during our journey. After we interviewed with CHESS, we decided to go further and enroll my daughter in the CHESS Diploma Program for the accountability and an actual private school diploma at graduation. She thrived in the CHESS environment. I watched as her joy returned. The Godly aspect in each class grew my daughter spiritually, which is priceless. I cannot say enough good about the teachers and Mrs. Brown, the principal, because their care for my daughter went above and beyond what she would have received in a secular school setting. The classes offered at CHESS were a perfect complement to our home classes. I am absolutely certain this school was a Godsend for which we will always be grateful and thankful."
+    },
+    {
+      "name": "Polly",
+      "location": "Firestone, CO",
+      "quote": "I recommend CHESS for several reasons. My children and I appreciate the relationships that they've made there. I have a daughter in nursing school, and she counts several of the friendships that she made at CHESS as best friends in adulthood. My sons, a senior and an 8th grader, also greatly value the friends that they've made there. As a parent, I love knowing the families of their friends, because you can walk through raising kids together, and the mom fellowship is awesome! CHESS has a great curriculum and Diploma Program. The staff is incredibly patient and gracious while they guide one through the processes required for the Independent School and Diploma Program. Having a diploma, from a school, made my daughter's entrance into nursing school seamless. CHESS is very supportive of parents, and we can choose which classes to take with CHESS and which classes we would like to teach our kids at home. We especially love Mr. Ong's Bible classes and Mrs. Smart's writing classes. We live 45 minutes from CHESS and have been attending since 2018. We count the drive as an easy sacrifice for so many wonderful benefits!"
+    },
+    {
+      "name": "Crystal",
+      "location": "Johnstown, CO",
+      "quote": "CHESS is truly a blessing to our family. As a new family to homeschooling, we were helped by CHESS to navigate the process of what is required to help keep us on track for our high school student. We utilize the Independent School, High School Diploma Program, Academy, and Standardized Testing. The Christ-centered teaching and staff are such an encouragement for us. My daughter's favorite thing besides the wonderful friends she has made, is that her English teacher prays every day before class. Switching to CHESS was the best decision we made for our high school student!"
+    },
+    {
+      "name": "Michelle",
+      "location": "Bailey, CO",
+      "quote": "I don't know where to begin to thank you for all you've done. I am pretty sure we would not have been able to home school all the way through high school without CHESS's diploma program. Your direction, encouragement, and influence on our son caused him to reach higher and accomplish more academically and spiritually than he would have ever been able to do without you."
+    },
+    {
+      "name": "David",
+      "location": "Cheyenne, WY",
+      "quote": "We are thankful for all you are doing to help us teach our kids in the nurture and admonition of the Lord."
+    },
+    {
+      "name": "Mary",
+      "location": "Nunn, CO",
+      "quote": "We are so thankful for the Christian emphasis at Colorado Heritage and for the caliber of the teachers. We graduated our four students from your Diploma Program, and we can truly say that the experience from start to finish was a blessing! I highly recommend this school to homeschooling parents or to those who are thinking about homeschooling and who want their high school student(s) to receive a quality education which is firmly housed in traditional Biblical values and beliefs."
+    },
+    {
+      "name": "Gordon & Robin",
+      "location": "Brighton, CO",
+      "quote": "Your guidance and prayers have been a tremendous blessing!"
+    },
+    {
+      "name": "Sandy",
+      "location": "Greeley, CO",
+      "quote": "We appreciate your willingness to work with us and offer the flexibility you have."
     }
   ]
 }

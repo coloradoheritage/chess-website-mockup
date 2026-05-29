@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Our Creed and Statement of Faith — what Colorado Heritage Education School System believes concerning God, Scripture, Jesus Christ, humanity, salvation, marriage, family, and education.">
+    <title>Our Beliefs — Colorado Heritage Education School System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'heritage-navy': '#1A365D',
+                        'academy-gold': '#D4AF37',
+                        'chess-blue': '#0D008C',
+                        'mountain-slate': '#2D3748',
+                        'parchment': '#F7FAFC',
+                    },
+                    fontFamily: {
+                        'serif': ['Merriweather', 'serif'],
+                        'sans': ['Lato', 'sans-serif'],
+                        'garamond': ['EB Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .creed-section + .creed-section { border-top: 1px solid #e5e7eb; }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white font-sans text-mountain-slate antialiased">
+
+<!-- TOP ANNOUNCEMENT BAR -->
+<div id="announcement-bar" class="bg-chess-blue text-white text-sm font-semibold py-2 px-4 relative z-50 flex justify-center items-center gap-4 text-center">
+    <span class="flex items-center gap-2">
+        <i data-lucide="bell" class="w-4 h-4 text-academy-gold animate-bounce"></i>
+        <span id="announcement-text">2026/2027 Academy Class Registration is scheduled to open Monday, June 1.</span>
+    </span>
+    <a id="announcement-link" href="programs.html#academy" class="underline text-academy-gold hover:text-white transition-colors">View Classes</a>
+</div>
+
+<!-- MAIN NAVIGATION -->
+<header class="bg-white shadow-sm sticky top-0 z-40 border-b-4 border-academy-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-24">
+            <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                <img src="chess-logo.png" alt="CHESS Logo" class="h-14 w-14 object-contain transition-transform group-hover:scale-105">
+                <div class="flex flex-col">
+                    <h1 class="font-serif text-2xl md:text-3xl font-bold text-heritage-navy leading-none tracking-tight">Colorado Heritage</h1>
+                    <span class="font-sans text-xs font-bold tracking-widest text-academy-gold uppercase mt-1">Education School System</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex space-x-8 items-center">
+                <div class="relative group">
+                    <button class="text-academy-gold font-bold transition-colors flex items-center gap-1 py-4 border-b-2 border-academy-gold">
+                        About Us <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="about.html#purpose" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Our Purpose</a>
+                        <a href="about.html#foundation" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our Foundation</a>
+                        <a href="about.html#history" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our History</a>
+                        <a href="beliefs.html" class="block px-4 py-2.5 text-sm bg-parchment text-heritage-navy font-bold">Our Beliefs</a>
+                        <hr class="my-1 border-gray-100">
+                        <a href="people.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Faculty &amp; Staff</a>
+                        <a href="acceptance.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Acceptance Policy</a>
+                    </div>
+                </div>
+                <a href="programs.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Programs</a>
+                <div class="relative group">
+                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">
+                        Admissions <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute left-0 mt-0 w-56 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="apply.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Apply</a>
+                        <a href="schedule.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Class Schedule</a>
+                        <a href="tuition.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Tuition &amp; Fees</a>
+                        <a href="courses.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Course Descriptions</a>
+                        <a href="policies.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Academy Policies</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">
+                        Resources <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute left-0 mt-0 w-64 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="resources.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Homeschool Resources</a>
+                        <a href="homeschool-law.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Colorado Homeschool Law</a>
+                        <a href="why-independent-school.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Why Independent School?</a>
+                        <hr class="my-1 border-gray-100">
+                        <a href="gallery.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Photo Gallery</a>
+                        <a href="testimonials.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Testimonials</a>
+                    </div>
+                </div>
+                <a href="blog.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Blog</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="contact.html" class="text-heritage-navy hover:text-chess-blue font-bold flex items-center gap-2"><i data-lucide="mail" class="w-5 h-5"></i> Contact Us</a>
+                <a href="donate.html" class="bg-heritage-navy hover:bg-chess-blue text-white px-6 py-2.5 rounded-md font-bold transition-all shadow-md hover:shadow-lg">Donate</a>
+            </div>
+            <div class="md:hidden flex items-center"><button id="mobile-menu-btn" class="text-heritage-navy hover:text-chess-blue"><i data-lucide="menu" class="w-8 h-8"></i></button></div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3 shadow-inner">
+        <a href="about.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">About Us</a>
+        <a href="programs.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">Programs</a>
+        <div class="border-b border-gray-50">
+            <p class="font-bold text-heritage-navy py-2">Admissions</p>
+            <div class="pl-3 pb-2 space-y-1">
+                <a href="apply.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Apply</a>
+                <a href="schedule.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Class Schedule</a>
+                <a href="tuition.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Tuition &amp; Fees</a>
+                <a href="courses.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Course Descriptions</a>
+                <a href="policies.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Academy Policies</a>
+            </div>
+        </div>
+        <div class="border-b border-gray-50">
+            <p class="font-bold text-heritage-navy py-2">Resources</p>
+            <div class="pl-3 pb-2 space-y-1">
+                <a href="resources.html" class="block font-semibold text-mountain-slate py-1 text-sm hover:text-heritage-navy">Homeschool Resources</a>
+                <a href="gallery.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Photo Gallery</a>
+                <a href="testimonials.html" class="block text-mountain-slate py-1 text-sm hover:text-heritage-navy">Testimonials</a>
+            </div>
+        </div>
+        <a href="blog.html" class="block font-bold text-heritage-navy py-2">Blog</a>
+        <div class="pt-4 flex flex-col gap-3">
+            <a href="contact.html" class="text-center font-bold text-heritage-navy py-2 border border-heritage-navy rounded">Contact Us</a>
+            <a href="donate.html" class="text-center bg-heritage-navy text-white font-bold py-2.5 rounded">Donate</a>
+        </div>
+    </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-heritage-navy relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-academy-gold"></div>
+    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 28px 28px;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">What We Believe</p>
+        <h1 class="text-white font-serif font-bold text-4xl md:text-5xl mb-4">Our Creed &amp; Statement of Faith</h1>
+        <p class="text-blue-200 text-lg max-w-3xl leading-relaxed">Colorado Heritage Independent School &amp; Academy exists because we believe that all truth is God's truth and that education must be grounded in the Lordship of Jesus Christ.</p>
+    </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="bg-parchment border-b border-gray-200 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex items-center gap-2 text-xs text-gray-500">
+            <a href="index.html" class="hover:text-heritage-navy transition-colors">Home</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <a href="about.html" class="hover:text-heritage-navy transition-colors">About</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <span class="text-heritage-navy font-bold">Our Beliefs</span>
+        </nav>
+    </div>
+</div>
+
+<!-- PAGE NAV -->
+<div class="bg-white border-b border-gray-200 sticky top-24 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex overflow-x-auto gap-0">
+            <a href="#foundation" class="flex-shrink-0 text-xs font-bold uppercase tracking-wider px-5 py-4 text-mountain-slate hover:text-heritage-navy border-b-2 border-transparent hover:border-heritage-navy transition-colors">Foundation</a>
+            <a href="#god" class="flex-shrink-0 text-xs font-bold uppercase tracking-wider px-5 py-4 text-mountain-slate hover:text-heritage-navy border-b-2 border-transparent hover:border-heritage-navy transition-colors">God</a>
+            <a href="#scripture" class="flex-shrink-0 text-xs font-bold uppercase tracking-wider px-5 py-4 text-mountain-slate hover:text-heritage-navy border-b-2 border-transparent hover:border-heritage-navy transition-colors">Scripture</a>
+            <a href="#christ" class="flex-shrink-0 text-xs font-bold uppercase tracking-wider px-5 py-4 text-mountain-slate hover:text-heritage-navy border-b-2 border-transparent hover:border-heritage-navy transition-colors">Christ</a>
+            <a href="#salvation" class="flex-shrink-0 text-xs font-bold uppercase tracking-wider px-5 py-4 text-mountain-slate hover:text-heritage-navy border-b-2 border-transparent hover:border-heritage-navy transition-colors">Salvation</a>
+            <a href="#marriage" class="flex-shrink-0 text-xs font-bold uppercase tracking-wider px-5 py-4 text-mountain-slate hover:text-heritage-navy border-b-2 border-transparent hover:border-heritage-navy transition-colors">Marriage &amp; Family</a>
+            <a href="#education" class="flex-shrink-0 text-xs font-bold uppercase tracking-wider px-5 py-4 text-mountain-slate hover:text-heritage-navy border-b-2 border-transparent hover:border-heritage-navy transition-colors">Education</a>
+        </div>
+    </div>
+</div>
+
+<!-- CREED CONTENT -->
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+
+    <!-- Our Foundation -->
+    <div id="foundation" class="creed-section pb-16 mb-16">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-4">Our Foundation</p>
+        <h2 class="text-heritage-navy font-serif font-bold text-3xl md:text-4xl mb-6">Why We Exist</h2>
+        <div class="w-12 h-0.5 bg-academy-gold mb-8"></div>
+
+        <div class="bg-heritage-navy rounded-2xl p-8 mb-8 text-white">
+            <p class="font-garamond italic text-xl md:text-2xl leading-relaxed text-white mb-3">"The Bible itself, as the inspired and infallible Word of God that speaks with final authority concerning truth, morality, and the proper conduct of mankind, is the sole and final source of all that we believe."</p>
+        </div>
+
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">Colorado Heritage Independent School &amp; Academy exists because we believe that all truth is God's truth and that education must be grounded in the Lordship of Jesus Christ.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We affirm the historic Christian faith as confessed by the church throughout the centuries in the Apostles' Creed, the Nicene Creed, the Athanasian Creed, the Definition of Chalcedon, the Protestant Reformation confessions, and the faithful evangelical tradition.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe Christian education is not religious instruction added onto a secular foundation, but the joyful pursuit of all knowledge under the authority of God's Word.</p>
+        <p class="text-mountain-slate text-base leading-relaxed">Because of this, we seek to partner with families who desire to raise their children in the nurture and admonition of the Lord, forming students intellectually, morally, spiritually, and culturally according to a distinctly Christian worldview.</p>
+    </div>
+
+    <!-- What We Believe header -->
+    <div class="mb-12">
+        <h2 class="text-heritage-navy font-serif font-bold text-3xl md:text-4xl mb-4">What We Believe</h2>
+        <div class="w-16 h-1 bg-academy-gold mb-2"></div>
+    </div>
+
+    <!-- Concerning God -->
+    <div id="god" class="creed-section py-12 mb-2">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Article I</p>
+        <h3 class="text-heritage-navy font-serif font-bold text-2xl mb-6">Concerning God</h3>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe there is one true and living God, eternally existing in three Persons: Father, Son, and Holy Spirit — equal in power and glory, of one essence, eternal, uncreated, holy, sovereign, and worthy of all worship.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">God is the Creator and Sustainer of all things. He governs all creation according to His wisdom and providence and works all things according to the counsel of His will.</p>
+        <p class="text-mountain-slate text-base leading-relaxed">We believe God is perfectly holy, perfectly just, perfectly loving, and perfectly good.</p>
+    </div>
+
+    <!-- Concerning Holy Scripture -->
+    <div id="scripture" class="creed-section py-12 mb-2">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Article II</p>
+        <h3 class="text-heritage-navy font-serif font-bold text-2xl mb-6">Concerning Holy Scripture</h3>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe the Holy Scriptures of the Old and New Testaments are the inspired Word of God, breathed out by God Himself through human authors.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">The Bible is true, trustworthy, without error in all that it affirms, and the supreme authority for faith, doctrine, morality, and life.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe Scripture is sufficient for knowing God, understanding salvation, and equipping believers for faithful living.</p>
+        <p class="text-mountain-slate text-base leading-relaxed">Because God has spoken, truth is objective, knowable, and binding upon all people.</p>
+    </div>
+
+    <!-- Concerning Jesus Christ -->
+    <div id="christ" class="creed-section py-12 mb-2">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Article III</p>
+        <h3 class="text-heritage-navy font-serif font-bold text-2xl mb-6">Concerning Jesus Christ</h3>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe in Jesus Christ, the eternal Son of God, fully God and fully man.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-4">We believe:</p>
+        <ul class="space-y-2 mb-5 pl-2">
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">He was conceived by the Holy Spirit,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Born of the virgin Mary,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Lived a sinless life,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Fulfilled the Law of God perfectly,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Performed mighty works,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Was crucified under Pontius Pilate,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Died as a substitutionary sacrifice for sinners,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Was buried,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Rose bodily from the dead on the third day,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Ascended into heaven,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">And now reigns at the right hand of the Father as Lord and King.</span></li>
+        </ul>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe Jesus Christ will personally and visibly return to judge the living and the dead and to consummate His everlasting kingdom.</p>
+        <p class="text-mountain-slate text-base leading-relaxed">We affirm that salvation is found in Christ alone and that there is no other mediator between God and man.</p>
+    </div>
+
+    <!-- Concerning the Holy Spirit -->
+    <div class="creed-section py-12 mb-2">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Article IV</p>
+        <h3 class="text-heritage-navy font-serif font-bold text-2xl mb-6">Concerning the Holy Spirit</h3>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe the Holy Spirit is fully God and actively works in creation, revelation, salvation, sanctification, and the life of the church.</p>
+        <p class="text-mountain-slate text-base leading-relaxed">The Holy Spirit convicts the world of sin, regenerates sinners, indwells believers, grants spiritual gifts, illuminates Scripture, and empowers Christians for holy living and faithful witness.</p>
+    </div>
+
+    <!-- Concerning Humanity -->
+    <div class="creed-section py-12 mb-2">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Article V</p>
+        <h3 class="text-heritage-navy font-serif font-bold text-2xl mb-6">Concerning Humanity</h3>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe all human beings are created in the image of God and therefore possess inherent dignity and value from conception to natural death.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">God created mankind male and female. We believe these distinctions are good, purposeful, and established by God.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">Because of Adam's fall into sin, all people are sinners by nature and by choice and are separated from God apart from His saving grace.</p>
+        <p class="text-mountain-slate text-base leading-relaxed">Humanity's greatest need is reconciliation to God through Jesus Christ.</p>
+    </div>
+
+    <!-- Concerning Salvation -->
+    <div id="salvation" class="creed-section py-12 mb-2">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Article VI</p>
+        <h3 class="text-heritage-navy font-serif font-bold text-2xl mb-6">Concerning Salvation</h3>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe salvation is entirely by the grace of God through faith in Jesus Christ alone.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">No person can earn salvation through moral effort, religious works, or personal righteousness.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe Christ's atoning death fully satisfied the justice of God for all who trust in Him.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">Those who repent of their sins and place their faith in Christ are forgiven, declared righteous before God, adopted into His family, and granted eternal life.</p>
+        <p class="text-mountain-slate text-base leading-relaxed">We believe true faith results in a transformed life marked by repentance, obedience, love for God, and perseverance in the faith.</p>
+    </div>
+
+    <!-- Concerning the Church -->
+    <div class="creed-section py-12 mb-2">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Article VII</p>
+        <h3 class="text-heritage-navy font-serif font-bold text-2xl mb-6">Concerning the Church</h3>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe the universal church consists of all true believers united to Christ by faith.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">Christ has ordained the local church for worship, discipleship, fellowship, the preaching of the Word, the administration of baptism and the Lord's Supper, prayer, and gospel witness.</p>
+        <p class="text-mountain-slate text-base leading-relaxed">We affirm the importance of faithful church membership, Christian fellowship, and submission to biblical authority within the church.</p>
+    </div>
+
+    <!-- Concerning Marriage, Family, and Human Sexuality -->
+    <div id="marriage" class="creed-section py-12 mb-2">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Article VIII</p>
+        <h3 class="text-heritage-navy font-serif font-bold text-2xl mb-6">Concerning Marriage, Family, and Human Sexuality</h3>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe God established marriage as a covenant union between one man and one woman.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">The family is ordained by God as the foundational institution of human society.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">Parents bear the primary responsibility before God for the nurture, education, discipline, and discipleship of their children.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe sexual intimacy is reserved by God for marriage alone and that God calls all people to purity, holiness, self-control, and repentance from sexual sin.</p>
+        <p class="text-mountain-slate text-base leading-relaxed">We affirm the dignity and worth of every human being while holding firmly to biblical truth regarding human sexuality, marriage, and morality.</p>
+    </div>
+
+    <!-- Concerning Education -->
+    <div id="education" class="creed-section py-12 mb-2">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Article IX</p>
+        <h3 class="text-heritage-navy font-serif font-bold text-2xl mb-6">Concerning Education</h3>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe education is fundamentally the formation of the whole person under the Lordship of Jesus Christ.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">Because God is the Creator of all things, all truth finds its source, meaning, and coherence in Him. Therefore, education can never be religiously neutral. Every subject — including mathematics, science, literature, history, government, economics, agriculture, music, and the arts — must ultimately be understood in relation to God and His created order.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe "the fear of the LORD is the beginning of wisdom" (Prov. 9:10 ESV), and that true education must seek not merely the accumulation of information, but the cultivation of wisdom, virtue, discernment, diligence, and Christian character.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">The purpose of Christian education is not merely academic achievement or vocational success, though both are important. Rather, Christian education seeks to train students to glorify God and faithfully fulfill their callings in every sphere of life.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe parents bear the primary responsibility before God for the nurture, discipline, and education of their children (Deut. 6:6–7; Eph. 6:4). Therefore, the role of the school is not to replace the family, but to come alongside parents as a supportive partner in the education and discipleship of their children.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-4">We believe students should be trained:</p>
+        <ul class="space-y-2 mb-5 pl-2">
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">To think biblically and carefully,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">To love truth and reject falsehood,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">To work diligently and joyfully,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">To pursue excellence for the glory of God,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">To serve faithfully in church, family, vocation, and society,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">And to understand that all lawful work may be done unto the Lord.</span></li>
+        </ul>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We affirm that education includes both academic and spiritual formation. Students should be challenged intellectually while also being encouraged toward holiness, integrity, humility, responsibility, and love for God and neighbor.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe work itself is a gift from God and part of mankind's created purpose. Therefore, education should help students discover and develop their God-given gifts, abilities, and vocations so they may faithfully serve Christ in whatever calling He places before them.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-4">We believe Christian education should cultivate:</p>
+        <ul class="space-y-2 mb-5 pl-2">
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Academic excellence,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Strong moral character,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Biblical wisdom,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Love for the local church,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Respect for lawful authority,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Meaningful vocational preparation,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">And a lifelong commitment to learning under God.</span></li>
+        </ul>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">Because all people are made in the image of God yet affected by sin, we recognize that students require both instruction and shepherding. Discipline, accountability, counseling, encouragement, and mentorship are therefore important aspects of Christian education when exercised with wisdom, grace, and truth.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe the ultimate goal of education is not self-fulfillment, worldly success, or social prestige, but faithfulness to God.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-4">Accordingly, we seek to educate students who:</p>
+        <ul class="space-y-2 mb-8 pl-2">
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Love the Lord Jesus Christ,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Honor their parents,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Think with wisdom and discernment,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Work with diligence and integrity,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">Value truth, goodness, and beauty,</span></li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-mountain-slate text-base leading-relaxed">And live as faithful Christians in every area of life.</span></li>
+        </ul>
+        <div class="bg-parchment border-l-4 border-academy-gold pl-6 py-4 rounded-r-xl">
+            <p class="font-garamond italic text-lg text-mountain-slate leading-relaxed">"For from Him and through Him and to Him are all things. To Him be glory forever. Amen."</p>
+            <p class="text-heritage-navy text-sm font-bold mt-2">— Romans 11:36 (ESV)</p>
+        </div>
+    </div>
+
+    <!-- Concerning Christian Living -->
+    <div class="creed-section py-12 mb-2">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Article X</p>
+        <h3 class="text-heritage-navy font-serif font-bold text-2xl mb-6">Concerning Christian Living</h3>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe Christians are called to live in holiness, humility, love, integrity, diligence, courage, and truth.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">Believers should seek to glorify God in every area of life — including family life, work, education, citizenship, worship, and culture.</p>
+        <p class="text-mountain-slate text-base leading-relaxed">We believe the Christian life is marked by ongoing repentance, growth in grace, obedience to Scripture, and dependence upon the Holy Spirit.</p>
+    </div>
+
+    <!-- Concerning the Last Things -->
+    <div class="creed-section py-12 mb-2">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Article XI</p>
+        <h3 class="text-heritage-navy font-serif font-bold text-2xl mb-6">Concerning the Last Things</h3>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">We believe Jesus Christ will return bodily and visibly in glory.</p>
+        <p class="text-mountain-slate text-base leading-relaxed mb-5">There will be a final resurrection, final judgment, everlasting blessedness for the redeemed, and everlasting separation from God for the unrepentant.</p>
+        <p class="text-mountain-slate text-base leading-relaxed">We believe the kingdoms of this world ultimately belong to our Lord and to His Christ, and that Christ shall reign forever.</p>
+    </div>
+
+    <!-- Our Conviction -->
+    <div class="creed-section pt-12">
+        <div class="bg-heritage-navy rounded-2xl p-10 text-white">
+            <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-4">Our Conviction</p>
+            <h3 class="text-white font-serif font-bold text-2xl md:text-3xl mb-6">We Joyfully Confess</h3>
+            <p class="text-blue-200 text-base leading-relaxed mb-6">We do not claim perfection, but we joyfully confess the historic Christian faith once delivered to the saints.</p>
+            <p class="text-blue-200 text-base leading-relaxed mb-6">Our desire is to educate students who:</p>
+            <ul class="space-y-3 mb-8">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-blue-100 text-base leading-relaxed">Love God and His truth,</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-blue-100 text-base leading-relaxed">Think carefully and biblically,</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-blue-100 text-base leading-relaxed">Live with wisdom and integrity,</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-blue-100 text-base leading-relaxed">Serve faithfully in church and society,</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-academy-gold mt-2.5 flex-shrink-0"></span><span class="text-blue-100 text-base leading-relaxed">And glorify God in every sphere of life.</span></li>
+            </ul>
+            <p class="text-white font-garamond italic text-lg leading-relaxed">We believe the gospel of Jesus Christ is true, that God's Word is trustworthy, and that Christian education matters because Christ is Lord over all.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- CTA -->
+<section class="py-16 bg-parchment border-y border-gray-200">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-heritage-navy font-serif font-bold text-3xl mb-4">Rooted in These Beliefs</h2>
+        <p class="text-mountain-slate text-base mb-8">Every program, policy, and practice at Colorado Heritage flows from this foundation. We invite families who share these convictions to join us.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="acceptance.html" class="bg-heritage-navy text-white font-bold py-4 px-8 rounded uppercase tracking-wider text-sm hover:bg-chess-blue transition-colors">Acceptance Policy</a>
+            <a href="contact.html" class="border-2 border-heritage-navy text-heritage-navy font-bold py-4 px-8 rounded uppercase tracking-wider text-sm hover:bg-heritage-navy hover:text-white transition-colors">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-mountain-slate pt-16 pb-8 border-t-8 border-heritage-navy">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div><div class="flex items-center gap-2 mb-6"><img src="chess-logo.png" alt="CHESS Logo" class="h-10 w-10 object-contain"><h2 class="font-serif text-xl font-bold text-white tracking-tight">Colorado Heritage</h2></div><p class="text-gray-300 mb-6 font-garamond italic text-lg">"Pursuing the Knowledge of God."</p><div class="space-y-3 text-gray-400 text-sm"><p class="flex items-start gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-academy-gold shrink-0"></i><span>1300 9th Street<br>Greeley, Colorado 80631</span></p><p class="flex items-center gap-3"><i data-lucide="phone" class="w-5 h-5 text-academy-gold shrink-0"></i>(970) 346-0099</p><p class="flex items-center gap-3"><i data-lucide="mail" class="w-5 h-5 text-academy-gold shrink-0"></i><a href="mailto:office@coloradoheritage.org" class="hover:text-white transition-colors">office@coloradoheritage.org</a></p></div></div>
+            <div><h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Quick Links</h4><ul class="space-y-3 text-gray-400"><li><a href="beliefs.html" class="hover:text-academy-gold transition-colors block">Our Beliefs</a></li><li><a href="acceptance.html" class="hover:text-academy-gold transition-colors block">Acceptance Policy</a></li><li><a href="programs.html#academy" class="hover:text-academy-gold transition-colors block">Fee Schedule &amp; Scholarships</a></li><li><a href="resources.html" class="hover:text-academy-gold transition-colors block">Homeschool Resources</a></li><li><a href="testimonials.html" class="hover:text-academy-gold transition-colors block">Testimonials</a></li></ul></div>
+            <div><h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Access Portals</h4><div class="space-y-3"><a href="https://app.praxischool.com/parent_login.php?s=1300" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="users" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>PARENT Portal</a><a href="https://app.praxischool.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="briefcase" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>FACULTY/STAFF Portal</a><a href="https://app.praxischool.com/site_login.php?s=1300" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-400 hover:text-white hover:bg-heritage-navy p-2 rounded transition-colors group border border-gray-600 hover:border-heritage-navy"><i data-lucide="user-plus" class="w-5 h-5 text-academy-gold group-hover:text-white"></i>NEW APPLICANT Portal</a></div></div>
+            <div><h4 class="text-white font-serif font-bold text-lg mb-6 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Support CHESS</h4><p class="text-gray-400 text-sm mb-4">Please consider donating to Colorado Heritage. Thank you for your continued support!</p><a href="donate.html" class="bg-academy-gold hover:bg-yellow-500 text-heritage-navy font-bold px-6 py-2 rounded-md inline-flex items-center gap-2 transition-colors w-full justify-center mb-6"><i data-lucide="heart" class="w-4 h-4"></i> Donate Now</a><div class="flex gap-4"><a href="https://www.youtube.com/channel/UCFtMowGUdhluaSp85vJBXKw/videos?view=0" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i></a><a href="https://www.facebook.com/coloradoheritage" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-chess-blue transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a></div></div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 text-xs text-gray-500 leading-relaxed text-justify md:text-center">
+            <p class="mb-4">Colorado Heritage Education School System admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at Colorado Heritage. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs.</p>
+            <p>Colorado Heritage Education School System is a 501 (c) (3) charitable organization. &copy; 1991 - 2026. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    lucide.createIcons();
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+    fetch('data/announcement.json').then(r => r.json()).then(data => {
+        const bar = document.getElementById('announcement-bar');
+        if (!bar) return;
+        if (!data.active) { bar.style.display = 'none'; return; }
+        if (data.text) document.getElementById('announcement-text').textContent = data.text;
+        const linkEl = document.getElementById('announcement-link');
+        if (linkEl) { if (data.link_text) linkEl.textContent = data.link_text; if (data.link_url) linkEl.href = data.link_url; }
+    }).catch(() => {});
+</script>
+</body>
+</html>
