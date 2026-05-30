@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"/Users/noahnelson/Library/Mobile Documents/com~apple~CloudDocs/Documents/CHESS Branding Guide/website-mockup\" && git add -A && git diff --cached --quiet || git commit -m \"Auto-save: update site files\" && git push origin main"
+          }
+        ]
+      }
+    ]
+  }
+}
