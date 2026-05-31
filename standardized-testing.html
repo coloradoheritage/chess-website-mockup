@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="chess-logo.png">
+    <link rel="apple-touch-icon" href="chess-logo.png">
+    <meta name="description" content="Colorado Heritage offers standardized testing for homeschool students including CORE, COMPLETE, CLT, and group testing options. Required testing for Colorado homeschoolers every other year.">
+    <title>Standardized Testing Services — Homeschool Testing Colorado | Colorado Heritage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{'heritage-navy':'#1A365D','academy-gold':'#D4AF37','chess-blue':'#0D008C','mountain-slate':'#2D3748','parchment':'#F7FAFC'},fontFamily:{serif:['Merriweather','serif'],sans:['Lato','sans-serif'],garamond:['EB Garamond','serif']}}}}</script>
+    <style>
+        html{scroll-behavior:smooth;}
+        .dot-pattern{background-image:radial-gradient(circle,rgba(212,175,55,0.15) 1px,transparent 1px);background-size:24px 24px;}
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Colorado Heritage Education School System">
+    <meta property="og:title" content="Standardized Testing Services — Homeschool Testing Colorado | Colorado Heritage">
+    <meta property="og:description" content="Colorado Heritage offers standardized testing for homeschool students including CORE, COMPLETE, CLT, and group testing options. Required testing for Colorado homeschoolers every other year.">
+    <meta property="og:image" content="https://coloradoheritage.org/images/Graduation/SarahPorterPhotography2288.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://coloradoheritage.org/images/Graduation/SarahPorterPhotography2288.jpg">
+</head>
+<body class="bg-white font-sans text-mountain-slate antialiased">
+
+<!-- ANNOUNCEMENT BAR -->
+<div id="announcement-bar" class="bg-chess-blue text-white text-sm font-semibold py-2 px-4 z-50 flex justify-center items-center gap-4 text-center">
+    <span class="flex items-center gap-2"><i data-lucide="bell" class="w-4 h-4 text-academy-gold animate-bounce"></i><span id="announcement-text">2026/2027 Academy Class Registration is scheduled to open Monday, June 1.</span></span>
+    <a id="announcement-link" href="k12-academy.html" class="underline text-academy-gold hover:text-white transition-colors">View Classes</a>
+</div>
+
+<!-- NAV -->
+<header class="bg-white shadow-sm sticky top-0 z-40 border-b-4 border-academy-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-24">
+            <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                <img src="chess-logo.png" alt="CHESS Logo" class="h-14 w-14 object-contain transition-transform group-hover:scale-105">
+                <div class="flex flex-col"><h1 class="font-serif text-2xl md:text-3xl font-bold text-heritage-navy leading-none tracking-tight">Colorado Heritage</h1><span class="font-sans text-xs font-bold tracking-widest text-academy-gold uppercase mt-1">Education School System</span></div>
+            </a>
+            <nav class="hidden lg:flex space-x-8 items-center">
+                <div class="relative group"><button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">About Us <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50"><a href="about.html#purpose" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Our Purpose</a><a href="about.html#foundation" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our Foundation</a><a href="about.html#history" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our History</a><a href="beliefs.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Our Beliefs</a><hr class="my-1 border-gray-100"><a href="people.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Faculty &amp; Staff</a><a href="acceptance.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Acceptance Policy</a></div></div>
+                <div class="relative group"><button class="text-academy-gold font-bold transition-colors flex items-center gap-1 py-4 border-b-2 border-academy-gold">Programs <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="absolute left-0 mt-0 w-60 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50"><a href="programs.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">All Programs Overview</a><hr class="my-1 border-gray-100"><a href="independent-school.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Independent School</a><a href="k12-academy.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">K–12 Academy</a><a href="diploma-program.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Diploma Program</a><a href="standardized-testing.html" class="block px-4 py-2.5 text-sm bg-parchment text-heritage-navy font-bold">Standardized Testing</a></div></div>
+                <div class="relative group"><button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">Admissions <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="absolute left-0 mt-0 w-56 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50"><a href="apply.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Apply</a><a href="schedule.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Class Schedule</a><a href="tuition.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Tuition &amp; Fees</a><a href="courses.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Course Descriptions</a><a href="policies.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Academy Policies</a></div></div>
+                <div class="relative group"><button class="text-heritage-navy hover:text-academy-gold font-bold transition-colors flex items-center gap-1 py-4">Resources <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="absolute left-0 mt-0 w-64 bg-white border border-gray-100 rounded-md shadow-lg py-2 hidden group-hover:block z-50"><a href="resources.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy font-semibold">Homeschool Resources</a><a href="faq.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">FAQ</a><a href="start-homeschooling.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">How to Start Homeschooling</a><a href="homeschool-vs-public-school.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Homeschool vs. Public School</a><a href="christian-homeschool-curriculum.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Curriculum Guide</a><a href="why-christian-education.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Why Christian Education?</a><a href="homeschool-law.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Colorado Homeschool Law</a><a href="why-independent-school.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Why Independent School?</a><a href="why-chess.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">CHESS vs. Public School</a><hr class="my-1 border-gray-100"><a href="gallery.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Photo Gallery</a><a href="testimonials.html" class="block px-4 py-2.5 text-sm text-mountain-slate hover:bg-parchment hover:text-heritage-navy">Testimonials</a></div></div>
+                <a href="blog.html" class="text-heritage-navy hover:text-academy-gold font-bold transition-colors">Blog</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-4"><a href="contact.html" class="text-heritage-navy hover:text-chess-blue font-bold flex items-center gap-2"><i data-lucide="mail" class="w-5 h-5"></i> Contact Us</a><a href="apply.html" class="bg-academy-gold hover:bg-yellow-400 text-heritage-navy px-6 py-2.5 rounded-md font-bold transition-all shadow-md">Apply Now</a></div>
+            <div class="md:hidden flex items-center"><button id="mobile-menu-btn" class="text-heritage-navy"><i data-lucide="menu" class="w-8 h-8"></i></button></div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3 shadow-inner">
+        <a href="about.html" class="block font-bold text-heritage-navy py-2 border-b border-gray-50">About Us</a>
+        <div class="border-b border-gray-50"><p class="font-bold text-heritage-navy py-2">Programs</p><div class="pl-3 pb-2 space-y-1"><a href="programs.html" class="block text-mountain-slate py-1 text-sm">All Programs</a><a href="independent-school.html" class="block text-mountain-slate py-1 text-sm">Independent School</a><a href="k12-academy.html" class="block text-mountain-slate py-1 text-sm">K–12 Academy</a><a href="diploma-program.html" class="block text-mountain-slate py-1 text-sm">Diploma Program</a><a href="standardized-testing.html" class="block font-bold text-academy-gold py-1 text-sm">Standardized Testing</a></div></div>
+        <div class="border-b border-gray-50"><p class="font-bold text-heritage-navy py-2">Admissions</p><div class="pl-3 pb-2 space-y-1"><a href="apply.html" class="block font-semibold text-mountain-slate py-1 text-sm">Apply</a><a href="tuition.html" class="block text-mountain-slate py-1 text-sm">Tuition &amp; Fees</a></div></div>
+        <a href="blog.html" class="block font-bold text-heritage-navy py-2">Blog</a>
+        <div class="pt-4"><a href="apply.html" class="block text-center bg-academy-gold text-heritage-navy font-bold py-2.5 rounded">Apply Now</a></div>
+    </div>
+</header>
+
+<!-- HERO (navy + dot pattern, no photo) -->
+<section class="bg-heritage-navy dot-pattern relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-academy-gold"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
+        <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Program 04</p>
+        <h1 class="text-white font-serif font-bold text-4xl md:text-5xl mb-4">Standardized Testing</h1>
+        <p class="text-blue-200 text-lg max-w-2xl leading-relaxed mb-6">Professional standardized testing services for homeschooling families — fulfilling Colorado's biennial testing requirement with CORE, COMPLETE, CLT, and more.</p>
+        <div class="flex flex-wrap gap-4">
+            <a href="contact.html" class="bg-academy-gold hover:bg-yellow-400 text-heritage-navy font-bold px-8 py-3 rounded-md transition-colors">Contact Us to Register</a>
+            <a href="tuition.html" class="border-2 border-white text-white hover:bg-white hover:text-heritage-navy font-bold px-8 py-3 rounded-md transition-colors">View Fee Schedule</a>
+        </div>
+    </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="bg-parchment border-b border-gray-200 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex items-center gap-2 text-xs text-gray-500">
+            <a href="index.html" class="hover:text-heritage-navy">Home</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <a href="programs.html" class="hover:text-heritage-navy">Programs</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <span class="text-heritage-navy font-bold">Standardized Testing</span>
+        </nav>
+    </div>
+</div>
+
+<main>
+    <!-- WHY TESTING MATTERS -->
+    <section id="why-testing" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div>
+                    <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Colorado Law</p>
+                    <h2 class="text-heritage-navy font-serif font-bold text-3xl mb-4">Testing Is Required for Colorado Homeschoolers</h2>
+                    <div class="w-12 h-0.5 bg-academy-gold mb-6"></div>
+                    <p class="text-mountain-slate leading-relaxed mb-4">Colorado state law requires that homeschool students enrolled in an independent school (like CHESS) undergo standardized testing every other year, beginning in 3rd grade. Specifically, testing is required in grades 3, 5, 7, 9, and 11.</p>
+                    <p class="text-mountain-slate leading-relaxed mb-4">Colorado Heritage offers homeschool standardized testing services to our enrolled families, providing a convenient, low-stress way to fulfill this requirement while keeping your student's records with a trusted private school.</p>
+                    <p class="text-mountain-slate leading-relaxed mb-6">We offer multiple testing formats — private sessions, group sessions, and at-home testing — so you can choose what works best for your family. Contact our office for current testing dates and availability.</p>
+                    <a href="homeschool-law.html" class="inline-flex items-center gap-2 text-chess-blue font-bold hover:underline text-sm"><i data-lucide="external-link" class="w-4 h-4"></i> Learn About Colorado Homeschool Law →</a>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-heritage-navy rounded-2xl p-7 text-white">
+                        <h3 class="font-serif font-bold text-xl text-academy-gold mb-4">Colorado Testing Schedule</h3>
+                        <p class="text-blue-200 text-sm mb-4">Testing is required every other year in these grades:</p>
+                        <div class="grid grid-cols-5 gap-2">
+                            <div class="text-center bg-white/10 rounded-lg py-3"><p class="text-academy-gold font-bold text-lg">3</p><p class="text-blue-200 text-xs">Grade</p></div>
+                            <div class="text-center bg-white/10 rounded-lg py-3"><p class="text-academy-gold font-bold text-lg">5</p><p class="text-blue-200 text-xs">Grade</p></div>
+                            <div class="text-center bg-white/10 rounded-lg py-3"><p class="text-academy-gold font-bold text-lg">7</p><p class="text-blue-200 text-xs">Grade</p></div>
+                            <div class="text-center bg-white/10 rounded-lg py-3"><p class="text-academy-gold font-bold text-lg">9</p><p class="text-blue-200 text-xs">Grade</p></div>
+                            <div class="text-center bg-white/10 rounded-lg py-3"><p class="text-academy-gold font-bold text-lg">11</p><p class="text-blue-200 text-xs">Grade</p></div>
+                        </div>
+                        <p class="text-blue-300 text-xs mt-4">Biennial requirement under Colorado's homeschool compulsory attendance law.</p>
+                    </div>
+                    <div class="border-l-4 border-academy-gold bg-yellow-50 rounded-r-xl p-5">
+                        <p class="font-bold text-heritage-navy text-sm mb-1">CHESS Families Only</p>
+                        <p class="text-mountain-slate text-sm leading-relaxed">Our testing services are available to families currently enrolled in the CHESS Independent School. If you are not yet enrolled, <a href="independent-school.html" class="text-chess-blue font-bold hover:underline">apply first →</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTING OPTIONS TABLE -->
+    <section class="py-16 bg-parchment border-y border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Fees &amp; Options</p>
+                <h2 class="text-heritage-navy font-serif font-bold text-3xl mb-4">Testing Options &amp; Fees</h2>
+                <div class="w-12 h-0.5 bg-academy-gold mx-auto mb-4"></div>
+                <p class="text-mountain-slate max-w-2xl mx-auto text-sm">We offer several testing formats to fit your family's needs. A sibling discount is available when multiple children from the same family test during the same session.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-6">
+                <div class="bg-heritage-navy px-6 py-4">
+                    <h3 class="text-white font-serif font-bold text-lg">Private Test Sessions</h3>
+                    <p class="text-blue-200 text-sm">Scheduled individually for your family at our Greeley office</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-parchment border-b border-gray-200">
+                            <tr>
+                                <th class="text-left px-6 py-3 font-bold text-heritage-navy">Test</th>
+                                <th class="text-left px-6 py-3 font-bold text-heritage-navy">Description</th>
+                                <th class="text-right px-6 py-3 font-bold text-heritage-navy">Fee</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="hover:bg-parchment/50 transition-colors">
+                                <td class="px-6 py-4 font-bold text-heritage-navy whitespace-nowrap">CORE</td>
+                                <td class="px-6 py-4 text-mountain-slate">Core academic battery — reading, language arts, math</td>
+                                <td class="px-6 py-4 text-right font-bold text-heritage-navy">$85</td>
+                            </tr>
+                            <tr class="hover:bg-parchment/50 transition-colors">
+                                <td class="px-6 py-4 font-bold text-heritage-navy whitespace-nowrap">COMPLETE</td>
+                                <td class="px-6 py-4 text-mountain-slate">Full battery including science, social studies, and reference skills</td>
+                                <td class="px-6 py-4 text-right font-bold text-heritage-navy">$100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-6">
+                <div class="bg-chess-blue px-6 py-4">
+                    <h3 class="text-white font-serif font-bold text-lg">Group Testing Sessions</h3>
+                    <p class="text-blue-200 text-sm">Test alongside other CHESS families — more affordable, community feel</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-parchment border-b border-gray-200">
+                            <tr>
+                                <th class="text-left px-6 py-3 font-bold text-heritage-navy">Test</th>
+                                <th class="text-left px-6 py-3 font-bold text-heritage-navy">Description</th>
+                                <th class="text-right px-6 py-3 font-bold text-heritage-navy">Fee</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="hover:bg-parchment/50 transition-colors">
+                                <td class="px-6 py-4 font-bold text-heritage-navy whitespace-nowrap">Group CORE</td>
+                                <td class="px-6 py-4 text-mountain-slate">Core battery in a supervised group setting</td>
+                                <td class="px-6 py-4 text-right font-bold text-heritage-navy">$55</td>
+                            </tr>
+                            <tr class="hover:bg-parchment/50 transition-colors">
+                                <td class="px-6 py-4 font-bold text-heritage-navy whitespace-nowrap">Group CORE + COMPLETE</td>
+                                <td class="px-6 py-4 text-mountain-slate">Full battery in a supervised group setting</td>
+                                <td class="px-6 py-4 text-right font-bold text-heritage-navy">$65</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="bg-mountain-slate px-6 py-4">
+                        <h3 class="text-white font-serif font-bold text-lg">CLT Testing</h3>
+                        <p class="text-gray-300 text-sm">Classic Learning Test — for high school students</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-mountain-slate text-sm leading-relaxed mb-4">The Classic Learning Test (CLT) is an alternative college admissions test accepted by hundreds of colleges and universities. It assesses verbal reasoning, grammar/writing, and quantitative reasoning from a classical, Christian-friendly perspective.</p>
+                        <div class="flex items-center justify-between bg-parchment rounded-lg px-4 py-3">
+                            <span class="font-bold text-heritage-navy text-sm">CLT</span>
+                            <span class="font-bold text-heritage-navy">$75</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="bg-mountain-slate px-6 py-4">
+                        <h3 class="text-white font-serif font-bold text-lg">At-Home Testing</h3>
+                        <p class="text-gray-300 text-sm">Administered at home by a parent proctor</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-mountain-slate text-sm leading-relaxed mb-4">Families who prefer testing at home can choose the at-home testing option. Parents serve as the proctor following standardized administration guidelines provided by CHESS.</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between bg-parchment rounded-lg px-4 py-2.5">
+                                <span class="font-bold text-heritage-navy text-sm">Home Testing — CORE</span>
+                                <span class="font-bold text-heritage-navy">$55</span>
+                            </div>
+                            <div class="flex items-center justify-between bg-parchment rounded-lg px-4 py-2.5">
+                                <span class="font-bold text-heritage-navy text-sm">Home Testing — COMPLETE</span>
+                                <span class="font-bold text-heritage-navy">$65</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 border border-academy-gold/30 rounded-xl p-5 flex items-start gap-3">
+                <i data-lucide="info" class="w-5 h-5 text-academy-gold shrink-0 mt-0.5"></i>
+                <div>
+                    <p class="font-bold text-heritage-navy text-sm mb-1">Sibling Discount Available</p>
+                    <p class="text-mountain-slate text-sm">A sibling discount applies when two or more children from the same enrolled family test in the same session. Contact our office for details and current pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO REGISTER -->
+    <section class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">Registration</p>
+                <h2 class="text-heritage-navy font-serif font-bold text-3xl mb-4">How to Register for Testing</h2>
+                <div class="w-12 h-0.5 bg-academy-gold mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 mb-10">
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-heritage-navy rounded-full flex items-center justify-center mx-auto mb-4 text-academy-gold font-bold text-xl">1</div>
+                    <h3 class="font-bold text-heritage-navy mb-2">Confirm Enrollment</h3>
+                    <p class="text-mountain-slate text-sm">Make sure your student is currently enrolled in the CHESS Independent School for the current school year.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-heritage-navy rounded-full flex items-center justify-center mx-auto mb-4 text-academy-gold font-bold text-xl">2</div>
+                    <h3 class="font-bold text-heritage-navy mb-2">Contact Our Office</h3>
+                    <p class="text-mountain-slate text-sm">Call or email our office to ask about current testing dates, available sessions, and which test format is right for your student.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-heritage-navy rounded-full flex items-center justify-center mx-auto mb-4 text-academy-gold font-bold text-xl">3</div>
+                    <h3 class="font-bold text-heritage-navy mb-2">Pay &amp; Schedule</h3>
+                    <p class="text-mountain-slate text-sm">Pay the testing fee and confirm your session date. We'll provide everything your student needs to be prepared.</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-heritage-navy hover:bg-chess-blue text-white font-bold px-8 py-3 rounded-md inline-flex items-center gap-2 transition-colors"><i data-lucide="phone" class="w-5 h-5"></i> Contact Us</a>
+                <a href="mailto:office@coloradoheritage.org" class="border-2 border-heritage-navy text-heritage-navy hover:bg-heritage-navy hover:text-white font-bold px-8 py-3 rounded-md inline-flex items-center gap-2 transition-colors"><i data-lucide="mail" class="w-5 h-5"></i> Email the Office</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 bg-parchment border-t border-gray-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-academy-gold text-xs uppercase tracking-[0.3em] font-bold mb-3">FAQ</p>
+                <h2 class="text-heritage-navy font-serif font-bold text-3xl mb-4">Testing Questions Answered</h2>
+                <div class="w-12 h-0.5 bg-academy-gold mx-auto"></div>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-bold text-heritage-navy hover:bg-parchment transition-colors">
+                        <span>Who needs to be tested?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-academy-gold shrink-0 transition-transform faq-icon"></i>
+                    </button>
+                    <div class="faq-body hidden px-6 pb-5 text-mountain-slate text-sm leading-relaxed">
+                        <p>Colorado law requires homeschool students enrolled in an independent school to undergo standardized testing every other year starting in 3rd grade. This applies to students in grades 3, 5, 7, 9, and 11. Families enrolled in CHESS are responsible for ensuring their students test in the required years.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-bold text-heritage-navy hover:bg-parchment transition-colors">
+                        <span>When does testing need to happen?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-academy-gold shrink-0 transition-transform faq-icon"></i>
+                    </button>
+                    <div class="faq-body hidden px-6 pb-5 text-mountain-slate text-sm leading-relaxed">
+                        <p>Testing must be completed within the applicable school year. Colorado Heritage typically offers testing sessions throughout the spring semester. Contact our office early to secure your preferred session date, as spots are limited — especially for popular group sessions.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-bold text-heritage-navy hover:bg-parchment transition-colors">
+                        <span>What tests are available?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-academy-gold shrink-0 transition-transform faq-icon"></i>
+                    </button>
+                    <div class="faq-body hidden px-6 pb-5 text-mountain-slate text-sm leading-relaxed">
+                        <p>We offer the CORE battery (reading, language arts, math), the COMPLETE battery (CORE plus science, social studies, and reference skills), and the CLT (Classic Learning Test) for high school students. Tests can be taken privately, in a group session, or at home depending on your preference and the test type.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-bold text-heritage-navy hover:bg-parchment transition-colors">
+                        <span>What is the CLT and who is it for?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-academy-gold shrink-0 transition-transform faq-icon"></i>
+                    </button>
+                    <div class="faq-body hidden px-6 pb-5 text-mountain-slate text-sm leading-relaxed">
+                        <p>The Classic Learning Test (CLT) is designed for high school students as an alternative to the SAT or ACT for college admissions. It is accepted by hundreds of colleges and universities and is particularly popular in classical and Christian homeschool communities. The CLT tests verbal reasoning, grammar and writing, and quantitative reasoning from a classical academic perspective.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-bold text-heritage-navy hover:bg-parchment transition-colors">
+                        <span>Can I use a different testing provider?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-academy-gold shrink-0 transition-transform faq-icon"></i>
+                    </button>
+                    <div class="faq-body hidden px-6 pb-5 text-mountain-slate text-sm leading-relaxed">
+                        <p>Yes. Colorado law allows testing through an independent school or through another qualified test administrator. However, CHESS families who use our testing service benefit from the convenience of having results kept directly in their student's CHESS records file. Contact our office if you have questions about alternative testing options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-heritage-navy">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-white font-serif font-bold text-3xl mb-4">Ready to Schedule Testing?</h2>
+            <p class="text-blue-200 mb-8">Contact our office for current homeschool standardized testing dates and to register your student. We're here to make fulfilling Colorado's testing requirements as easy as possible.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-academy-gold hover:bg-yellow-400 text-heritage-navy font-bold px-8 py-4 rounded-md inline-flex items-center gap-2 transition-colors"><i data-lucide="phone" class="w-5 h-5"></i> Contact Us</a>
+                <a href="tuition.html" class="border-2 border-white text-white hover:bg-white hover:text-heritage-navy font-bold px-8 py-4 rounded-md inline-flex items-center gap-2 transition-colors"><i data-lucide="dollar-sign" class="w-5 h-5"></i> View Fee Schedule</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-mountain-slate pt-16 pb-8 border-t-8 border-heritage-navy">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div><div class="flex items-center gap-2 mb-6"><img src="chess-logo.png" alt="CHESS Logo" class="h-10 w-10 object-contain"><h2 class="font-serif text-xl font-bold text-white tracking-tight">Colorado Heritage</h2></div><p class="text-gray-300 mb-4 font-garamond italic text-lg">"Pursuing the Knowledge of God."</p><div class="space-y-2 text-gray-400 text-sm"><p class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-academy-gold shrink-0"></i>1300 9th Street, Greeley, CO 80631</p><p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-academy-gold shrink-0"></i>(970) 346-0099</p><p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-academy-gold shrink-0"></i><a href="mailto:office@coloradoheritage.org" class="hover:text-white">office@coloradoheritage.org</a></p></div></div>
+            <div><h4 class="text-white font-serif font-bold text-lg mb-4 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Programs</h4><ul class="space-y-2 text-gray-400"><li><a href="independent-school.html" class="hover:text-academy-gold block">Independent School</a></li><li><a href="k12-academy.html" class="hover:text-academy-gold block">K–12 Academy</a></li><li><a href="diploma-program.html" class="hover:text-academy-gold block">Diploma Program</a></li><li><a href="standardized-testing.html" class="hover:text-academy-gold block font-bold text-white">Standardized Testing</a></li></ul></div>
+            <div><h4 class="text-white font-serif font-bold text-lg mb-4 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Quick Links</h4><ul class="space-y-2 text-gray-400"><li><a href="apply.html" class="hover:text-academy-gold block">Apply Now</a></li><li><a href="tuition.html" class="hover:text-academy-gold block">Fee Schedule</a></li><li><a href="faq.html" class="hover:text-academy-gold block">FAQ</a></li><li><a href="contact.html" class="hover:text-academy-gold block">Contact Us</a></li></ul></div>
+            <div><h4 class="text-white font-serif font-bold text-lg mb-4 flex items-center gap-2"><span class="w-4 h-1 bg-academy-gold rounded"></span> Access Portals</h4><div class="space-y-2"><a href="https://app.praxischool.com/parent_login.php?s=1300" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-400 hover:text-white p-2 rounded border border-gray-600 hover:border-heritage-navy transition-colors group"><i data-lucide="users" class="w-4 h-4 text-academy-gold"></i>PARENT Portal</a><a href="https://app.praxischool.com/site_login.php?s=1300" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-400 hover:text-white p-2 rounded border border-gray-600 hover:border-heritage-navy transition-colors group"><i data-lucide="user-plus" class="w-4 h-4 text-academy-gold"></i>NEW APPLICANT Portal</a></div></div>
+        </div>
+        <div class="border-t border-gray-700 pt-6 text-xs text-gray-500 text-center"><p>Colorado Heritage Education School System is a 501 (c) (3) charitable organization. &copy; 1991 - 2026. All Rights Reserved.</p></div>
+    </div>
+</footer>
+<script>
+    lucide.createIcons();
+    document.getElementById('mobile-menu-btn').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('hidden'));
+    fetch('data/announcement.json').then(r=>r.json()).then(d=>{if(!d.active){document.getElementById('announcement-bar').style.display='none';return;}const t=document.getElementById('announcement-text'),l=document.getElementById('announcement-link');if(t&&d.text)t.textContent=d.text;if(l){if(d.link_text)l.textContent=d.link_text;if(d.link_url)l.href=d.link_url;}}).catch(()=>{});
+    // FAQ accordion
+    document.querySelectorAll('.faq-btn').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+            const body=btn.nextElementSibling;
+            const icon=btn.querySelector('.faq-icon');
+            body.classList.toggle('hidden');
+            icon.style.transform=body.classList.contains('hidden')?'rotate(0deg)':'rotate(180deg)';
+        });
+    });
+</script>
+</body>
+</html>
