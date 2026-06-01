@@ -1,10 +1,6 @@
 backend:
   name: git-gateway
   branch: main
-  identity_url: https://coloradoheritagewebsite.netlify.app/.netlify/identity
-  gateway_url: https://coloradoheritagewebsite.netlify.app/.netlify/git
-
-site_url: https://coloradoheritage.github.io/chess-website-mockup
 
 # Where uploaded images are stored in the repo
 media_folder: "images/uploads"
