@@ -2,239 +2,138 @@ backend:
   name: git-gateway
   branch: main
 
+# Where uploaded images are stored in the repo
 media_folder: "images/uploads"
+# The public URL path to those images
 public_folder: "/images/uploads"
 
-# ─────────────────────────────────────────────
-# SITE SETTINGS
-# ─────────────────────────────────────────────
 collections:
 
-  - label: "Site Settings"
-    name: "settings"
+  # ─────────────────────────────────────────
+  # ANNOUNCEMENT BAR
+  # ─────────────────────────────────────────
+  - name: "site_settings"
+    label: "📢 Announcements"
     files:
-
       - label: "Announcement Bar"
         name: "announcement"
         file: "data/announcement.json"
+        format: json
         fields:
-          - label: "Show Announcement Bar"
+          - label: "Show Announcement"
             name: "active"
             widget: "boolean"
             default: true
-            hint: "Turn off to hide the blue bar entirely."
+            hint: "Turn this off to hide the blue bar at the top of every page."
           - label: "Announcement Text"
             name: "text"
             widget: "string"
-            hint: "The message shown in the blue bar at the top of every page."
-          - label: "Link Text"
+            hint: "The message displayed in the announcement bar."
+          - label: "Button Label"
             name: "link_text"
             widget: "string"
-            default: "View Classes"
-          - label: "Link URL"
+            hint: "The clickable link label (e.g. 'View Classes')."
+          - label: "Button URL"
             name: "link_url"
             widget: "string"
-            default: "programs.html#academy"
+            hint: "Where the button links to (e.g. programs.html#academy)."
 
-# ─────────────────────────────────────────────
-# BLOG POSTS
-# ─────────────────────────────────────────────
+  # ─────────────────────────────────────────
+  # BLOG POSTS
+  # ─────────────────────────────────────────
+  - name: "posts"
+    label: "📝 Blog Posts"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Colorado Heritage" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Announcements"
+          - "Education"
+          - "Faith & Learning"
+          - "News"
+          - "Resources"
+          - "Events"
+      - { label: "Short Excerpt", name: "excerpt", widget: "text", hint: "1–2 sentences shown on the blog listing page." }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
 
-  - label: "Blog Posts"
-    name: "posts"
+  # ─────────────────────────────────────────
+  # PEOPLE — Faculty, Staff, Board
+  # ─────────────────────────────────────────
+  - name: "people"
+    label: "👥 People"
     files:
-      - label: "All Posts"
-        name: "all_posts"
-        file: "data/posts.json"
-        fields:
-          - label: "Posts"
-            name: "posts"
-            widget: "list"
-            summary: "{{fields.title}} — {{fields.date}}"
-            fields:
-              - label: "Slug (URL ID)"
-                name: "slug"
-                widget: "string"
-                hint: "Lowercase letters and hyphens only. Example: 2026-06-01-summer-update"
-              - label: "Title"
-                name: "title"
-                widget: "string"
-              - label: "Publish Date"
-                name: "date"
-                widget: "date"
-                format: "MMMM D, YYYY"
-              - label: "Summary"
-                name: "summary"
-                widget: "text"
-                hint: "Short description shown on the blog listing page (1–2 sentences)."
-              - label: "Featured Image"
-                name: "image"
-                widget: "image"
-                required: false
-                hint: "Optional photo shown at the top of the article and on the listing card."
-              - label: "Body"
-                name: "body"
-                widget: "markdown"
-                hint: "Write the full article here. Use the toolbar to add headings, bold, links, etc."
 
-# ─────────────────────────────────────────────
-# STAFF DIRECTORY
-# ─────────────────────────────────────────────
-
-  - label: "Staff Directory"
-    name: "staff"
-    files:
-      - label: "Staff Members"
-        name: "staff_members"
-        file: "data/staff.json"
-        fields:
-          - label: "Staff Members"
-            name: "members"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Title / Role", name: "role", widget: "string"}
-              - label: "Photo"
-                name: "photo"
-                widget: "image"
-                required: false
-                hint: "Upload a headshot photo."
-              - {label: "Bio", name: "bio", widget: "text", required: false}
-
-# ─────────────────────────────────────────────
-# CLASS SCHEDULE
-# ─────────────────────────────────────────────
-
-  - label: "Class Schedule"
-    name: "schedule"
-    files:
-      - label: "Class Schedule"
-        name: "class_schedule"
-        file: "data/schedule.json"
-        fields:
-          - label: "Semester / Academic Year"
-            name: "semester"
-            widget: "string"
-            hint: "Shown in the page hero. Example: 2026-2027 Academic Year"
-          - label: "Announcement / Note"
-            name: "note"
-            widget: "text"
-            required: false
-            hint: "Optional message shown at the top of the schedule page (e.g. registration dates)."
-          - label: "Classes"
-            name: "classes"
-            widget: "list"
-            summary: "{{fields.name}} — {{fields.days}}"
-            fields:
-              - {label: "Class Name", name: "name", widget: "string"}
-              - {label: "Description", name: "description", widget: "text", required: false}
-              - {label: "Instructor", name: "instructor", widget: "string", required: false, hint: "Leave blank to show TBD"}
-              - {label: "Grade Levels", name: "grade_levels", widget: "string", hint: "e.g. Grades 6–8"}
-              - {label: "Days", name: "days", widget: "string", hint: "e.g. Monday & Wednesday"}
-              - {label: "Time", name: "time", widget: "string", hint: "e.g. 9:00 AM – 10:30 AM"}
-              - {label: "Fee", name: "fee", widget: "string", required: false, hint: "e.g. $250/semester"}
-              - {label: "Open for Registration", name: "open", widget: "boolean", default: true}
-
-# ─────────────────────────────────────────────
-# TUITION & FEES
-# ─────────────────────────────────────────────
-
-  - label: "Tuition & Fees"
-    name: "tuition"
-    files:
-      - label: "Tuition & Fees"
-        name: "tuition_fees"
-        file: "data/tuition.json"
-        fields:
-          - label: "Note / Announcement"
-            name: "note"
-            widget: "text"
-            required: false
-            hint: "Optional message shown at the top of the tuition page."
-          - label: "Programs"
-            name: "programs"
-            widget: "list"
-            summary: "{{fields.name}}"
-            fields:
-              - {label: "Program Name", name: "name", widget: "string"}
-              - {label: "Description", name: "description", widget: "text", required: false}
-              - label: "Fee Items"
-                name: "fees"
-                widget: "list"
-                fields:
-                  - {label: "Item", name: "item", widget: "string"}
-                  - {label: "Amount", name: "amount", widget: "string"}
-                  - {label: "Notes", name: "notes", widget: "string", required: false}
-
-# ─────────────────────────────────────────────
-# BOARD MEMBERS
-# ─────────────────────────────────────────────
-
-  - label: "Board Members"
-    name: "board"
-    files:
-      - label: "Board Members"
-        name: "board_members"
-        file: "data/board.json"
-        fields:
-          - label: "Board Members"
-            name: "members"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Title / Role", name: "role", widget: "string", default: "Board Member"}
-              - label: "Photo"
-                name: "photo"
-                widget: "image"
-                required: false
-                hint: "Upload a headshot photo."
-              - {label: "Bio", name: "bio", widget: "text", required: false}
-
-# ─────────────────────────────────────────────
-# FACULTY DIRECTORY
-# ─────────────────────────────────────────────
-
-  - label: "Faculty Directory"
-    name: "faculty"
-    files:
-      - label: "Faculty Members"
-        name: "faculty_members"
+      - label: "Faculty"
+        name: "faculty"
         file: "data/faculty.json"
+        format: json
         fields:
           - label: "Faculty Members"
             name: "members"
             widget: "list"
+            summary: "{{fields.name}} — {{fields.role}}"
             fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Subject / Role", name: "role", widget: "string"}
-              - label: "Photo"
-                name: "photo"
-                widget: "image"
-                required: false
-                hint: "Upload a headshot photo."
-              - {label: "Bio", name: "bio", widget: "text", required: false}
+              - { label: "Full Name", name: "name", widget: "string" }
+              - { label: "Role / Subject(s)", name: "role", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Upload a headshot or paste a URL." }
+              - { label: "Bio", name: "bio", widget: "text", hint: "Short paragraph displayed on the Faculty & Staff page." }
 
-# ─────────────────────────────────────────────
-# TESTIMONIALS
-# ─────────────────────────────────────────────
+      - label: "Office Staff"
+        name: "staff"
+        file: "data/staff.json"
+        format: json
+        fields:
+          - label: "Staff Members"
+            name: "members"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields:
+              - { label: "Full Name", name: "name", widget: "string" }
+              - { label: "Role / Title", name: "role", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Bio", name: "bio", widget: "text" }
 
-  - label: "Testimonials"
-    name: "testimonials"
+      - label: "Board of Directors"
+        name: "board"
+        file: "data/board.json"
+        format: json
+        fields:
+          - label: "Board Members"
+            name: "members"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields:
+              - { label: "Full Name", name: "name", widget: "string" }
+              - { label: "Role / Title", name: "role", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Bio", name: "bio", widget: "text", required: false }
+
+  # ─────────────────────────────────────────
+  # TESTIMONIALS
+  # ─────────────────────────────────────────
+  - name: "testimonials"
+    label: "💬 Testimonials"
     files:
-      - label: "Testimonials"
-        name: "all_testimonials"
+      - label: "Family Testimonials"
+        name: "testimonials"
         file: "data/testimonials.json"
+        format: json
         fields:
           - label: "Testimonials"
             name: "testimonials"
             widget: "list"
-            summary: "{{fields.name}}"
+            summary: "{{fields.name}} — {{fields.location}}"
             fields:
-              - {label: "Name", name: "name", widget: "string", hint: "Family name or first name only (e.g. 'The Johnson Family' or 'Sarah M.')"}
-              - {label: "Quote", name: "quote", widget: "text"}
-              - {label: "Program", name: "program", widget: "string", required: false, hint: "e.g. K–12 Academy, Diploma Program, Independent School"}
-              - {label: "Years Enrolled", name: "years", widget: "string", required: false, hint: "e.g. 2019–2024"}
-              - label: "Photo"
-                name: "photo"
-                widget: "image"
-                required: false
+              - { label: "Family Name", name: "name", widget: "string", hint: "e.g. Polly or The Smith Family" }
+              - { label: "City, State", name: "location", widget: "string", hint: "e.g. Greeley, CO" }
+              - { label: "Quote", name: "quote", widget: "text" }
