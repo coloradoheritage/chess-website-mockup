@@ -2,9 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-# Where uploaded images are stored in the repo
+# Uploaded images are stored in the repo and served from Netlify
 media_folder: "images/uploads"
-# The public URL path to those images
 public_folder: "/images/uploads"
 
 collections:
@@ -14,6 +13,8 @@ collections:
   # ─────────────────────────────────────────
   - name: "site_settings"
     label: "📢 Announcements"
+    editor:
+      preview: false
     files:
       - label: "Announcement Bar"
         name: "announcement"
@@ -48,6 +49,8 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     extension: "md"
     format: "frontmatter"
+    editor:
+      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
@@ -63,14 +66,79 @@ collections:
           - "Resources"
           - "Events"
       - { label: "Short Excerpt", name: "excerpt", widget: "text", hint: "1–2 sentences shown on the blog listing page." }
-      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false, hint: "Upload an image. It will appear after Netlify rebuilds (usually within 30 seconds)." }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─────────────────────────────────────────
+  # CLASS SCHEDULE
+  # ─────────────────────────────────────────
+  - name: "schedule"
+    label: "📅 Class Schedule"
+    editor:
+      preview: false
+    files:
+      - label: "Class Schedule"
+        name: "schedule"
+        file: "data/schedule.json"
+        format: json
+        fields:
+          - { label: "Semester Label", name: "semester", widget: "string", hint: "e.g. 2027/2028 — Two 14-Week Semesters" }
+          - { label: "Note", name: "note", widget: "string" }
+          - label: "Classes"
+            name: "classes"
+            widget: "list"
+            summary: "{{fields.day}} {{fields.time}} — {{fields.name}} (Grades {{fields.grade_band}})"
+            fields:
+              - label: "Grade Band"
+                name: "grade_band"
+                widget: "select"
+                options: ["K-2", "3-5", "6-8", "9-12"]
+              - label: "Day"
+                name: "day"
+                widget: "select"
+                options: ["Tuesday", "Thursday"]
+              - { label: "Time", name: "time", widget: "string", hint: "e.g. 8:15" }
+              - { label: "Class Name", name: "name", widget: "string" }
+              - { label: "Instructor", name: "instructor", widget: "string" }
+              - { label: "Room Code", name: "room", widget: "string", hint: "e.g. cs, au, rh, pa, bs" }
+
+  # ─────────────────────────────────────────
+  # TUITION & FEES
+  # ─────────────────────────────────────────
+  - name: "tuition"
+    label: "💰 Tuition & Fees"
+    editor:
+      preview: false
+    files:
+      - label: "Fee Schedule"
+        name: "tuition"
+        file: "data/tuition.json"
+        format: json
+        fields:
+          - { label: "Disclaimer Note", name: "note", widget: "text", hint: "Shown at the top of the fee schedule page." }
+          - label: "Programs"
+            name: "programs"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Program Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Fees"
+                name: "fees"
+                widget: "list"
+                summary: "{{fields.item}} — {{fields.amount}}"
+                fields:
+                  - { label: "Line Item", name: "item", widget: "string" }
+                  - { label: "Amount", name: "amount", widget: "string", hint: "e.g. $125.00" }
+                  - { label: "Notes", name: "notes", widget: "string", required: false, hint: "e.g. Non-refundable, due at enrollment" }
 
   # ─────────────────────────────────────────
   # PEOPLE — Faculty, Staff, Board
   # ─────────────────────────────────────────
   - name: "people"
     label: "👥 People"
+    editor:
+      preview: false
     files:
 
       - label: "Faculty"
@@ -85,8 +153,8 @@ collections:
             fields:
               - { label: "Full Name", name: "name", widget: "string" }
               - { label: "Role / Subject(s)", name: "role", widget: "string" }
-              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Upload a headshot or paste a URL." }
-              - { label: "Bio", name: "bio", widget: "text", hint: "Short paragraph displayed on the Faculty & Staff page." }
+              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Upload a headshot." }
+              - { label: "Bio", name: "bio", widget: "text" }
 
       - label: "Office Staff"
         name: "staff"
@@ -123,6 +191,8 @@ collections:
   # ─────────────────────────────────────────
   - name: "testimonials"
     label: "💬 Testimonials"
+    editor:
+      preview: false
     files:
       - label: "Family Testimonials"
         name: "testimonials"
@@ -134,6 +204,6 @@ collections:
             widget: "list"
             summary: "{{fields.name}} — {{fields.location}}"
             fields:
-              - { label: "Family Name", name: "name", widget: "string", hint: "e.g. Polly or The Smith Family" }
-              - { label: "City, State", name: "location", widget: "string", hint: "e.g. Greeley, CO" }
+              - { label: "Family Name", name: "name", widget: "string" }
+              - { label: "City, State", name: "location", widget: "string" }
               - { label: "Quote", name: "quote", widget: "text" }

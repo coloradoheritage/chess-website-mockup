@@ -1,9 +1,7 @@
 [build]
   publish = "."
-  # Skip the build unless the commit message contains [deploy]
-  # This prevents Netlify from consuming build minutes on every dev commit.
-  # To publish a new version: include [deploy] anywhere in your commit message.
-  ignore = "git log -1 --pretty=%s | grep -qv '\\[deploy\\]'"
+  # No build command needed — pure static HTML site.
+  # Netlify deploys in ~5 seconds on every commit (no build minutes consumed).
 
 [[headers]]
   for = "/admin/*"
