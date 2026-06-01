@@ -2,9 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
-# Uploaded images are stored in the repo and served from Netlify
+# Images stored in repo — served from GitHub Pages (always up to date without a Netlify deploy)
 media_folder: "images/uploads"
-public_folder: "/images/uploads"
+public_folder: "https://coloradoheritage.github.io/chess-website-mockup/images/uploads"
 
 collections:
 

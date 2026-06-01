@@ -1,7 +1,8 @@
 [build]
   publish = "."
-  # No build command needed — pure static HTML site.
-  # Netlify deploys in ~5 seconds on every commit (no build minutes consumed).
+  # Only deploy to Netlify when commit subject contains [deploy].
+  # All other commits (CMS edits, content changes) go to GitHub Pages only.
+  ignore = "git log -1 --pretty=%s | grep -qv '\\[deploy\\]'"
 
 [[headers]]
   for = "/admin/*"
