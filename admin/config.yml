@@ -2,9 +2,10 @@ backend:
   name: git-gateway
   branch: main
 
-# Images stored in repo — served from GitHub Pages (always up to date without a Netlify deploy)
+# Images stored in repo. Relative path (no leading slash) works on both the
+# GitHub Pages preview URL and the future custom domain without changes.
 media_folder: "images/uploads"
-public_folder: "https://coloradoheritage.github.io/chess-website-mockup/images/uploads"
+public_folder: "images/uploads"
 
 collections:
 
@@ -40,34 +41,29 @@ collections:
             hint: "Where the button links to (e.g. programs.html#academy)."
 
   # ─────────────────────────────────────────
-  # BLOG POSTS
+  # BLOG POSTS  (edits data/posts.json — the file the website actually reads)
   # ─────────────────────────────────────────
-  - name: "posts"
+  - name: "blog"
     label: "📝 Blog Posts"
-    folder: "posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    extension: "md"
-    format: "frontmatter"
     editor:
       preview: false
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string", default: "Colorado Heritage" }
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        options:
-          - "Announcements"
-          - "Education"
-          - "Faith & Learning"
-          - "News"
-          - "Resources"
-          - "Events"
-      - { label: "Short Excerpt", name: "excerpt", widget: "text", hint: "1–2 sentences shown on the blog listing page." }
-      - { label: "Featured Image", name: "featured_image", widget: "image", required: false, hint: "Upload an image. It will appear after Netlify rebuilds (usually within 30 seconds)." }
-      - { label: "Body", name: "body", widget: "markdown" }
+    files:
+      - label: "Blog Posts"
+        name: "posts"
+        file: "data/posts.json"
+        format: json
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "URL Slug", name: "slug", widget: "string", hint: "Lowercase with dashes — e.g. why-christian-education. Becomes the article's web address." }
+              - { label: "Date", name: "date", widget: "string", hint: "e.g. June 1, 2026" }
+              - { label: "Summary", name: "summary", widget: "text", hint: "1–2 sentences shown on the blog listing page." }
+              - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Optional. Shows at the top of the article and on the blog list." }
+              - { label: "Body", name: "body", widget: "markdown", hint: "The full article. Use headings, bold, lists, quotes." }
 
   # ─────────────────────────────────────────
   # CLASS SCHEDULE
