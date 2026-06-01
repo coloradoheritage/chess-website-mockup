@@ -4,6 +4,8 @@ backend:
   identity_url: https://coloradoheritage.netlify.app/.netlify/identity
   gateway_url: https://coloradoheritage.netlify.app/.netlify/git
 
+site_url: https://coloradoheritage.github.io/chess-website-mockup
+
 # Where uploaded images are stored in the repo
 media_folder: "images/uploads"
 # The public URL path to those images
