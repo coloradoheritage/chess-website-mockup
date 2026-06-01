@@ -277,6 +277,19 @@
                     </div>
                 </div>
 
+                <!-- Important Dates -->
+                <div class="mt-8 p-5 bg-parchment border border-gray-200 rounded-xl">
+                    <p class="font-bold text-heritage-navy text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <svg class="w-4 h-4 text-academy-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        <span id="dates-title">Important Dates</span>
+                    </p>
+                    <ul id="important-dates" class="space-y-2 text-sm">
+                        <li class="flex gap-3"><span class="font-bold text-heritage-navy whitespace-nowrap">June 1, 2026</span><span class="text-mountain-slate">2026/2027 Academy Registration Opens</span></li>
+                        <li class="flex gap-3"><span class="font-bold text-heritage-navy whitespace-nowrap">Fall 2026</span><span class="text-mountain-slate">Fall Semester Begins</span></li>
+                        <li class="flex gap-3"><span class="font-bold text-heritage-navy whitespace-nowrap">Spring 2027</span><span class="text-mountain-slate">Spring Semester Begins</span></li>
+                    </ul>
+                </div>
+
                 <!-- Google Maps Embed -->
                 <div class="mt-8 rounded-xl overflow-hidden border border-gray-200 shadow-sm">
                     <iframe
@@ -546,6 +559,21 @@
                         <p class="font-bold text-heritage-navy text-xs uppercase tracking-wider mb-0.5">${esc(s.label || '')}</p>
                         <p class="text-mountain-slate leading-relaxed">${esc(s.text || '').replace(/\n/g, '<br>')}</p>
                     </div>`).join('');
+            })
+            .catch(() => {});
+
+        // Load important dates from CMS (data/dates.json). Falls back to the
+        // static HTML already in the page if the file is missing.
+        fetch('data/dates.json')
+            .then(r => r.json())
+            .then(data => {
+                const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                const titleEl = document.getElementById('dates-title');
+                if (titleEl && data.title) titleEl.textContent = data.title;
+                const list = document.getElementById('important-dates');
+                if (!list || !data.dates || !data.dates.length) return;
+                list.innerHTML = data.dates.map(d => `
+                    <li class="flex gap-3"><span class="font-bold text-heritage-navy whitespace-nowrap">${esc(d.date || '')}</span><span class="text-mountain-slate">${esc(d.event || '')}</span></li>`).join('');
             })
             .catch(() => {});
 </script>

@@ -65,6 +65,31 @@ collections:
               - { label: "Details", name: "text", widget: "text", hint: "Press Enter for a new line within a section." }
 
   # ─────────────────────────────────────────
+  # IMPORTANT DATES
+  # ─────────────────────────────────────────
+  - name: "important_dates"
+    label: "📆 Important Dates"
+    editor:
+      preview: false
+    files:
+      - label: "Important Dates"
+        name: "dates"
+        file: "data/dates.json"
+        format: json
+        fields:
+          - { label: "Heading", name: "title", widget: "string", default: "Important Dates" }
+          - label: "Dates"
+            name: "dates"
+            label_singular: "Date"
+            widget: "list"
+            collapsed: true
+            summary: "{{fields.date}} — {{fields.event}}"
+            hint: "Shown on the contact page. List in the order you want them displayed."
+            fields:
+              - { label: "When", name: "date", widget: "string", hint: "e.g. June 1, 2026 or Fall 2026" }
+              - { label: "What", name: "event", widget: "string", hint: "e.g. Fall Semester Begins" }
+
+  # ─────────────────────────────────────────
   # BLOG POSTS  (edits data/posts.json — the file the website actually reads)
   # ─────────────────────────────────────────
   - name: "blog"
