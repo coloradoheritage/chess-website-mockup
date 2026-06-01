@@ -1,0 +1,8 @@
+{
+  "sections": [
+    { "label": "Summer Hours", "text": "Mon – Thu: 10:00 am – 1:00 pm" },
+    { "label": "School Year", "text": "Mon & Wed: 10:00 am – 1:00 pm\nTue & Thu: No availability for non-Academy needs" },
+    { "label": "By Appointment", "text": "Use the calendar below to schedule a meeting." },
+    { "label": "Closed", "text": "Fri / Sat / Sun — year-round\nMemorial Day · Labor Day\nThanksgiving week\nDec 13 – Jan 3" }
+  ]
+}

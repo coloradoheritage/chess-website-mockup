@@ -255,7 +255,7 @@
                         </div>
                         <div class="flex-1">
                             <p class="font-bold text-heritage-navy text-sm uppercase tracking-wider mb-3">Office Hours</p>
-                            <div class="space-y-3 text-sm">
+                            <div id="office-hours" class="space-y-3 text-sm">
                                 <div>
                                     <p class="font-bold text-heritage-navy text-xs uppercase tracking-wider mb-0.5">Summer Hours</p>
                                     <p class="text-mountain-slate leading-relaxed">Mon – Thu: 10:00 am – 1:00 pm</p>
@@ -530,6 +530,22 @@
                     if (data.link_text) linkEl.textContent = data.link_text;
                     if (data.link_url) linkEl.href = data.link_url;
                 }
+            })
+            .catch(() => {});
+
+        // Load office hours from CMS (data/hours.json). Falls back to the
+        // static HTML already in the page if the file is missing.
+        fetch('data/hours.json')
+            .then(r => r.json())
+            .then(data => {
+                const wrap = document.getElementById('office-hours');
+                if (!wrap || !data.sections || !data.sections.length) return;
+                const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                wrap.innerHTML = data.sections.map((s, i) => `
+                    <div${i === data.sections.length - 1 ? ' class="pt-1 border-t border-gray-200"' : ''}>
+                        <p class="font-bold text-heritage-navy text-xs uppercase tracking-wider mb-0.5">${esc(s.label || '')}</p>
+                        <p class="text-mountain-slate leading-relaxed">${esc(s.text || '').replace(/\n/g, '<br>')}</p>
+                    </div>`).join('');
             })
             .catch(() => {});
 </script>

@@ -41,6 +41,30 @@ collections:
             hint: "Where the button links to (e.g. programs.html#academy)."
 
   # ─────────────────────────────────────────
+  # OFFICE HOURS
+  # ─────────────────────────────────────────
+  - name: "office_hours"
+    label: "🕒 Office Hours"
+    editor:
+      preview: false
+    files:
+      - label: "Office Hours"
+        name: "hours"
+        file: "data/hours.json"
+        format: json
+        fields:
+          - label: "Hours Sections"
+            name: "sections"
+            label_singular: "Section"
+            widget: "list"
+            collapsed: true
+            summary: "{{fields.label}}"
+            hint: "Each section shows on the contact page. The last one is styled as 'Closed' with a divider above it."
+            fields:
+              - { label: "Heading", name: "label", widget: "string", hint: "e.g. Summer Hours, School Year, Closed" }
+              - { label: "Details", name: "text", widget: "text", hint: "Press Enter for a new line within a section." }
+
+  # ─────────────────────────────────────────
   # BLOG POSTS  (edits data/posts.json — the file the website actually reads)
   # ─────────────────────────────────────────
   - name: "blog"
