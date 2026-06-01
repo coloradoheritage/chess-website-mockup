@@ -41,6 +41,31 @@ collections:
             hint: "Where the button links to (e.g. programs.html#academy)."
 
   # ─────────────────────────────────────────
+  # PAGE VISIBILITY  (hides nav links to chosen pages)
+  # ─────────────────────────────────────────
+  - name: "page_visibility"
+    label: "👁 Page Visibility"
+    editor:
+      preview: false
+    files:
+      - label: "Show / Hide Pages"
+        name: "visibility"
+        file: "data/page-visibility.json"
+        format: json
+        fields:
+          - label: "Pages"
+            name: "pages"
+            label_singular: "Page"
+            widget: "list"
+            collapsed: true
+            summary: "{{fields.label}} — {{#if fields.visible}}Visible{{else}}Hidden{{/if}}"
+            hint: "Turn a page OFF to hide its links from the menus and footer site-wide. The page still exists at its address, but visitors won't find it through navigation."
+            fields:
+              - { label: "Page Name", name: "label", widget: "string", hint: "Just a label for you — e.g. 'Donate'." }
+              - { label: "File", name: "page", widget: "string", hint: "The page's file name, e.g. donate.html. Don't change this." }
+              - { label: "Show this page", name: "visible", widget: "boolean", default: true }
+
+  # ─────────────────────────────────────────
   # OFFICE HOURS
   # ─────────────────────────────────────────
   - name: "office_hours"

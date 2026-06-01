@@ -1,0 +1,11 @@
+{
+  "pages": [
+    { "page": "apply.html", "label": "Apply / Registration", "visible": true },
+    { "page": "donate.html", "label": "Donate", "visible": true },
+    { "page": "gallery.html", "label": "Photo Gallery", "visible": true },
+    { "page": "blog.html", "label": "Blog", "visible": true },
+    { "page": "testimonials.html", "label": "Testimonials", "visible": true },
+    { "page": "faq.html", "label": "FAQ", "visible": true },
+    { "page": "standardized-testing.html", "label": "Standardized Testing", "visible": true }
+  ]
+}
