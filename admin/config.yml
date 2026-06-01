@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
   branch: main
-  identity_url: https://coloradoheritage.netlify.app/.netlify/identity
-  gateway_url: https://coloradoheritage.netlify.app/.netlify/git
+  identity_url: https://coloradoheritagewebsite.netlify.app/.netlify/identity
+  gateway_url: https://coloradoheritagewebsite.netlify.app/.netlify/git
 
 site_url: https://coloradoheritage.github.io/chess-website-mockup
 
