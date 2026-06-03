@@ -1,21 +1,37 @@
 {
-  "note": "This list is a starting point, not an exhaustive directory. We include only schools that publicly affirm the fundamentals of the historic Christian faith. Because a school's doctrine and spiritual climate can change over time, and because CHESS does not control these institutions, families must personally verify each school's current statement of faith — and confirm that a faithful, Bible-believing local church is within reach — before enrolling.",
+  "note": "This list is a starting point, not an exhaustive directory, and focuses on schools of like conviction. We include only schools that publicly affirm the fundamentals of the historic Christian faith. Because a school's doctrine and spiritual climate can change over time, and because CHESS does not control these institutions, families must personally verify each school's current statement of faith — and confirm that a faithful, Bible-believing local church is within reach — before enrolling.",
   "colleges": [
     {
       "name": "Chambers College",
       "location": "Greeley, Colorado",
       "tradition": "Reformation Baptist",
-      "url": "",
+      "url": "https://chamberscollege.org",
       "highlight": true,
       "note": "Affiliated with Reformation Baptist Church and led by Pastor Baxter Ong. A natural next step for many CHESS families, rooted in the same convictions."
     },
     {
-      "name": "Bob Jones University",
+      "name": "Bob Jones University (BJU)",
       "location": "Greenville, South Carolina",
       "tradition": "Independent Fundamentalist",
       "url": "https://www.bju.edu",
       "highlight": false,
       "note": "A long-standing fundamentalist university holding to biblical inerrancy and the deity of Christ."
+    },
+    {
+      "name": "Maranatha Baptist University (MBU)",
+      "location": "Watertown, Wisconsin",
+      "tradition": "Independent Baptist",
+      "url": "https://www.mbu.edu",
+      "highlight": false,
+      "note": "An independent Baptist university committed to the inerrancy of Scripture and historic Baptist doctrine."
+    },
+    {
+      "name": "Reformation Bible College (RBC)",
+      "location": "Sanford, Florida",
+      "tradition": "Reformed",
+      "url": "https://www.reformationbiblecollege.org",
+      "highlight": false,
+      "note": "A Reformed college grounded in the authority and inerrancy of Scripture and the historic doctrines of grace."
     },
     {
       "name": "The Master's University",
