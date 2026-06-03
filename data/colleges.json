@@ -58,6 +58,14 @@
       "note": "Founded with homeschool graduates in mind; affirms biblical inerrancy and a classical, Christ-centered liberal arts education."
     },
     {
+      "name": "Grove City College",
+      "location": "Grove City, Pennsylvania",
+      "tradition": "Conservative Christian Liberal Arts",
+      "url": "https://www.gcc.edu",
+      "highlight": false,
+      "note": "An independent, Christ-centered liberal arts college known for its commitment to historic Christian faith, conservative values, and freedom from federal funding."
+    },
+    {
       "name": "Pensacola Christian College",
       "location": "Pensacola, Florida",
       "tradition": "Independent Baptist",
