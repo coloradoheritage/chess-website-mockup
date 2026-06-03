@@ -90,6 +90,35 @@ collections:
               - { label: "Details", name: "text", widget: "text", hint: "Press Enter for a new line within a section." }
 
   # ─────────────────────────────────────────
+  # RECOMMENDED COLLEGES
+  # ─────────────────────────────────────────
+  - name: "colleges"
+    label: "🎓 Recommended Colleges"
+    editor:
+      preview: false
+    files:
+      - label: "Recommended Colleges"
+        name: "colleges"
+        file: "data/colleges.json"
+        format: json
+        fields:
+          - { label: "Disclaimer Note", name: "note", widget: "text", hint: "Shown above the list. Reminds families to verify each school's statement of faith." }
+          - label: "Colleges"
+            name: "colleges"
+            label_singular: "College"
+            widget: "list"
+            collapsed: true
+            summary: "{{fields.name}} — {{fields.location}}"
+            hint: "Only list schools that faithfully affirm the fundamentals of the Christian faith."
+            fields:
+              - { label: "School Name", name: "name", widget: "string" }
+              - { label: "City, State", name: "location", widget: "string" }
+              - { label: "Tradition / Affiliation", name: "tradition", widget: "string", required: false, hint: "e.g. Reformed, Independent Baptist, Southern Baptist" }
+              - { label: "Website", name: "url", widget: "string", required: false, hint: "Full URL, e.g. https://www.example.edu — leave blank for no link" }
+              - { label: "Feature this school (gold highlight)", name: "highlight", widget: "boolean", default: false, required: false }
+              - { label: "Note", name: "note", widget: "text", required: false, hint: "A sentence on why this school is included." }
+
+  # ─────────────────────────────────────────
   # IMPORTANT DATES
   # ─────────────────────────────────────────
   - name: "important_dates"

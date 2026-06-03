@@ -39,6 +39,11 @@
       "page": "why-chess-for-your-child.html",
       "label": "Why CHESS for Your Child",
       "visible": true
+    },
+    {
+      "page": "christian-college-guide.html",
+      "label": "Christian College Guide",
+      "visible": true
     }
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "note": "This list is a starting point, not an exhaustive directory. We include only schools that publicly affirm the fundamentals of the historic Christian faith. Because a school's doctrine and spiritual climate can change over time, and because CHESS does not control these institutions, families must personally verify each school's current statement of faith — and confirm that a faithful, Bible-believing local church is within reach — before enrolling.",
+  "colleges": [
+    {
+      "name": "Chambers College",
+      "location": "Greeley, Colorado",
+      "tradition": "Reformation Baptist",
+      "url": "",
+      "highlight": true,
+      "note": "Affiliated with Reformation Baptist Church and led by Pastor Baxter Ong. A natural next step for many CHESS families, rooted in the same convictions."
+    },
+    {
+      "name": "Bob Jones University",
+      "location": "Greenville, South Carolina",
+      "tradition": "Independent Fundamentalist",
+      "url": "https://www.bju.edu",
+      "highlight": false,
+      "note": "A long-standing fundamentalist university holding to biblical inerrancy and the deity of Christ."
+    },
+    {
+      "name": "The Master's University",
+      "location": "Santa Clarita, California",
+      "tradition": "Reformed / Baptistic",
+      "url": "https://www.masters.edu",
+      "highlight": false,
+      "note": "Associated with Grace Community Church and Pastor John MacArthur; strong commitment to the authority and inerrancy of Scripture."
+    },
+    {
+      "name": "Boyce College",
+      "location": "Louisville, Kentucky",
+      "tradition": "Southern Baptist",
+      "url": "https://www.boycecollege.com",
+      "highlight": false,
+      "note": "The undergraduate college of The Southern Baptist Theological Seminary, grounded in confessional, conservative theology."
+    },
+    {
+      "name": "Patrick Henry College",
+      "location": "Purcellville, Virginia",
+      "tradition": "Classical Christian",
+      "url": "https://www.phc.edu",
+      "highlight": false,
+      "note": "Founded with homeschool graduates in mind; affirms biblical inerrancy and a classical, Christ-centered liberal arts education."
+    },
+    {
+      "name": "Pensacola Christian College",
+      "location": "Pensacola, Florida",
+      "tradition": "Independent Baptist",
+      "url": "https://www.pcci.edu",
+      "highlight": false,
+      "note": "An independent Baptist college committed to the inerrancy of Scripture and historic fundamentalist doctrine."
+    }
+  ]
+}
