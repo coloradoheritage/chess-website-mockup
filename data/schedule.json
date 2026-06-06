@@ -25,7 +25,7 @@
     { "grade_band": "3-5",  "time": "2:15",  "day": "Tuesday",    "name": "Basic Sign Language (Grades K–8)",  "instructor": "JS",                  "room": "bs"  },
 
     { "grade_band": "6-8",  "time": "8:15",  "day": "Tuesday",    "name": "Drama (Grades 4–12)",               "instructor": "Miss Lilah Barth",     "room": "au"  },
-    { "grade_band": "6-8",  "time": "8:15",  "day": "Thursday",   "name": "Physical Science",                  "instructor": "Mr. Cliff Smart",      "room": "pa"  },
+    { "grade_band": "6-8",  "time": "8:15",  "day": "Tues/Thurs", "name": "Physical Science",                  "instructor": "Mr. Cliff Smart",      "room": "pa"  },
     { "grade_band": "6-8",  "time": "9:15",  "day": "Tuesday",    "name": "Elementary Choir",                  "instructor": "Mrs. Teri Ong",        "room": "au"  },
     { "grade_band": "6-8",  "time": "10:15", "day": "Tuesday",    "name": "JH/HS Art",                         "instructor": "Mrs. Alice Wishart",   "room": "cc"  },
     { "grade_band": "6-8",  "time": "10:15", "day": "Thursday",   "name": "Junior High Literature",             "instructor": "Mrs. Annie Nelson",    "room": "pa"  },
