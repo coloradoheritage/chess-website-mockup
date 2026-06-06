@@ -373,6 +373,22 @@
         // ── Globals set after fetch ──────────────────────────────────
         let allClasses = [];
         let activeBand = 'K-2';
+        let activeView = 'list';
+
+        function setView(view) {
+            activeView = view;
+            ['list','grid'].forEach(v => {
+                const btn = document.getElementById('view-' + v);
+                if (v === view) {
+                    btn.classList.add('bg-white','text-heritage-navy','shadow-sm');
+                    btn.classList.remove('text-gray-500','hover:text-heritage-navy');
+                } else {
+                    btn.classList.remove('bg-white','text-heritage-navy','shadow-sm');
+                    btn.classList.add('text-gray-500','hover:text-heritage-navy');
+                }
+            });
+            renderTable(allClasses.filter(c => c.grade_band === activeBand));
+        }
 
         function switchBand(band) {
             activeBand = band;
@@ -396,6 +412,8 @@
                 panel.innerHTML = '<p class="text-center text-gray-400 py-12">No classes found for this grade band.</p>';
                 return;
             }
+            if (activeView === 'grid') { renderGrid(classes, panel); return; }
+
             // Sort by time then by day (Tue before Thu)
             const sorted = [...classes].sort((a, b) => {
                 const td = timeRank(a.time) - timeRank(b.time);
