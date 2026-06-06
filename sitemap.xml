@@ -37,6 +37,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://coloradoheritage.org/christian-college-guide.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://coloradoheritage.org/contact.html</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
