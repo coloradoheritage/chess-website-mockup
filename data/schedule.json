@@ -40,7 +40,7 @@
     { "grade_band": "9-12", "time": "8:15",  "day": "Tuesday",    "name": "Drama (Grades 4–12)",               "instructor": "Miss Lilah Barth",     "room": "au"  },
     { "grade_band": "9-12", "time": "8:15",  "day": "Tuesday",    "name": "World War II",                      "instructor": "Mr. Joshua Franklin",  "room": "sp"  },
     { "grade_band": "9-12", "time": "8:15",  "day": "Thursday",   "name": "Principles of Bible Study",         "instructor": "Pastor Baxter Ong",    "room": "ofc" },
-    { "grade_band": "9-12", "time": "8:15",  "day": "Thursday",   "name": "Speech & Debate",                   "instructor": "Mr. Noah Nelson",      "room": "bs"  },
+    { "grade_band": "9-12", "time": "8:15",  "day": "Thursday",   "name": "Speech & Debate (T&H)",             "instructor": "Mr. Noah Nelson",      "room": "bs"  },
     { "grade_band": "9-12", "time": "9:15",  "day": "Tuesday",    "name": "US Civil War",                      "instructor": "Mr. Joshua Franklin",  "room": "bs"  },
     { "grade_band": "9-12", "time": "9:15",  "day": "Tues/Thurs", "name": "General Chemistry w/Lab",           "instructor": "Mr. Cliff Smart",      "room": "pa"  },
     { "grade_band": "9-12", "time": "9:15",  "day": "Tues/Thurs", "name": "British Literature",                "instructor": "Mrs. Annie Nelson",    "room": "rh"  },
