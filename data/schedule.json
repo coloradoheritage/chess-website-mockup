@@ -53,6 +53,7 @@
     { "grade_band": "9-12", "time": "1:15",  "day": "Tues/Thurs", "name": "Algebra I",                         "instructor": "Mrs. Amy Kearns",      "room": "bs"  },
     { "grade_band": "9-12", "time": "1:15",  "day": "Tues/Thurs", "name": "Research & Composition",            "instructor": "Mrs. Chris Smart",     "room": "rh"  },
     { "grade_band": "9-12", "time": "2:15",  "day": "Tuesday",    "name": "Advanced Chamber Ensemble",         "instructor": "Mrs. Teri Ong",        "room": "au"  },
+    { "grade_band": "9-12", "time": "2:15",  "day": "Tuesday",    "name": "Speech & Debate (T&H)",             "instructor": "Mr. Noah Nelson",      "room": "pa"  },
     { "grade_band": "9-12", "time": "2:15",  "day": "Thursday",   "name": "Computer Graphics",                 "instructor": "Miss Lilah Barth",     "room": "pa"  },
     { "grade_band": "9-12", "time": "2:15",  "day": "Thursday",   "name": "OT Survey",                         "instructor": "Pastor Baxter Ong",    "room": "ofc" },
     { "grade_band": "9-12", "time": "3:15",  "day": "Tues/Thurs", "name": "Weight Training",                   "instructor": "Mr. Matthew Salzmann", "room": "by"  }
