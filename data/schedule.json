@@ -10,7 +10,6 @@
     { "grade_band": "K-2",  "time": "1:15",  "day": "Tuesday",    "name": "PE",                                "instructor": "Mr. Andrew Kearns",    "room": "by"  },
     { "grade_band": "K-2",  "time": "2:15",  "day": "Tuesday",    "name": "Basic Sign Language (Grades K–8)",  "instructor": "JS",                  "room": "bs"  },
 
-    { "grade_band": "3-5",  "time": "8:15",  "day": "Tuesday",    "name": "Art",                               "instructor": "Mrs. Alice Wishart",   "room": "cc"  },
     { "grade_band": "3-5",  "time": "8:15",  "day": "Tuesday",    "name": "Drama (Grades 4–12)",               "instructor": "Miss Lilah Barth",     "room": "au"  },
     { "grade_band": "3-5",  "time": "8:15",  "day": "Tuesday",    "name": "Zoology I",                         "instructor": "SS",                  "room": "bs"  },
     { "grade_band": "3-5",  "time": "9:15",  "day": "Tuesday",    "name": "Elementary Choir",                  "instructor": "Mrs. Teri Ong",        "room": "au"  },
