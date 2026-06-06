@@ -1,0 +1,33 @@
+{
+  "teachers": [
+    {"abbr": "AJK", "name": "Andrew Kearns"},
+    {"abbr": "AK",  "name": "Amy Kearns"},
+    {"abbr": "AN",  "name": "Annie Nelson"},
+    {"abbr": "AW",  "name": "Alice Wishart"},
+    {"abbr": "BO",  "name": "Baxter Ong"},
+    {"abbr": "CLS", "name": "Cliff Smart"},
+    {"abbr": "CS",  "name": "Chris Smart"},
+    {"abbr": "JF",  "name": "Josh Franklin"},
+    {"abbr": "JS",  "name": "Jeannine Schale"},
+    {"abbr": "LB",  "name": "Lilah Barth"},
+    {"abbr": "MS",  "name": "Matthew Salzmann"},
+    {"abbr": "NN",  "name": "Noah Nelson"},
+    {"abbr": "PL",  "name": "Paul leDuc"},
+    {"abbr": "SC",  "name": "Shana Chavez"},
+    {"abbr": "SS",  "name": "Stacey Solanyk"},
+    {"abbr": "TO",  "name": "Teri Ong"}
+  ],
+  "rooms": [
+    {"abbr": "au",  "name": "Auditorium"},
+    {"abbr": "bs",  "name": "Room BS"},
+    {"abbr": "by",  "name": "Gymnasium"},
+    {"abbr": "cc",  "name": "Room CC"},
+    {"abbr": "cs",  "name": "Room CS"},
+    {"abbr": "jb",  "name": "Room JB"},
+    {"abbr": "ki",  "name": "Kitchen"},
+    {"abbr": "ofc", "name": "Office"},
+    {"abbr": "pa",  "name": "Room PA"},
+    {"abbr": "rh",  "name": "Room RH"},
+    {"abbr": "sp",  "name": "Room SP"}
+  ]
+}
