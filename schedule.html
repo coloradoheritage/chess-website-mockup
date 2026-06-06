@@ -470,6 +470,25 @@
             panel.innerHTML = html;
         }
 
+        // ── Load schedule-keys.json (teacher + room key) ────────────
+        fetch('data/schedule-keys.json')
+            .then(r => r.json())
+            .then(keys => {
+                const box = document.getElementById('schedule-keys');
+                if (!box) return;
+                function keyRows(items) {
+                    return items.map(k =>
+                        `<div class="flex gap-2"><span class="font-bold text-heritage-navy w-10 shrink-0">${k.abbr}</span><span class="text-mountain-slate">${k.name}</span></div>`
+                    ).join('');
+                }
+                box.innerHTML =
+                    `<h3 class="text-heritage-navy font-serif font-bold text-lg mb-3">Teacher Key</h3>
+                     <div class="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm mb-5">${keyRows(keys.teachers)}</div>
+                     <h3 class="text-heritage-navy font-serif font-bold text-lg mb-3">Room Key</h3>
+                     <div class="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">${keyRows(keys.rooms)}</div>`;
+                box.classList.remove('hidden');
+            }).catch(() => {});
+
         // ── Load schedule.json ──────────────────────────────────────
         fetch('data/schedule.json')
             .then(r => r.json())
