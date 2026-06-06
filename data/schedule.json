@@ -28,7 +28,7 @@
     { "grade_band": "6-8",  "time": "8:15",  "day": "Tues/Thurs", "name": "Physical Science",                  "instructor": "Mr. Cliff Smart",      "room": "pa"  },
     { "grade_band": "6-8",  "time": "9:15",  "day": "Tuesday",    "name": "Elementary Choir",                  "instructor": "Mrs. Teri Ong",        "room": "au"  },
     { "grade_band": "6-8",  "time": "10:15", "day": "Tuesday",    "name": "JH/HS Art",                         "instructor": "Mrs. Alice Wishart",   "room": "cc"  },
-    { "grade_band": "6-8",  "time": "10:15", "day": "Thursday",   "name": "Junior High Literature",             "instructor": "Mrs. Annie Nelson",    "room": "pa"  },
+    { "grade_band": "6-8",  "time": "10:15", "day": "Tues/Thurs", "name": "Junior High Literature",             "instructor": "Mrs. Annie Nelson",    "room": "pa"  },
     { "grade_band": "6-8",  "time": "11:15", "day": "Tuesday",    "name": "Structure & Style",                 "instructor": "Mrs. Chris Smart",     "room": "cc"  },
     { "grade_band": "6-8",  "time": "11:15", "day": "Thursday",   "name": "Cooking Class",                     "instructor": "Mrs. Annie Nelson",    "room": "ki"  },
     { "grade_band": "6-8",  "time": "1:15",  "day": "Tuesday",    "name": "Speech",                            "instructor": "Mrs. Annie Nelson",    "room": "cc"  },
