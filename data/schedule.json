@@ -46,7 +46,7 @@
     { "grade_band": "9-12", "time": "9:15",  "day": "Tues/Thurs", "name": "British Literature",                "instructor": "Mrs. Annie Nelson",    "room": "rh"  },
     { "grade_band": "9-12", "time": "9:15",  "day": "Tuesday",    "name": "OT Survey",                         "instructor": "Pastor Baxter Ong",    "room": "ofc" },
     { "grade_band": "9-12", "time": "10:15", "day": "Tuesday",    "name": "JH/HS Art",                         "instructor": "Mrs. Alice Wishart",   "room": "cc"  },
-    { "grade_band": "9-12", "time": "10:15", "day": "Thursday",   "name": "U.S. Government",                   "instructor": "Mr. Noah Nelson",      "room": "sp"  },
+    { "grade_band": "9-12", "time": "10:15", "day": "Tues/Thurs", "name": "U.S. Government",                   "instructor": "Mr. Noah Nelson",      "room": "sp"  },
     { "grade_band": "9-12", "time": "10:15", "day": "Tuesday",    "name": "Algebra II",                        "instructor": "Mrs. Amy Kearns",      "room": "ofc" },
     { "grade_band": "9-12", "time": "11:15", "day": "Tuesday",    "name": "Choir",                             "instructor": "Mrs. Teri Ong",        "room": "au"  },
     { "grade_band": "9-12", "time": "11:15", "day": "Thursday",   "name": "NT Survey",                         "instructor": "Pastor Baxter Ong",    "room": "ofc" },
