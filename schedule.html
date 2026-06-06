@@ -451,6 +451,45 @@
             panel.innerHTML = html;
         }
 
+        // ── Grid / chart view ───────────────────────────────────────
+        function renderGrid(classes, panel) {
+            const tueTimes = TIME_ORDER.filter(t => classes.some(c => c.time === t && (c.day === 'Tuesday' || c.day === 'Tues/Thurs')));
+            const thuTimes = TIME_ORDER.filter(t => classes.some(c => c.time === t && (c.day === 'Thursday' || c.day === 'Tues/Thurs')));
+            const allTimes = TIME_ORDER.filter(t => classes.some(c => c.time === t));
+
+            function cellClasses(day, name, instructor) {
+                const base = 'rounded-lg px-2 py-1.5 mb-1 last:mb-0 text-xs leading-snug';
+                if (day === 'Tuesday')    return `${base} bg-blue-50 border border-blue-200 text-blue-900`;
+                if (day === 'Thursday')   return `${base} bg-amber-50 border border-amber-200 text-amber-900`;
+                return `${base} bg-purple-50 border border-purple-200 text-purple-900`;
+            }
+
+            function classCard(c) {
+                return `<div class="${cellClasses(c.day)}"><div class="font-semibold">${c.name}</div><div class="opacity-70">${c.instructor || ''}</div></div>`;
+            }
+
+            let html = '<div class="overflow-x-auto"><table class="w-full text-sm border-collapse">';
+            html += '<thead><tr class="bg-heritage-navy text-white">'
+                  + '<th class="px-3 py-3 text-left font-bold text-xs uppercase tracking-wider w-20 border-r border-heritage-navy/40">Time</th>'
+                  + '<th class="px-3 py-3 text-left font-bold text-xs uppercase tracking-wider border-r border-heritage-navy/40"><span class="inline-block w-2 h-2 rounded-sm bg-blue-300 mr-1"></span>Tuesday</th>'
+                  + '<th class="px-3 py-3 text-left font-bold text-xs uppercase tracking-wider"><span class="inline-block w-2 h-2 rounded-sm bg-amber-300 mr-1"></span>Thursday</th>'
+                  + '</tr></thead><tbody>';
+
+            allTimes.forEach((time, gi) => {
+                const tueCells = classes.filter(c => c.time === time && (c.day === 'Tuesday' || c.day === 'Tues/Thurs'));
+                const thuCells = classes.filter(c => c.time === time && (c.day === 'Thursday' || c.day === 'Tues/Thurs'));
+                const border = gi > 0 ? 'border-t-2 border-gray-200' : '';
+                html += `<tr class="${border}">`;
+                html += `<td class="px-3 py-3 font-bold text-heritage-navy whitespace-nowrap align-top border-r border-gray-100">${time}</td>`;
+                html += `<td class="px-3 py-3 align-top border-r border-gray-100">${tueCells.map(classCard).join('') || '<span class="text-gray-300 text-xs">—</span>'}</td>`;
+                html += `<td class="px-3 py-3 align-top">${thuCells.map(classCard).join('') || '<span class="text-gray-300 text-xs">—</span>'}</td>`;
+                html += '</tr>';
+            });
+
+            html += '</tbody></table></div>';
+            panel.innerHTML = html;
+        }
+
         // ── Load schedule.json ──────────────────────────────────────
         fetch('data/schedule.json')
             .then(r => r.json())
