@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "chess-site",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "4321", "."],
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["-run", "-e", "httpd", "--", "-p", "4321", "."],
       "port": 4321
     }
   ]
