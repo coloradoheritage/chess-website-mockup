@@ -304,5 +304,6 @@
     fetch('data/announcement.json').then(r=>r.json()).then(d=>{if(!d.active){document.getElementById('announcement-bar').style.display='none';return;}const t=document.getElementById('announcement-text'),l=document.getElementById('announcement-link');if(t&&d.text)t.textContent=d.text;if(l){if(d.link_text)l.textContent=d.link_text;if(d.link_url)l.href=d.link_url;}}).catch(()=>{});
 </script>
     <script src="nav-visibility.js" defer></script>
+    <script src="mobile-nav.js" defer></script>
 </body>
 </html>
