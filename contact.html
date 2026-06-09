@@ -364,22 +364,27 @@
                 <h2 class="text-heritage-navy font-serif font-bold text-2xl md:text-3xl mb-6">Get in Touch</h2>
                 <div class="w-12 h-0.5 bg-academy-gold mb-8"></div>
 
-                <form name="contact" method="POST" data-netlify="true" class="space-y-5">
-                    <input type="hidden" name="form-name" value="contact">
+                <form id="contact-form" action="https://formsubmit.co/office@coloradoheritage.org" method="POST" class="space-y-5">
+                    <!-- FormSubmit configuration (delivers to office@coloradoheritage.org) -->
+                    <input type="hidden" name="_subject" value="New message from the Colorado Heritage website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Honeypot: bots fill this, humans never see it -->
+                    <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-xs font-bold text-heritage-navy uppercase tracking-wider mb-2">First Name *</label>
-                            <input type="text" name="first-name" placeholder="Jane" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
+                            <input type="text" name="first-name" required placeholder="Jane" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-heritage-navy uppercase tracking-wider mb-2">Last Name *</label>
-                            <input type="text" name="last-name" placeholder="Smith" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
+                            <input type="text" name="last-name" required placeholder="Smith" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-heritage-navy uppercase tracking-wider mb-2">Email Address *</label>
-                        <input type="email" name="email" placeholder="jane@example.com" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
+                        <input type="email" name="email" required placeholder="jane@example.com" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                     </div>
 
                     <div>
@@ -404,9 +409,10 @@
                         <textarea name="message" rows="5" placeholder="Tell us about your family and how we can help…" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all resize-none"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-heritage-navy text-white font-bold py-4 px-8 rounded uppercase tracking-wider text-sm hover:bg-blue-900 transition-colors">
+                    <button type="submit" id="contact-submit" class="w-full bg-heritage-navy text-white font-bold py-4 px-8 rounded uppercase tracking-wider text-sm hover:bg-blue-900 transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
                         Send Message
                     </button>
+                    <p id="contact-status" class="text-sm text-center hidden"></p>
                     <p class="text-xs text-gray-400 text-center">We typically respond within 1–2 business days.</p>
                 </form>
             </div>
@@ -645,6 +651,42 @@
                     <li class="flex gap-3"><span class="font-bold text-heritage-navy whitespace-nowrap">${esc(d.date || '')}</span><span class="text-mountain-slate">${esc(d.event || '')}</span></li>`).join('');
             })
             .catch(() => {});
+
+        // ── Contact form: send to office@coloradoheritage.org via FormSubmit ──
+        (function () {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+            const btn = document.getElementById('contact-submit');
+            const status = document.getElementById('contact-status');
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const original = btn.textContent;
+                btn.disabled = true;
+                btn.textContent = 'Sending…';
+                status.classList.add('hidden');
+                try {
+                    const res = await fetch('https://formsubmit.co/ajax/office@coloradoheritage.org', {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json' },
+                        body: new FormData(form)
+                    });
+                    const data = await res.json().catch(() => ({}));
+                    if (res.ok && (data.success === true || data.success === 'true')) {
+                        form.reset();
+                        status.textContent = 'Thank you! Your message has been sent. We’ll respond within 1–2 business days.';
+                        status.className = 'text-sm text-center text-green-700 font-semibold';
+                    } else {
+                        throw new Error('failed');
+                    }
+                } catch (err) {
+                    status.innerHTML = 'Sorry, something went wrong. Please email <a href="mailto:office@coloradoheritage.org" class="underline font-bold">office@coloradoheritage.org</a> or call (970) 346-0099.';
+                    status.className = 'text-sm text-center text-red-600 font-semibold';
+                } finally {
+                    btn.disabled = false;
+                    btn.textContent = original;
+                }
+            });
+        })();
 </script>
     <script src="nav-visibility.js" defer></script>
     <script src="mobile-nav.js" defer></script>
