@@ -388,6 +388,31 @@
             return activeBand === 'all' ? allClasses : allClasses.filter(c => c.grade_band === activeBand);
         }
 
+        // ── Two-day (Tues & Thurs) class detection ───────────────────
+        // A class counts as two-day if it meets on BOTH days — either as a
+        // single 'Tues/Thurs' entry or split across two single-day entries.
+        let twoDaySet = new Set();
+        function baseName(name) {
+            return (name || '').replace(/\s*\((?:t&h|tues?\s*&\s*thurs?|tu?e?\/thu?r?s?)\)\s*/ig, ' ').replace(/\s+/g, ' ').trim();
+        }
+        function computeTwoDay() {
+            const days = {};
+            allClasses.forEach(c => {
+                const k = c.grade_band + '|' + baseName(c.name);
+                days[k] = days[k] || new Set();
+                if (c.day === 'Tues/Thurs') { days[k].add('Tuesday'); days[k].add('Thursday'); }
+                else days[k].add(c.day);
+            });
+            twoDaySet = new Set(Object.keys(days).filter(k => days[k].has('Tuesday') && days[k].has('Thursday')));
+        }
+        function isTwoDay(c) {
+            return c.day === 'Tues/Thurs' || twoDaySet.has(c.grade_band + '|' + baseName(c.name));
+        }
+        function thBadge(small) {
+            const size = small ? 'text-[9px] px-1 ml-1' : 'text-[10px] px-1.5 ml-2';
+            return `<span class="inline-block bg-purple-100 text-purple-700 ${size} py-0.5 rounded font-bold align-middle whitespace-nowrap">Tues &amp; Thurs</span>`;
+        }
+
         function setView(view) {
             activeView = view;
             ['list','grid'].forEach(v => {
@@ -457,7 +482,7 @@
                     html += `<tr class="${rowBg(c.day)} ${border} hover:brightness-95 transition-all">`;
                     html += `<td class="px-5 py-3 font-bold text-heritage-navy whitespace-nowrap">${ri === 0 ? time : ''}</td>`;
                     html += `<td class="px-5 py-3">${dayBadge(c.day)}</td>`;
-                    html += `<td class="px-5 py-3 font-semibold text-mountain-slate">${gradeBadge}${c.name}<span class="block md:hidden text-xs font-normal text-gray-500 mt-0.5">${c.instructor || ''}</span></td>`;
+                    html += `<td class="px-5 py-3 font-semibold text-mountain-slate">${gradeBadge}${baseName(c.name)}${isTwoDay(c) ? thBadge(false) : ''}<span class="block md:hidden text-xs font-normal text-gray-500 mt-0.5">${c.instructor || ''}</span></td>`;
                     html += `<td class="px-5 py-3 text-gray-500 hidden md:table-cell">${c.instructor || ''}</td>`;
                     html += '</tr>';
                 });
@@ -483,7 +508,8 @@
             function classCard(c) {
                 const gradeBadge = activeBand === 'all'
                     ? `<span class="inline-block bg-heritage-navy text-white text-[9px] font-bold px-1 py-0.5 rounded mr-1 align-middle">${c.grade_band}</span>` : '';
-                return `<div class="${cellClasses(c.day)}"><div class="font-semibold">${gradeBadge}${c.name}</div><div class="opacity-70">${c.instructor || ''}</div></div>`;
+                const th = isTwoDay(c) ? thBadge(true) : '';
+                return `<div class="${cellClasses(c.day)}"><div class="font-semibold">${gradeBadge}${baseName(c.name)}${th}</div><div class="opacity-70">${c.instructor || ''}</div></div>`;
             }
 
             let html = '<div class="overflow-x-auto"><table class="w-full text-sm border-collapse">';
@@ -540,6 +566,7 @@
                     document.getElementById('schedule-note').classList.remove('hidden');
                 }
                 allClasses = data.classes || [];
+                computeTwoDay();
                 switchBand('K-2');
             })
             .catch(() => {
