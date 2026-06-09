@@ -257,6 +257,7 @@
                     <button onclick="switchBand('3-5')"  id="tab-3-5"  class="tab-btn px-5 py-2.5 rounded-lg text-sm font-bold border-2 transition-colors">Grades 3–5</button>
                     <button onclick="switchBand('6-8')"  id="tab-6-8"  class="tab-btn px-5 py-2.5 rounded-lg text-sm font-bold border-2 transition-colors">Grades 6–8</button>
                     <button onclick="switchBand('9-12')" id="tab-9-12" class="tab-btn px-5 py-2.5 rounded-lg text-sm font-bold border-2 transition-colors">Grades 9–12</button>
+                    <button onclick="switchBand('all')" id="tab-all" class="tab-btn px-5 py-2.5 rounded-lg text-sm font-bold border-2 transition-colors">All Grades (K–12)</button>
                 </div>
                 <div class="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
                     <button id="view-list" onclick="setView('list')" class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-bold transition-colors bg-white text-heritage-navy shadow-sm">
@@ -382,6 +383,11 @@
         let activeBand = 'K-2';
         let activeView = 'list';
 
+        // Classes for the currently selected band ('all' shows every grade)
+        function currentClasses() {
+            return activeBand === 'all' ? allClasses : allClasses.filter(c => c.grade_band === activeBand);
+        }
+
         function setView(view) {
             activeView = view;
             ['list','grid'].forEach(v => {
@@ -394,14 +400,15 @@
                     btn.classList.add('text-gray-500','hover:text-heritage-navy');
                 }
             });
-            renderTable(allClasses.filter(c => c.grade_band === activeBand));
+            renderTable(currentClasses());
         }
 
         function switchBand(band) {
             activeBand = band;
-            const bands = ['K-2','3-5','6-8','9-12'];
+            const bands = ['K-2','3-5','6-8','9-12','all'];
             bands.forEach(b => {
                 const btn = document.getElementById('tab-' + b);
+                if (!btn) return;
                 if (b === band) {
                     btn.classList.add('bg-heritage-navy','text-white','border-heritage-navy');
                     btn.classList.remove('bg-white','text-heritage-navy','border-gray-300','hover:border-heritage-navy');
@@ -410,7 +417,7 @@
                     btn.classList.add('bg-white','text-heritage-navy','border-gray-300','hover:border-heritage-navy');
                 }
             });
-            renderTable(allClasses.filter(c => c.grade_band === band));
+            renderTable(currentClasses());
         }
 
         function renderTable(classes) {
@@ -445,10 +452,12 @@
             Object.entries(groups).forEach(([time, rows], gi) => {
                 rows.forEach((c, ri) => {
                     const border = ri === 0 && gi > 0 ? 'border-t-2 border-gray-200' : 'border-t border-gray-100';
+                    const gradeBadge = activeBand === 'all'
+                        ? `<span class="inline-block bg-heritage-navy text-white text-[10px] font-bold px-1.5 py-0.5 rounded mr-2 align-middle">${c.grade_band}</span>` : '';
                     html += `<tr class="${rowBg(c.day)} ${border} hover:brightness-95 transition-all">`;
                     html += `<td class="px-5 py-3 font-bold text-heritage-navy whitespace-nowrap">${ri === 0 ? time : ''}</td>`;
                     html += `<td class="px-5 py-3">${dayBadge(c.day)}</td>`;
-                    html += `<td class="px-5 py-3 font-semibold text-mountain-slate">${c.name}</td>`;
+                    html += `<td class="px-5 py-3 font-semibold text-mountain-slate">${gradeBadge}${c.name}<span class="block md:hidden text-xs font-normal text-gray-500 mt-0.5">${c.instructor || ''}</span></td>`;
                     html += `<td class="px-5 py-3 text-gray-500 hidden md:table-cell">${c.instructor || ''}</td>`;
                     html += '</tr>';
                 });
@@ -472,7 +481,9 @@
             }
 
             function classCard(c) {
-                return `<div class="${cellClasses(c.day)}"><div class="font-semibold">${c.name}</div><div class="opacity-70">${c.instructor || ''}</div></div>`;
+                const gradeBadge = activeBand === 'all'
+                    ? `<span class="inline-block bg-heritage-navy text-white text-[9px] font-bold px-1 py-0.5 rounded mr-1 align-middle">${c.grade_band}</span>` : '';
+                return `<div class="${cellClasses(c.day)}"><div class="font-semibold">${gradeBadge}${c.name}</div><div class="opacity-70">${c.instructor || ''}</div></div>`;
             }
 
             let html = '<div class="overflow-x-auto"><table class="w-full text-sm border-collapse">';
